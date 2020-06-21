@@ -1,0 +1,1417 @@
+<stix:STIX_Package 
+	xmlns:cyboxCommon="http://cybox.mitre.org/common-2"
+	xmlns:cybox="http://cybox.mitre.org/cybox-2"
+	xmlns:cyboxVocabs="http://cybox.mitre.org/default_vocabularies-2"
+	xmlns:AddressObj="http://cybox.mitre.org/objects#AddressObject-2"
+	xmlns:ArtifactObj="http://cybox.mitre.org/objects#ArtifactObject-2"
+	xmlns:FileObj="http://cybox.mitre.org/objects#FileObject-2"
+	xmlns:HTTPSessionObj="http://cybox.mitre.org/objects#HTTPSessionObject-2"
+	xmlns:PDFFileObj="http://cybox.mitre.org/objects#PDFFileObject-1"
+	xmlns:PortObj="http://cybox.mitre.org/objects#PortObject-2"
+	xmlns:URIObj="http://cybox.mitre.org/objects#URIObject-2"
+	xmlns:WhoisObj="http://cybox.mitre.org/objects#WhoisObject-2"
+	xmlns:marking="http://data-marking.mitre.org/Marking-1"
+	xmlns:tlpMarking="http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1"
+	xmlns:TOUMarking="http://data-marking.mitre.org/extensions/MarkingStructure#Terms_Of_Use-1"
+	xmlns:maecBundle="http://maec.mitre.org/XMLSchema/maec-bundle-4"
+	xmlns:maecPackage="http://maec.mitre.org/XMLSchema/maec-package-2"
+	xmlns:maecVocabs="http://maec.mitre.org/default_vocabularies-1"
+	xmlns:incident="http://stix.mitre.org/Incident-1"
+	xmlns:indicator="http://stix.mitre.org/Indicator-2"
+	xmlns:ttp="http://stix.mitre.org/TTP-1"
+	xmlns:stixCommon="http://stix.mitre.org/common-1"
+	xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1"
+	xmlns:stix-maec="http://stix.mitre.org/extensions/Malware#MAEC4.1-1"
+	xmlns:stix="http://stix.mitre.org/stix-1"
+	xmlns:NCCIC="http://www.us-cert.gov/"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+	http://cybox.mitre.org/common-2 http://cybox.mitre.org/XMLSchema/common/2.1/cybox_common.xsd
+	http://cybox.mitre.org/cybox-2 http://cybox.mitre.org/XMLSchema/core/2.1/cybox_core.xsd
+	http://cybox.mitre.org/default_vocabularies-2 http://cybox.mitre.org/XMLSchema/default_vocabularies/2.1/cybox_default_vocabularies.xsd
+	http://cybox.mitre.org/objects#AddressObject-2 http://cybox.mitre.org/XMLSchema/objects/Address/2.1/Address_Object.xsd
+	http://cybox.mitre.org/objects#ArtifactObject-2 http://cybox.mitre.org/XMLSchema/objects/Artifact/2.1/Artifact_Object.xsd
+	http://cybox.mitre.org/objects#FileObject-2 http://cybox.mitre.org/XMLSchema/objects/File/2.1/File_Object.xsd
+	http://cybox.mitre.org/objects#HTTPSessionObject-2 http://cybox.mitre.org/XMLSchema/objects/HTTP_Session/2.1/HTTP_Session_Object.xsd
+	http://cybox.mitre.org/objects#PDFFileObject-1 http://cybox.mitre.org/XMLSchema/objects/PDF_File/1.1/PDF_File_Object.xsd
+	http://cybox.mitre.org/objects#PortObject-2 http://cybox.mitre.org/XMLSchema/objects/Port/2.1/Port_Object.xsd
+	http://cybox.mitre.org/objects#URIObject-2 http://cybox.mitre.org/XMLSchema/objects/URI/2.1/URI_Object.xsd
+	http://cybox.mitre.org/objects#WhoisObject-2 http://cybox.mitre.org/XMLSchema/objects/Whois/2.1/Whois_Object.xsd
+	http://data-marking.mitre.org/Marking-1 http://stix.mitre.org/XMLSchema/data_marking/1.1.1/data_marking.xsd
+	http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1 http://stix.mitre.org/XMLSchema/extensions/marking/tlp/1.1.1/tlp_marking.xsd
+	http://data-marking.mitre.org/extensions/MarkingStructure#Terms_Of_Use-1 http://stix.mitre.org/XMLSchema/extensions/marking/terms_of_use/1.0.1/terms_of_use_marking.xsd
+	http://maec.mitre.org/XMLSchema/maec-bundle-4 http://maec.mitre.org/language/version4.1/maec_bundle_schema.xsd
+	http://maec.mitre.org/XMLSchema/maec-package-2 http://maec.mitre.org/language/version4.1/maec_package_schema.xsd
+	http://maec.mitre.org/default_vocabularies-1 http://maec.mitre.org/language/version4.1/maec_default_vocabularies.xsd
+	http://stix.mitre.org/Incident-1 http://stix.mitre.org/XMLSchema/incident/1.1.1/incident.xsd
+	http://stix.mitre.org/Indicator-2 http://stix.mitre.org/XMLSchema/indicator/2.1.1/indicator.xsd
+	http://stix.mitre.org/TTP-1 http://stix.mitre.org/XMLSchema/ttp/1.1.1/ttp.xsd
+	http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd
+	http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd
+	http://stix.mitre.org/extensions/Malware#MAEC4.1-1 http://stix.mitre.org/XMLSchema/extensions/malware/maec_4.1/1.0.1/maec_4.1_malware.xsd
+	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd" id="NCCIC:Package-c52b3a4a-4191-446b-845a-c621367ad123" version="1.1.1" timestamp="2017-10-13T13:40:56.211899+00:00">
+    <stix:STIX_Header>
+        <stix:Title>MIFR-10135300</stix:Title>
+        <stix:Package_Intent>Malware Characterization</stix:Package_Intent>
+        <stix:Handling>
+            <marking:Marking>
+                <marking:Controlled_Structure>//node() | //@*</marking:Controlled_Structure>
+                <marking:Marking_Structure xsi:type='tlpMarking:TLPMarkingStructureType' color="WHITE"/>
+                <marking:Marking_Structure xsi:type='TOUMarking:TermsOfUseMarkingStructureType'>
+                    <TOUMarking:Terms_Of_Use>This report is provided "as is" for informational purposes only. The Department of Homeland Security (DHS) does not provide any warranties of any kind regarding any information contained within. The DHS does not endorse any commercial product or service, referenced in this bulletin or otherwise. This document is marked TLP:WHITE. Disclosure is not limited. Sources may use TLP:WHITE when information carries minimal or no foreseeable risk of misuse, in accordance with applicable rules and procedures for public release. Subject to standard copyright rules, TLP:WHITE information may be distributed without restriction. For more information on the Traffic Light Protocol, see http://www.us-cert.gov/tlp.</TOUMarking:Terms_Of_Use>
+                </marking:Marking_Structure>
+            </marking:Marking>
+        </stix:Handling>
+        <stix:Information_Source>
+            <stixCommon:Identity>
+                <stixCommon:Name>US-CERT</stixCommon:Name>
+            </stixCommon:Identity>
+            <stixCommon:Time>
+                <cyboxCommon:Produced_Time>2017-10-13T15:05:17.580901+00:00</cyboxCommon:Produced_Time>
+            </stixCommon:Time>
+            <stixCommon:Tools>
+                <cyboxCommon:Tool>
+                    <cyboxCommon:Name>bmachine</cyboxCommon:Name>
+                    <cyboxCommon:Description>F694.F694.F694.F694.F694.F694</cyboxCommon:Description>
+                    <cyboxCommon:Version>6.4.17</cyboxCommon:Version>
+                </cyboxCommon:Tool>
+            </stixCommon:Tools>
+        </stix:Information_Source>
+    </stix:STIX_Header>
+    <stix:Observables cybox_major_version="2" cybox_minor_version="1" cybox_update_version="0">
+        <cybox:Observable id="NCCIC:Observable-ab09466e-38a7-4378-8765-153f7a4660f1">
+            <cybox:Description><![CDATA[This PDF contains a malicious link. The PDF prompts the victim to click on the link to download a file (see screenshot).
+
+The link connects to a "bit.ly" domain, which in turn connects to a "tinyrul.com" address. The "tinyurl.com" address resolves to "www.imageliners.com/nitel" website that returns a HTTP 404 error. The file at imageliners.com was not available for download at the time of analysis.
+
+--Begin URIs--
+bit.ly/2m0x8IH
+tinyurl.com/h3sdqck
+www.imageliners.com/nitel
+--End URIs--]]></cybox:Description>
+            <cybox:Object id="NCCIC:PDFFile-35b9dccb-e4ad-45c7-a20b-4b660776a7f4">
+                <cybox:Properties xsi:type="PDFFileObj:PDFFileObjectType">
+                    <FileObj:File_Name>document.pdf</FileObj:File_Name>
+                    <FileObj:Size_In_Bytes>237179</FileObj:Size_In_Bytes>
+                    <FileObj:File_Format>PDF document, version 1.5</FileObj:File_Format>
+                    <FileObj:Hashes>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>e29d1f5d79cd906f75c88177c7f6168e</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>be0a15d1aa85c9d39c4757efda861da014156d31</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA256</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>fcc093a79fae9b92e69c99bb28f9ae12939e4e1327a371eeac9207e346eccdb4</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA512</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>c7b1454272ed88ae382fc8dc57084f7496c376d527a5c737a6e75db94e073c6f393d781c62bf27ed8140b4a3f39ea5a53eaabb3d1c5e3086ad59a4d48a51f594</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SSDEEP</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>6144:P3xUxs8qpZ5gB8zo35Gm0bLsSWpa9IP8F9/xZbbSxk:P+xs8Xio3ZOWpaSmpxZYk</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                    </FileObj:Hashes>
+                    <FileObj:Peak_Entropy>7.97898152566</FileObj:Peak_Entropy>
+                    <PDFFileObj:Metadata>
+                        <PDFFileObj:Document_Information_Dictionary>
+                            <PDFFileObj:Title/>
+                            <PDFFileObj:Author>Dan Richards</PDFFileObj:Author>
+                            <PDFFileObj:Subject/>
+                            <PDFFileObj:Creator>Microsoft Word</PDFFileObj:Creator>
+                            <PDFFileObj:Producer/>
+                            <PDFFileObj:CreationDate>2017-03-02T18:35:50+00:00</PDFFileObj:CreationDate>
+                            <PDFFileObj:ModDate>2017-03-02T18:35:50+00:00</PDFFileObj:ModDate>
+                        </PDFFileObj:Document_Information_Dictionary>
+                    </PDFFileObj:Metadata>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:Artifact-de3b7fee-e227-425f-a6d3-3b21b16a5240">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Characterized_By</cybox:Relationship>
+                    </cybox:Related_Object>
+                    <cybox:Related_Object idref="NCCIC:URI-b470ccf2-67d4-4cfc-8652-26b4b7fcaf83">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Connected_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-58fa5282-8d4c-4996-b883-f9c60d0e3ce0">
+            <cybox:Title>Screenshot of PDF</cybox:Title>
+            <cybox:Object id="NCCIC:Artifact-de3b7fee-e227-425f-a6d3-3b21b16a5240">
+                <cybox:Properties xsi:type="ArtifactObj:ArtifactObjectType" type="File">
+                    <ArtifactObj:Raw_Artifact><![CDATA[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]]></ArtifactObj:Raw_Artifact>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:PDFFile-35b9dccb-e4ad-45c7-a20b-4b660776a7f4">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Characterizes</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-26f06893-3c96-4630-96a9-55678cb97d24">
+            <cybox:Description><![CDATA[Connects to "tinyurl.com/h3sdqck"]]></cybox:Description>
+            <cybox:Object id="NCCIC:URI-b470ccf2-67d4-4cfc-8652-26b4b7fcaf83">
+                <cybox:Properties xsi:type="URIObj:URIObjectType" type="Domain Name">
+                    <URIObj:Value>bit.ly</URIObj:Value>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:HTTPSession-f00167e8-6d3b-40da-a73e-349ed62c5e8e">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Related_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                    <cybox:Related_Object idref="NCCIC:Port-bf359774-4741-4331-be66-eba3ffc88572">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Related_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                    <cybox:Related_Object idref="NCCIC:PDFFile-35b9dccb-e4ad-45c7-a20b-4b660776a7f4">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Connected_From</cybox:Relationship>
+                    </cybox:Related_Object>
+                    <cybox:Related_Object idref="NCCIC:URI-e1e7bbbf-981e-409c-a4f8-f6a747ccbd7d">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Connected_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                    <cybox:Related_Object idref="NCCIC:Address-08dd0262-696e-4924-94f4-f0c4bce3da06">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Resolved_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                    <cybox:Related_Object idref="NCCIC:WhoisEntry-255a35d9-1c47-492b-87e8-e1c874df88e7">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Characterized_By</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-94ab1a7c-fcb1-4a91-9ab1-5d71723aff5e">
+            <cybox:Object id="NCCIC:Address-08dd0262-696e-4924-94f4-f0c4bce3da06">
+                <cybox:Properties xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                    <AddressObj:Address_Value>67.199.248.10</AddressObj:Address_Value>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:URI-b470ccf2-67d4-4cfc-8652-26b4b7fcaf83">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Resolved_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                    <cybox:Related_Object idref="NCCIC:WhoisEntry-05c88dba-f33a-4b71-833e-f7559ef438a3">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Characterized_By</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-7fe33c63-e41b-4129-a50e-9ef83645b719">
+            <cybox:Description><![CDATA[Connects to "www.imageliners.com/nitel"]]></cybox:Description>
+            <cybox:Object id="NCCIC:URI-e1e7bbbf-981e-409c-a4f8-f6a747ccbd7d">
+                <cybox:Properties xsi:type="URIObj:URIObjectType" type="Domain Name">
+                    <URIObj:Value>tinyurl.com</URIObj:Value>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:Port-66e07c61-24f7-4bcb-bb00-d03a27e50dd5">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Related_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                    <cybox:Related_Object idref="NCCIC:HTTPSession-fd5bcb54-7c4d-4caa-b639-b3cd6ad57a25">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Related_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                    <cybox:Related_Object idref="NCCIC:URI-b470ccf2-67d4-4cfc-8652-26b4b7fcaf83">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Connected_From</cybox:Relationship>
+                    </cybox:Related_Object>
+                    <cybox:Related_Object idref="NCCIC:Address-0de681b2-feb3-40b4-8f5d-683de9e56d9d">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Resolved_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                    <cybox:Related_Object idref="NCCIC:URI-b348fb38-c7d0-4655-a679-15be361d90e5">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Connected_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                    <cybox:Related_Object idref="NCCIC:WhoisEntry-13f9d442-0cad-4999-8196-b0f844b1a990">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Characterized_By</cybox:Relationship>
+                    </cybox:Related_Object>
+                    <cybox:Related_Object idref="NCCIC:URI-d54bb77a-12bf-4c3c-8275-281829044327">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Related_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-79d6e253-b9cc-4cb8-ad6e-8c90b928ad67">
+            <cybox:Object id="NCCIC:Address-0de681b2-feb3-40b4-8f5d-683de9e56d9d">
+                <cybox:Properties xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                    <AddressObj:Address_Value>104.20.219.42</AddressObj:Address_Value>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:URI-e1e7bbbf-981e-409c-a4f8-f6a747ccbd7d">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Resolved_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                    <cybox:Related_Object idref="NCCIC:WhoisEntry-1f83c558-d485-478e-950b-68baa76cacd9">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Characterized_By</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-cb6146cc-d254-4285-86ea-0ba5f69dcdc0">
+            <cybox:Object id="NCCIC:URI-b348fb38-c7d0-4655-a679-15be361d90e5">
+                <cybox:Properties xsi:type="URIObj:URIObjectType" type="Domain Name">
+                    <URIObj:Value>imageliners.com</URIObj:Value>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:URI-e1e7bbbf-981e-409c-a4f8-f6a747ccbd7d">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Connected_From</cybox:Relationship>
+                    </cybox:Related_Object>
+                    <cybox:Related_Object idref="NCCIC:Address-0aa348ca-8721-4cf3-ae0a-00c1a74753f7">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Resolved_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                    <cybox:Related_Object idref="NCCIC:WhoisEntry-43314765-0da5-44f3-9b36-202ad937ce45">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Characterized_By</cybox:Relationship>
+                    </cybox:Related_Object>
+                    <cybox:Related_Object idref="NCCIC:Artifact-fa675f1d-d606-44de-a941-b94507f7586e">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Characterized_By</cybox:Relationship>
+                    </cybox:Related_Object>
+                    <cybox:Related_Object idref="NCCIC:URI-2a68d425-6e4d-43e1-a96e-6d72fc203f63">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Related_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-a74e9d1f-fd31-41ed-bd11-8fb84e2c46aa">
+            <cybox:Object id="NCCIC:Address-0aa348ca-8721-4cf3-ae0a-00c1a74753f7">
+                <cybox:Properties xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                    <AddressObj:Address_Value>192.81.76.117</AddressObj:Address_Value>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:Port-7fcfb09e-aaf8-4592-8ee2-905850e2be7b">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Related_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                    <cybox:Related_Object idref="NCCIC:URI-b348fb38-c7d0-4655-a679-15be361d90e5">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Resolved_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                    <cybox:Related_Object idref="NCCIC:WhoisEntry-a9417f66-9670-457f-a9c2-a2427bffd663">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Characterized_By</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-6c5c3540-e93d-4f55-b14e-cc575d55dc8e">
+            <cybox:Title>10135300_Screenshot-2.png</cybox:Title>
+            <cybox:Object id="NCCIC:Artifact-fa675f1d-d606-44de-a941-b94507f7586e">
+                <cybox:Properties xsi:type="ArtifactObj:ArtifactObjectType" type="File">
+                    <ArtifactObj:Raw_Artifact><![CDATA[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Ur3SIb+VZHuL2IquMW91JEDznJCkAn3q/RQAyKJYo1RckAAZY5J9yT1PvTsD0paKAEAA6AUhRSCCoIPtTqKAGlFOcqPm68daXaMEYHPWlooAQKFGAAB7CloooAb5af3R13dO/rTqKKAE2jOcDOMZoIBGCAR6UtFACbVyDgZHQ4paKKADA9KMCiigBMDOcCgqp6gflS0UAZepeHtO1aQvdxOwdBHKiysqyoCSFdQcMPmbr6n1rTCKM4UcnPTvS0UAJtGMYGKAqrnAAycnA70tFACBVBJCgE9TjrRsXGNoxnPTvS0UAGBSFFK7SoI9CKWigBCobGQDjkUFQRggEUtFABRRRQAgAAwBgCloooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP//Z]]></ArtifactObj:Raw_Artifact>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:URI-b348fb38-c7d0-4655-a679-15be361d90e5">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Characterizes</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-3c4654fa-f237-4e4c-9218-bca5e746a314">
+            <cybox:Object id="NCCIC:HTTPSession-f00167e8-6d3b-40da-a73e-349ed62c5e8e">
+                <cybox:Properties xsi:type="HTTPSessionObj:HTTPSessionObjectType">
+                    <HTTPSessionObj:HTTP_Request_Response>
+                        <HTTPSessionObj:HTTP_Client_Request>
+                            <HTTPSessionObj:HTTP_Request_Header>
+                                <HTTPSessionObj:Raw_Header><![CDATA[GET /2m0x8IH HTTP/1.1
+Host: bit.ly
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+HTTP/1.1 301 Moved Permanently
+Server: nginx
+Date: Thu, 03 Aug 2017 18:51:10 GMT
+Content-Type: text/html; charset=utf-8
+Content-Length: 113
+Connection: keep-alive
+Cache-Control: private, max-age=90
+Location: http://tinyurl.com/h3sdqck
+Set-Cookie: _bit=h73iPa-4621b905c62ea92ae9-00j; Domain=bit.ly; Expires=Tue, 30 Jan 2018 18:51:10 GMT
+
+<html>
+<head><title>Bitly</title></head>
+<body><a href="http://tinyurl.com/h3sdqck">moved here</a></body>
+</html>]]></HTTPSessionObj:Raw_Header>
+                            </HTTPSessionObj:HTTP_Request_Header>
+                        </HTTPSessionObj:HTTP_Client_Request>
+                    </HTTPSessionObj:HTTP_Request_Response>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:URI-b470ccf2-67d4-4cfc-8652-26b4b7fcaf83">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Related_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-380eca57-2caf-474b-afdd-f40a752b6863">
+            <cybox:Object id="NCCIC:Port-bf359774-4741-4331-be66-eba3ffc88572">
+                <cybox:Properties xsi:type="PortObj:PortObjectType">
+                    <PortObj:Port_Value>80</PortObj:Port_Value>
+                    <PortObj:Layer4_Protocol>TCP</PortObj:Layer4_Protocol>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:URI-b470ccf2-67d4-4cfc-8652-26b4b7fcaf83">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Related_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-0b9d5132-dbc8-4f10-b592-e4955aca1782">
+            <cybox:Object id="NCCIC:Port-66e07c61-24f7-4bcb-bb00-d03a27e50dd5">
+                <cybox:Properties xsi:type="PortObj:PortObjectType">
+                    <PortObj:Port_Value>80</PortObj:Port_Value>
+                    <PortObj:Layer4_Protocol>TCP</PortObj:Layer4_Protocol>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:URI-e1e7bbbf-981e-409c-a4f8-f6a747ccbd7d">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Related_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-60fb5db6-492a-42e6-9d7c-9faa454e80e3">
+            <cybox:Object id="NCCIC:HTTPSession-fd5bcb54-7c4d-4caa-b639-b3cd6ad57a25">
+                <cybox:Properties xsi:type="HTTPSessionObj:HTTPSessionObjectType">
+                    <HTTPSessionObj:HTTP_Request_Response>
+                        <HTTPSessionObj:HTTP_Client_Request>
+                            <HTTPSessionObj:HTTP_Request_Header>
+                                <HTTPSessionObj:Raw_Header><![CDATA[GET /h3sdqck HTTP/1.1
+Host: tinyurl.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+HTTP/1.1 301 Moved Permanently
+Date: Thu, 03 Aug 2017 18:51:11 GMT
+Content-Type: text/html; charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Set-Cookie: __cfduid=dbaf95a174187c31f6498cf418b035f381501786270; expires=Fri, 03-Aug-18 18:51:10 GMT; path=/; domain=.tinyurl.com; HttpOnly
+Set-Cookie: tinyUUID=98370a0a5311a4846aa20000; expires=Fri, 03-Aug-2018 18:51:07 GMT; Max-Age=31536000; path=/; domain=.tinyurl.com
+Location: https://www.imageliners.com/nitel
+X-tiny: cache 0.010951995849609
+Server: cloudflare-nginx
+CF-RAY: 388b7781471d6944-CDG]]></HTTPSessionObj:Raw_Header>
+                            </HTTPSessionObj:HTTP_Request_Header>
+                        </HTTPSessionObj:HTTP_Client_Request>
+                    </HTTPSessionObj:HTTP_Request_Response>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:URI-e1e7bbbf-981e-409c-a4f8-f6a747ccbd7d">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Related_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-2748c710-1088-4327-a17d-9dbb98e7debd">
+            <cybox:Object id="NCCIC:Port-7fcfb09e-aaf8-4592-8ee2-905850e2be7b">
+                <cybox:Properties xsi:type="PortObj:PortObjectType">
+                    <PortObj:Port_Value>443</PortObj:Port_Value>
+                    <PortObj:Layer4_Protocol>TCP</PortObj:Layer4_Protocol>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:Address-0aa348ca-8721-4cf3-ae0a-00c1a74753f7">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Related_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-975d4e4b-2bf9-4ffe-9d61-2a57e346762d">
+            <cybox:Object id="NCCIC:WhoisEntry-13f9d442-0cad-4999-8196-b0f844b1a990">
+                <cybox:Properties xsi:type="WhoisObj:WhoisObjectType">
+                    <WhoisObj:Remarks>Address lookup
+canonical name 	tinyurl.com.
+aliases 	
+addresses 	2400:cb00:2048:1::6814:da2a
+2400:cb00:2048:1::6814:db2a
+104.20.218.42
+104.20.219.42
+Domain Whois record
+
+Queried whois.internic.net with "dom tinyurl.com"...
+
+   Domain Name: TINYURL.COM
+   Registry Domain ID: 83069101_DOMAIN_COM-VRSN
+   Registrar WHOIS Server: whois.tucows.com
+   Registrar URL: http://www.tucowsdomains.com
+   Updated Date: 2017-04-03T14:20:36Z
+   Creation Date: 2002-01-27T06:17:41Z
+   Registry Expiry Date: 2026-01-27T06:17:41Z
+   Registrar: Tucows Domains Inc.
+   Registrar IANA ID: 69
+   Registrar Abuse Contact Email:
+   Registrar Abuse Contact Phone:
+   Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+   Domain Status: clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited
+   Name Server: CONSTITUTION.NS.TINYURL.COM
+   Name Server: FREEDOM.NS.TINYURL.COM
+   Name Server: LIBERTY.NS.TINYURL.COM
+   Name Server: REVOLUTION.NS.TINYURL.COM
+   DNSSEC: unsigned
+   URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
+&gt;&gt;&gt; Last update of whois database: 2017-08-03T20:31:43Z &lt;&lt;&lt;
+
+Queried whois.tucows.com with "tinyurl.com"...
+
+Domain Name: TINYURL.COM
+Domain ID: 83069101_DOMAIN_COM-VRSN
+Registrar WHOIS Server: whois.tucows.com
+Registrar URL: http://tucowsdomains.com
+Updated Date: 2016-09-06T15:29:05Z
+Creation Date: 2002-01-27T06:17:41Z
+Registrar Registration Expiration Date: 2026-01-27T06:17:41Z
+Registrar: TUCOWS, INC.
+Registrar IANA ID: 69
+Registrar Abuse Contact Email: domainabuse@tucows.com
+Registrar Abuse Contact Phone: +1.4165350123
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Domain Status: clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited
+Registry Registrant ID: 
+Registrant Name: Kevin Gilbertson
+Registrant Organization: TinyURL, LLC
+Registrant Street: 3916 N Potsdam Ave #4535
+Registrant City: Sioux Falls
+Registrant State/Province: SD
+Registrant Postal Code: 57104
+Registrant Country: US
+Registrant Phone: +1.7633900044
+Registrant Phone Ext: 
+Registrant Fax: 
+Registrant Fax Ext: 
+Registrant Email: domains@tinyurl.com
+Registry Admin ID: 
+Admin Name: Kevin Gilbertson
+Admin Organization: TinyURL, LLC
+Admin Street: 3916 N Potsdam Ave #4535
+Admin City: Sioux Falls
+Admin State/Province: SD
+Admin Postal Code: 57104
+Admin Country: US
+Admin Phone: +1.7633900044
+Admin Phone Ext: 
+Admin Fax: 
+Admin Fax Ext: 
+Admin Email: domains@tinyurl.com
+Registry Tech ID: 
+Tech Name: Kevin Gilbertson
+Tech Organization: TinyURL, LLC
+Tech Street: 3916 N Potsdam Ave #4535
+Tech City: Sioux Falls
+Tech State/Province: SD
+Tech Postal Code: 57104
+Tech Country: US
+Tech Phone: +1.7633900044
+Tech Phone Ext: 
+Tech Fax: 
+Tech Fax Ext: 
+Tech Email: domains@tinyurl.com
+Name Server: REVOLUTION.NS.TINYURL.COM
+Name Server: CONSTITUTION.NS.TINYURL.COM
+Name Server: LIBERTY.NS.TINYURL.COM
+Name Server: FREEDOM.NS.TINYURL.COM
+DNSSEC: unsigned
+URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
+&gt;&gt;&gt; Last update of WHOIS database: 2016-09-06T15:29:05Z &lt;&lt;&lt;
+
+Network Whois record
+
+Queried whois.arin.net with "n 104.20.218.42"...
+
+NetRange:       104.16.0.0 - 104.31.255.255
+CIDR:           104.16.0.0/12
+NetName:        CLOUDFLARENET
+NetHandle:      NET-104-16-0-0-1
+Parent:         NET104 (NET-104-0-0-0-0)
+NetType:        Direct Assignment
+OriginAS:       AS13335
+Organization:   Cloudflare, Inc. (CLOUD14)
+RegDate:        2014-03-28
+Updated:        2017-02-17
+Comment:        All Cloudflare abuse reporting can be done via https://www.cloudflare.com/abuse
+Ref:            https://whois.arin.net/rest/net/NET-104-16-0-0-1
+
+
+
+OrgName:        Cloudflare, Inc.
+OrgId:          CLOUD14
+Address:        101 Townsend Street
+City:           San Francisco
+StateProv:      CA
+PostalCode:     94107
+Country:        US
+RegDate:        2010-07-09
+Updated:        2017-02-17
+Comment:        All Cloudflare abuse reporting can be done via https://www.cloudflare.com/abuse
+Ref:            https://whois.arin.net/rest/org/CLOUD14
+
+
+OrgTechHandle: ADMIN2521-ARIN
+OrgTechName:   Admin
+OrgTechPhone:  +1-650-319-8930 
+OrgTechEmail:  admin@cloudflare.com
+OrgTechRef:    https://whois.arin.net/rest/poc/ADMIN2521-ARIN
+
+OrgNOCHandle: NOC11962-ARIN
+OrgNOCName:   NOC
+OrgNOCPhone:  +1-650-319-8930 
+OrgNOCEmail:  noc@cloudflare.com
+OrgNOCRef:    https://whois.arin.net/rest/poc/NOC11962-ARIN
+
+OrgAbuseHandle: ABUSE2916-ARIN
+OrgAbuseName:   Abuse
+OrgAbusePhone:  +1-650-319-8930 
+OrgAbuseEmail:  abuse@cloudflare.com
+OrgAbuseRef:    https://whois.arin.net/rest/poc/ABUSE2916-ARIN
+
+RAbuseHandle: ABUSE2916-ARIN
+RAbuseName:   Abuse
+RAbusePhone:  +1-650-319-8930 
+RAbuseEmail:  abuse@cloudflare.com
+RAbuseRef:    https://whois.arin.net/rest/poc/ABUSE2916-ARIN
+
+RTechHandle: ADMIN2521-ARIN
+RTechName:   Admin
+RTechPhone:  +1-650-319-8930 
+RTechEmail:  admin@cloudflare.com
+RTechRef:    https://whois.arin.net/rest/poc/ADMIN2521-ARIN
+
+RNOCHandle: NOC11962-ARIN
+RNOCName:   NOC
+RNOCPhone:  +1-650-319-8930 
+RNOCEmail:  noc@cloudflare.com
+RNOCRef:    https://whois.arin.net/rest/poc/NOC11962-ARIN
+
+DNS records
+name	class	type	data	time to live
+tinyurl.com	IN	A	104.20.218.42	146s	(00:02:26)
+tinyurl.com	IN	A	104.20.219.42	146s	(00:02:26)
+tinyurl.com	IN	AAAA	2400:cb00:2048:1::6814:da2a	63s	(00:01:03)
+tinyurl.com	IN	AAAA	2400:cb00:2048:1::6814:db2a	63s	(00:01:03)
+tinyurl.com	IN	NS	freedom.ns.tinyurl.com	86400s	(1.00:00:00)
+tinyurl.com	IN	NS	liberty.ns.tinyurl.com	86400s	(1.00:00:00)
+tinyurl.com	IN	NS	constitution.ns.tinyurl.com	86400s	(1.00:00:00)
+tinyurl.com	IN	NS	revolution.ns.tinyurl.com	86400s	(1.00:00:00)
+42.218.20.104.in-addr.arpa	IN	HINFO	
+CPU:	Please stop asking for ANY
+OS:	See draft-ietf-dnsop-refuse-any
+	3789s	(01:03:09)
+a.2.a.d.4.1.8.6.0.0.0.0.0.0.0.0.1.0.0.0.8.4.0.2.0.0.b.c.0.0.4.2.ip6.arpa	IN	HINFO	
+CPU:	ANY obsoleted
+OS:	See draft-ietf-dnsop-refuse-any
+	3789s	(01:03:09)
+0.0.b.c.0.0.4.2.ip6.arpa	IN	NS	chloe.ns.cloudflare.com	57873s	(16:04:33)
+0.0.b.c.0.0.4.2.ip6.arpa	IN	NS	scott.ns.cloudflare.com	57873s	(16:04:33)
+
+-- end --</WhoisObj:Remarks>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:URI-e1e7bbbf-981e-409c-a4f8-f6a747ccbd7d">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Characterizes</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-db8349f9-1e7a-4032-a197-26aa743c4141">
+            <cybox:Object id="NCCIC:WhoisEntry-1f83c558-d485-478e-950b-68baa76cacd9">
+                <cybox:Properties xsi:type="WhoisObj:WhoisObjectType">
+                    <WhoisObj:Remarks>Address lookup
+lookup failed 	104.20.219.42
+  	Could not find a domain name corresponding to this IP address.
+Domain Whois record
+
+Don't have a domain name for which to get a record
+Network Whois record
+
+Queried whois.arin.net with "n 104.20.219.42"...
+
+NetRange:       104.16.0.0 - 104.31.255.255
+CIDR:           104.16.0.0/12
+NetName:        CLOUDFLARENET
+NetHandle:      NET-104-16-0-0-1
+Parent:         NET104 (NET-104-0-0-0-0)
+NetType:        Direct Assignment
+OriginAS:       AS13335
+Organization:   Cloudflare, Inc. (CLOUD14)
+RegDate:        2014-03-28
+Updated:        2017-02-17
+Comment:        All Cloudflare abuse reporting can be done via https://www.cloudflare.com/abuse
+Ref:            https://whois.arin.net/rest/net/NET-104-16-0-0-1
+
+
+OrgName:        Cloudflare, Inc.
+OrgId:          CLOUD14
+Address:        101 Townsend Street
+City:           San Francisco
+StateProv:      CA
+PostalCode:     94107
+Country:        US
+RegDate:        2010-07-09
+Updated:        2017-02-17
+Comment:        All Cloudflare abuse reporting can be done via https://www.cloudflare.com/abuse
+Ref:            https://whois.arin.net/rest/org/CLOUD14
+
+
+OrgTechHandle: ADMIN2521-ARIN
+OrgTechName:   Admin
+OrgTechPhone:  +1-650-319-8930 
+OrgTechEmail:  admin@cloudflare.com
+OrgTechRef:    https://whois.arin.net/rest/poc/ADMIN2521-ARIN
+
+OrgAbuseHandle: ABUSE2916-ARIN
+OrgAbuseName:   Abuse
+OrgAbusePhone:  +1-650-319-8930 
+OrgAbuseEmail:  abuse@cloudflare.com
+OrgAbuseRef:    https://whois.arin.net/rest/poc/ABUSE2916-ARIN
+
+OrgNOCHandle: NOC11962-ARIN
+OrgNOCName:   NOC
+OrgNOCPhone:  +1-650-319-8930 
+OrgNOCEmail:  noc@cloudflare.com
+OrgNOCRef:    https://whois.arin.net/rest/poc/NOC11962-ARIN
+
+RNOCHandle: NOC11962-ARIN
+RNOCName:   NOC
+RNOCPhone:  +1-650-319-8930 
+RNOCEmail:  noc@cloudflare.com
+RNOCRef:    https://whois.arin.net/rest/poc/NOC11962-ARIN
+
+RTechHandle: ADMIN2521-ARIN
+RTechName:   Admin
+RTechPhone:  +1-650-319-8930 
+RTechEmail:  admin@cloudflare.com
+RTechRef:    https://whois.arin.net/rest/poc/ADMIN2521-ARIN
+
+RAbuseHandle: ABUSE2916-ARIN
+RAbuseName:   Abuse
+RAbusePhone:  +1-650-319-8930 
+RAbuseEmail:  abuse@cloudflare.com
+RAbuseRef:    https://whois.arin.net/rest/poc/ABUSE2916-ARIN
+
+DNS records
+name	class	type	data	time to live
+42.219.20.104.in-addr.arpa	IN	HINFO	
+CPU:	Please stop asking for ANY
+OS:	See draft-ietf-dnsop-refuse-any
+	3789s	(01:03:09)
+
+-- end --</WhoisObj:Remarks>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:Address-0de681b2-feb3-40b4-8f5d-683de9e56d9d">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Characterizes</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-e8c30fcd-41b9-42d7-b4b3-dfffea091c35">
+            <cybox:Object id="NCCIC:WhoisEntry-255a35d9-1c47-492b-87e8-e1c874df88e7">
+                <cybox:Properties xsi:type="WhoisObj:WhoisObjectType">
+                    <WhoisObj:Remarks>Address lookup
+canonical name 	bit.ly.
+aliases 	
+addresses 	67.199.248.11
+67.199.248.10
+Domain Whois record
+
+Queried whois.nic.ly with "bit.ly"...
+
+Domain Name: bit.ly
+- Domain Status: Strings shorter than four symbols long are to be registered directly under .ly ONLY through Libya Telecom and Technology co. (LTT) in the upcoming period to guarantee that registrants have Local presence.
+--
+Whois information provided by:
+LY Registry
+whois.nic.ly
+-For Whois usage policy please check:
+ http://whois.nic.ly/policy.php
+
+Network Whois record
+
+Queried whois.arin.net with "n 67.199.248.11"...
+
+NetRange:       67.199.248.0 - 67.199.248.255
+CIDR:           67.199.248.0/24
+NetName:        BITLY
+NetHandle:      NET-67-199-248-0-1
+Parent:         NET67 (NET-67-0-0-0-0)
+NetType:        Direct Assignment
+OriginAS:       AS395224, AS36351, AS32787
+Organization:   Bitly Inc (BITLY)
+RegDate:        2016-05-31
+Updated:        2016-07-06
+Ref:            https://whois.arin.net/rest/net/NET-67-199-248-0-1
+
+
+OrgName:        Bitly Inc
+OrgId:          BITLY
+Address:        139 5th Ave
+Address:        5th Floor
+City:           New York
+StateProv:      NY
+PostalCode:     10010
+Country:        US
+RegDate:        2011-11-18
+Updated:        2016-04-28
+Ref:            https://whois.arin.net/rest/org/BITLY
+
+
+OrgAbuseHandle: ABUSE3257-ARIN
+OrgAbuseName:   Abuse
+OrgAbusePhone:  +1-646-678-5610 
+OrgAbuseEmail:  abuse@bitly.com
+OrgAbuseRef:    https://whois.arin.net/rest/poc/ABUSE3257-ARIN
+
+OrgAbuseHandle: OPERA345-ARIN
+OrgAbuseName:   Operations, Bitly 
+OrgAbusePhone:  +1-646-678-5610 
+OrgAbuseEmail:  hostmaster@bitly.com
+OrgAbuseRef:    https://whois.arin.net/rest/poc/OPERA345-ARIN
+
+OrgTechHandle: OPERA345-ARIN
+OrgTechName:   Operations, Bitly 
+OrgTechPhone:  +1-646-678-5610 
+OrgTechEmail:  hostmaster@bitly.com
+OrgTechRef:    https://whois.arin.net/rest/poc/OPERA345-ARIN
+
+DNS records
+
+DNS query for 11.248.199.67.in-addr.arpa returned an error from the server: NameError
+name	class	type	data	time to live
+bit.ly	IN	SOA	
+server:	ns1.p26.dynect.net
+email:	hostmaster@bit.ly
+serial:	1212581715
+refresh:	3600
+retry:	600
+expire:	604800
+minimum ttl:	3600
+	3600s	(01:00:00)
+bit.ly	IN	NS	ns1.p35.dynect.net	86400s	(1.00:00:00)
+bit.ly	IN	NS	ns4.p35.dynect.net	86400s	(1.00:00:00)
+bit.ly	IN	NS	ns2.p35.dynect.net	86400s	(1.00:00:00)
+bit.ly	IN	NS	ns3.p35.dynect.net	86400s	(1.00:00:00)
+bit.ly	IN	A	67.199.248.10	3600s	(01:00:00)
+bit.ly	IN	A	67.199.248.11	3600s	(01:00:00)
+bit.ly	IN	MX	
+preference:	10
+exchange:	aspmx.l.google.com
+	86400s	(1.00:00:00)
+bit.ly	IN	MX	
+preference:	30
+exchange:	aspmx3.googlemail.com
+	86400s	(1.00:00:00)
+bit.ly	IN	MX	
+preference:	20
+exchange:	alt1.aspmx.l.google.com
+	86400s	(1.00:00:00)
+bit.ly	IN	MX	
+preference:	30
+exchange:	aspmx2.googlemail.com
+	86400s	(1.00:00:00)
+bit.ly	IN	MX	
+preference:	20
+exchange:	alt2.aspmx.l.google.com
+	86400s	(1.00:00:00)
+bit.ly	IN	TXT	yandex-verification: 41b3ec866726729d	3600s	(01:00:00)
+bit.ly	IN	TXT	google-site-verification: zhEwFAQvtUWYInQtt81loDiZmomsEmkAbuRsSSxk1YI	3600s	(01:00:00)
+bit.ly	IN	TXT	2205ECE8B9	3600s	(01:00:00)
+bit.ly	IN	TXT	v=spf1 include:mktomail.com include:_spf.google.com include:_spf.salesforce.com include:mailgun.org -all	3600s	(01:00:00)
+
+-- end --</WhoisObj:Remarks>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:URI-b470ccf2-67d4-4cfc-8652-26b4b7fcaf83">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Characterizes</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-30264ae1-0197-463d-9cae-c0a90be52f9b">
+            <cybox:Object id="NCCIC:WhoisEntry-05c88dba-f33a-4b71-833e-f7559ef438a3">
+                <cybox:Properties xsi:type="WhoisObj:WhoisObjectType">
+                    <WhoisObj:Remarks>Address lookup
+lookup failed 	67.199.248.10
+  	Could not find a domain name corresponding to this IP address.
+Domain Whois record
+
+Don't have a domain name for which to get a record
+Network Whois record
+
+Queried whois.arin.net with "n 67.199.248.10"...
+
+NetRange:       67.199.248.0 - 67.199.248.255
+CIDR:           67.199.248.0/24
+NetName:        BITLY
+NetHandle:      NET-67-199-248-0-1
+Parent:         NET67 (NET-67-0-0-0-0)
+NetType:        Direct Assignment
+OriginAS:       AS395224, AS36351, AS32787
+Organization:   Bitly Inc (BITLY)
+RegDate:        2016-05-31
+Updated:        2016-07-06
+Ref:            https://whois.arin.net/rest/net/NET-67-199-248-0-1
+
+
+OrgName:        Bitly Inc
+OrgId:          BITLY
+Address:        139 5th Ave
+Address:        5th Floor
+City:           New York
+StateProv:      NY
+PostalCode:     10010
+Country:        US
+RegDate:        2011-11-18
+Updated:        2016-04-28
+Ref:            https://whois.arin.net/rest/org/BITLY
+
+
+OrgAbuseHandle: ABUSE3257-ARIN
+OrgAbuseName:   Abuse
+OrgAbusePhone:  +1-646-678-5610 
+OrgAbuseEmail:  abuse@bitly.com
+OrgAbuseRef:    https://whois.arin.net/rest/poc/ABUSE3257-ARIN
+
+OrgAbuseHandle: OPERA345-ARIN
+OrgAbuseName:   Operations, Bitly 
+OrgAbusePhone:  +1-646-678-5610 
+OrgAbuseEmail:  hostmaster@bitly.com
+OrgAbuseRef:    https://whois.arin.net/rest/poc/OPERA345-ARIN
+
+OrgTechHandle: OPERA345-ARIN
+OrgTechName:   Operations, Bitly 
+OrgTechPhone:  +1-646-678-5610 
+OrgTechEmail:  hostmaster@bitly.com
+OrgTechRef:    https://whois.arin.net/rest/poc/OPERA345-ARIN
+
+DNS records
+
+DNS query for 10.248.199.67.in-addr.arpa returned an error from the server: NameError
+
+No records to display
+
+-- end --</WhoisObj:Remarks>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:Address-08dd0262-696e-4924-94f4-f0c4bce3da06">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Characterizes</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-4f46296d-8a59-43e4-a4ce-2c74af856ca6">
+            <cybox:Object id="NCCIC:WhoisEntry-43314765-0da5-44f3-9b36-202ad937ce45">
+                <cybox:Properties xsi:type="WhoisObj:WhoisObjectType">
+                    <WhoisObj:Remarks>Address lookup
+canonical name 	imageliners.com.
+aliases 	www.imageliners.com
+addresses 	192.81.76.117
+Domain Whois record
+
+Queried whois.internic.net with "dom imageliners.com"...
+
+   Domain Name: IMAGELINERS.COM
+   Registry Domain ID: 1899658336_DOMAIN_COM-VRSN
+   Registrar WHOIS Server: whois.gofrancedomains.com
+   Registrar URL: http://www.gofrancedomains.com
+   Updated Date: 2017-02-16T15:48:21Z
+   Creation Date: 2015-01-31T19:08:25Z
+   Registry Expiry Date: 2018-01-31T19:08:25Z
+   Registrar: Go France Domains, LLC
+   Registrar IANA ID: 1153
+   Registrar Abuse Contact Email: abuse@godaddy.com
+   Registrar Abuse Contact Phone: 480-624-2505
+   Domain Status: clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited
+   Domain Status: clientRenewProhibited https://icann.org/epp#clientRenewProhibited
+   Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+   Domain Status: clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited
+   Name Server: NS1.MINDLASH.COM
+   Name Server: NS2.MINDLASH.COM
+   DNSSEC: unsigned
+   URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
+&gt;&gt;&gt; Last update of whois database: 2017-08-03T19:50:01Z &lt;&lt;&lt;
+
+Queried whois.gofrancedomains.com with "imageliners.com"...
+
+Domain Name: IMAGELINERS.COM
+Registry Domain ID: 1899658336_DOMAIN_COM-VRSN
+Registrar WHOIS Server: whois.godaddy.com
+Registrar URL: http://www.gofrancedomains.com
+Update Date: 2017-02-16T15:48:20Z
+Creation Date: 2015-01-31T19:08:25Z
+Registrar Registration Expiration Date: 2018-01-31T19:08:25Z
+Registrar: Go France Domains, LLC
+Registrar IANA ID: 1153
+Registrar Abuse Contact Email: abuse@godaddy.com
+Registrar Abuse Contact Phone: +1.4806242505
+Domain Status: clientTransferProhibited http://www.icann.org/epp#clientTransferProhibited
+Domain Status: clientUpdateProhibited http://www.icann.org/epp#clientUpdateProhibited
+Domain Status: clientRenewProhibited http://www.icann.org/epp#clientRenewProhibited
+Domain Status: clientDeleteProhibited http://www.icann.org/epp#clientDeleteProhibited
+Registry Registrant ID: Not Available From Registry
+Registrant Name: Matt Hudson
+Registrant Organization: Mindlash, Inc.
+Registrant Street: 1233 Washington Street
+Registrant Street: Suite 600
+Registrant City: Columbia
+Registrant State/Province: South Carolina
+Registrant Postal Code: 29201
+Registrant Country: US
+Registrant Phone: +1.8035530053
+Registrant Phone Ext: 
+Registrant Fax: 
+Registrant Fax Ext: 
+Registrant Email: dnsadmin@mindlash.com
+Registry Admin ID: Not Available From Registry
+Admin Name: Matt Hudson
+Admin Organization: Mindlash, Inc.
+Admin Street: 1233 Washington Street
+Admin Street: Suite 600
+Admin City: Columbia
+Admin State/Province: South Carolina
+Admin Postal Code: 29201
+Admin Country: US
+Admin Phone: +1.8035530053
+Admin Phone Ext: 
+Admin Fax: 
+Admin Fax Ext: 
+Admin Email: dnsadmin@mindlash.com
+Registry Tech ID: Not Available From Registry
+Tech Name: Matt Hudson
+Tech Organization: Mindlash, Inc.
+Tech Street: 1233 Washington Street
+Tech Street: Suite 600
+Tech City: Columbia
+Tech State/Province: South Carolina
+Tech Postal Code: 29201
+Tech Country: US
+Tech Phone: +1.8035530053
+Tech Phone Ext: 
+Tech Fax: 
+Tech Fax Ext: 
+Tech Email: dnsadmin@mindlash.com
+Name Server: NS1.MINDLASH.COM
+Name Server: NS2.MINDLASH.COM
+DNSSEC: unsigned
+URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
+&gt;&gt;&gt; Last update of WHOIS database: 2017-08-03T19:00:00Z &lt;&lt;&lt;
+
+Network Whois record
+
+Queried whois.arin.net with "n ! NET-192-81-76-112-1"...
+
+NetRange:       192.81.76.112 - 192.81.76.127
+CIDR:           192.81.76.112/28
+NetName:        PEER9NET
+NetHandle:      NET-192-81-76-112-1
+Parent:         PEER9NET (NET-192-81-76-0-1)
+NetType:        Reassigned
+OriginAS:       AS54750
+Customer:       Mindlash Inc (C03402230)
+RegDate:        2013-05-16
+Updated:        2013-05-16
+Ref:            https://whois.arin.net/rest/net/NET-192-81-76-112-1
+
+
+CustName:       Mindlash Inc
+Address:        5000 T-Rex Ave
+Address:        Suite 325
+City:           Boca Raton
+StateProv:      FL
+PostalCode:     33431
+Country:        US
+RegDate:        2013-05-16
+Updated:        2013-05-16
+Ref:            https://whois.arin.net/rest/customer/C03402230
+
+OrgTechHandle: NETWO6039-ARIN
+OrgTechName:   Network Administrator
+OrgTechPhone:  +1-561-549-9500 
+OrgTechEmail:  network@peer9.net
+OrgTechRef:    https://whois.arin.net/rest/poc/NETWO6039-ARIN
+
+OrgAbuseHandle: ABUSE3773-ARIN
+OrgAbuseName:   Abuse
+OrgAbusePhone:  +1-561-549-9500 
+OrgAbuseEmail:  abuse@peer9.net
+OrgAbuseRef:    https://whois.arin.net/rest/poc/ABUSE3773-ARIN
+
+OrgNOCHandle: NETWO6039-ARIN
+OrgNOCName:   Network Administrator
+OrgNOCPhone:  +1-561-549-9500 
+OrgNOCEmail:  network@peer9.net
+OrgNOCRef:    https://whois.arin.net/rest/poc/NETWO6039-ARIN
+
+DNS records
+
+DNS query for 117.76.81.192.in-addr.arpa returned an error from the server: NameError
+name	class	type	data	time to live
+www.imageliners.com	IN	CNAME	imageliners.com	14400s	(04:00:00)
+imageliners.com	IN	TXT	v=spf1 +a +mx +ip4:162.212.212.44 +ip4:192.81.76.116 +ip4:208.115.33.52 ~all	14400s	(04:00:00)
+imageliners.com	IN	MX	
+preference:	0
+exchange:	imageliners.com
+	14400s	(04:00:00)
+imageliners.com	IN	SOA	
+server:	ns1.mindlash.com
+email:	mindlash@gmail.com
+serial:	2017020701
+refresh:	86400
+retry:	7200
+expire:	3600000
+minimum ttl:	86400
+	86400s	(1.00:00:00)
+imageliners.com	IN	NS	ns1.mindlash.com	86400s	(1.00:00:00)
+imageliners.com	IN	NS	ns2.mindlash.com	86400s	(1.00:00:00)
+imageliners.com	IN	A	192.81.76.117	14400s	(04:00:00)
+
+-- end --</WhoisObj:Remarks>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:URI-b348fb38-c7d0-4655-a679-15be361d90e5">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Characterizes</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-753f1301-4b7c-4871-b3f3-a299d680a96f">
+            <cybox:Object id="NCCIC:WhoisEntry-a9417f66-9670-457f-a9c2-a2427bffd663">
+                <cybox:Properties xsi:type="WhoisObj:WhoisObjectType">
+                    <WhoisObj:Remarks>Address lookup
+lookup failed 	192.81.76.117
+  	Could not find a domain name corresponding to this IP address.
+Domain Whois record
+
+Don't have a domain name for which to get a record
+Network Whois record
+
+Queried whois.arin.net with "n ! NET-192-81-76-112-1"...
+
+NetRange:       192.81.76.112 - 192.81.76.127
+CIDR:           192.81.76.112/28
+NetName:        PEER9NET
+NetHandle:      NET-192-81-76-112-1
+Parent:         PEER9NET (NET-192-81-76-0-1)
+NetType:        Reassigned
+OriginAS:       AS54750
+Customer:       Mindlash Inc (C03402230)
+RegDate:        2013-05-16
+Updated:        2013-05-16
+Ref:            https://whois.arin.net/rest/net/NET-192-81-76-112-1
+
+
+CustName:       Mindlash Inc
+Address:        5000 T-Rex Ave
+Address:        Suite 325
+City:           Boca Raton
+StateProv:      FL
+PostalCode:     33431
+Country:        US
+RegDate:        2013-05-16
+Updated:        2013-05-16
+Ref:            https://whois.arin.net/rest/customer/C03402230
+
+OrgTechHandle: NETWO6039-ARIN
+OrgTechName:   Network Administrator
+OrgTechPhone:  +1-561-549-9500 
+OrgTechEmail:  network@peer9.net
+OrgTechRef:    https://whois.arin.net/rest/poc/NETWO6039-ARIN
+
+OrgAbuseHandle: ABUSE3773-ARIN
+OrgAbuseName:   Abuse
+OrgAbusePhone:  +1-561-549-9500 
+OrgAbuseEmail:  abuse@peer9.net
+OrgAbuseRef:    https://whois.arin.net/rest/poc/ABUSE3773-ARIN
+
+OrgNOCHandle: NETWO6039-ARIN
+OrgNOCName:   Network Administrator
+OrgNOCPhone:  +1-561-549-9500 
+OrgNOCEmail:  network@peer9.net
+OrgNOCRef:    https://whois.arin.net/rest/poc/NETWO6039-ARIN
+
+DNS records
+
+DNS query for 117.76.81.192.in-addr.arpa returned an error from the server: NameError
+
+No records to display
+
+-- end --</WhoisObj:Remarks>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:Address-0aa348ca-8721-4cf3-ae0a-00c1a74753f7">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Characterizes</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-981406ce-a749-4a19-84d2-77c9cd9cb21d">
+            <cybox:Object id="NCCIC:File-8133fa42-3361-4631-ade0-c4feda80ef0b">
+                <cybox:Properties xsi:type="FileObj:FileObjectType">
+                    <FileObj:Hashes>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value condition="Equals">e29d1f5d79cd906f75c88177c7f6168e</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                    </FileObj:Hashes>
+                </cybox:Properties>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-718ac6e5-4837-4b29-9f62-6fbf44c620ed">
+            <cybox:Object id="NCCIC:File-f87a0ae9-eeb8-48e4-818b-35d4cc1417f6">
+                <cybox:Properties xsi:type="FileObj:FileObjectType">
+                    <FileObj:Hashes>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value condition="Equals">be0a15d1aa85c9d39c4757efda861da014156d31</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                    </FileObj:Hashes>
+                </cybox:Properties>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-49b26fa2-7435-4ffb-bc06-1a85229c99b5">
+            <cybox:Object id="NCCIC:URI-d54bb77a-12bf-4c3c-8275-281829044327">
+                <cybox:Properties xsi:type="URIObj:URIObjectType" type="URL">
+                    <URIObj:Value>tinyurl.com/h3sdqck</URIObj:Value>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:URI-e1e7bbbf-981e-409c-a4f8-f6a747ccbd7d">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Related_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-59a9e823-9119-4381-97c1-5926671061c5">
+            <cybox:Object id="NCCIC:URI-2a68d425-6e4d-43e1-a96e-6d72fc203f63">
+                <cybox:Properties xsi:type="URIObj:URIObjectType" type="URL">
+                    <URIObj:Value>www.imageliners.com/nitel</URIObj:Value>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:URI-b348fb38-c7d0-4655-a679-15be361d90e5">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Related_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-c47619ff-6584-4e32-84a8-cc956d3b4e70">
+            <cybox:Object id="NCCIC:URI-94adee57-d7a8-407e-a4fc-975389eb7ea1">
+                <cybox:Properties xsi:type="URIObj:URIObjectType" type="Domain Name">
+                    <URIObj:Value condition="Equals">imageliners.com</URIObj:Value>
+                </cybox:Properties>
+            </cybox:Object>
+        </cybox:Observable>
+    </stix:Observables>
+    <stix:Indicators>
+        <stix:Indicator id="NCCIC:indicator-9e9870d5-eedf-4a4f-84e7-7074fc43d96b" timestamp="2017-08-16T16:02:26.995413+00:00" xsi:type='indicator:IndicatorType'>
+            <indicator:Title>PDF - MD5</indicator:Title>
+            <indicator:Type>Malware Artifacts</indicator:Type>
+            <indicator:Observable id="NCCIC:Observable-ba8b8d59-e1da-4352-8c2d-019da647f508">
+                <cybox:Object idref="NCCIC:File-8133fa42-3361-4631-ade0-c4feda80ef0b"/>
+            </indicator:Observable>
+            <indicator:Producer>
+                <stixCommon:Identity>
+                    <stixCommon:Name>US-CERT</stixCommon:Name>
+                </stixCommon:Identity>
+                <stixCommon:Time>
+                    <cyboxCommon:Produced_Time>2017-08-16T16:02:26.996271+00:00</cyboxCommon:Produced_Time>
+                </stixCommon:Time>
+            </indicator:Producer>
+        </stix:Indicator>
+        <stix:Indicator id="NCCIC:indicator-a796d129-4f2e-4652-b8a7-7bc344178514" timestamp="2017-08-16T16:02:26.996526+00:00" xsi:type='indicator:IndicatorType'>
+            <indicator:Title>PDF - SHA1</indicator:Title>
+            <indicator:Type>Malware Artifacts</indicator:Type>
+            <indicator:Observable id="NCCIC:Observable-45b248bc-5044-412a-b0f3-fa62821337eb">
+                <cybox:Object idref="NCCIC:File-f87a0ae9-eeb8-48e4-818b-35d4cc1417f6"/>
+            </indicator:Observable>
+            <indicator:Producer>
+                <stixCommon:Identity>
+                    <stixCommon:Name>US-CERT</stixCommon:Name>
+                </stixCommon:Identity>
+                <stixCommon:Time>
+                    <cyboxCommon:Produced_Time>2017-08-16T16:02:26.996995+00:00</cyboxCommon:Produced_Time>
+                </stixCommon:Time>
+            </indicator:Producer>
+        </stix:Indicator>
+        <stix:Indicator id="NCCIC:indicator-07377158-411a-4aaa-9ec0-05124b28d032" timestamp="2017-08-16T16:13:35.447169+00:00" xsi:type='indicator:IndicatorType'>
+            <indicator:Title>Domain</indicator:Title>
+            <indicator:Type>Domain Watchlist</indicator:Type>
+            <indicator:Observable id="NCCIC:Observable-26d704d5-5b53-4d9b-a786-1ac1830b393f">
+                <cybox:Object idref="NCCIC:URI-94adee57-d7a8-407e-a4fc-975389eb7ea1"/>
+            </indicator:Observable>
+            <indicator:Producer>
+                <stixCommon:Identity>
+                    <stixCommon:Name>US-CERT</stixCommon:Name>
+                </stixCommon:Identity>
+                <stixCommon:Time>
+                    <cyboxCommon:Produced_Time>2017-08-16T16:13:35.447992+00:00</cyboxCommon:Produced_Time>
+                </stixCommon:Time>
+            </indicator:Producer>
+        </stix:Indicator>
+    </stix:Indicators>
+    <stix:TTPs>
+        <stix:TTP id="NCCIC:ttp-4df231bb-0eb9-4253-917f-f5589a1287db" timestamp="2017-08-03T18:17:35.717507+00:00" xsi:type='ttp:TTPType'>
+            <ttp:Title>MAEC Characterization of e29d1f5d79cd906f75c88177c7f6168e</ttp:Title>
+            <ttp:Behavior>
+                <ttp:Malware>
+                    <ttp:Malware_Instance xsi:type='stix-maec:MAEC4.1InstanceType'>
+                        <stix-maec:MAEC id="NCCIC:package-ef48f6fd-f3d5-47c5-89c3-ce51cd596164" schema_version="2.1">
+                            <maecPackage:Malware_Subjects>
+                                <maecPackage:Malware_Subject id="NCCIC:malware_subject-673c7584-5f98-40e9-b95c-932c75a65676">
+                                    <maecPackage:Malware_Instance_Object_Attributes idref="NCCIC:PDFFile-35b9dccb-e4ad-45c7-a20b-4b660776a7f4"/>
+                                    <maecPackage:Findings_Bundles>
+                                        <maecPackage:Bundle defined_subject="true" id="NCCIC:bundle-d24af1b0-eb81-4d37-9305-7cc271d5e61c" schema_version="4.1"/>
+                                    </maecPackage:Findings_Bundles>
+                                </maecPackage:Malware_Subject>
+                            </maecPackage:Malware_Subjects>
+                        </stix-maec:MAEC>
+                    </ttp:Malware_Instance>
+                </ttp:Malware>
+            </ttp:Behavior>
+        </stix:TTP>
+    </stix:TTPs>
+    <stix:Incidents>
+        <stix:Incident id="NCCIC:incident-d03d8b37-a319-4657-a9b9-fb9a964b5ade" timestamp="2017-08-03T12:52:20.886578+00:00" xsi:type='incident:IncidentType'>
+            <incident:Title>10135300</incident:Title>
+            <incident:Description><![CDATA[A single PDF file was submitted for analysis.]]></incident:Description>
+            <incident:Categories>
+                <incident:Category xsi:type="stixVocabs:IncidentCategoryVocab-1.0">Malicious Code</incident:Category>
+            </incident:Categories>
+            <incident:Related_Indicators scope="exclusive">
+                <incident:Related_Indicator>
+                    <stixCommon:Indicator idref="NCCIC:indicator-9e9870d5-eedf-4a4f-84e7-7074fc43d96b" xsi:type='indicator:IndicatorType'/>
+                </incident:Related_Indicator>
+                <incident:Related_Indicator>
+                    <stixCommon:Indicator idref="NCCIC:indicator-a796d129-4f2e-4652-b8a7-7bc344178514" xsi:type='indicator:IndicatorType'/>
+                </incident:Related_Indicator>
+                <incident:Related_Indicator>
+                    <stixCommon:Indicator idref="NCCIC:indicator-07377158-411a-4aaa-9ec0-05124b28d032" xsi:type='indicator:IndicatorType'/>
+                </incident:Related_Indicator>
+            </incident:Related_Indicators>
+            <incident:Related_Observables scope="exclusive">
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-ab09466e-38a7-4378-8765-153f7a4660f1">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-58fa5282-8d4c-4996-b883-f9c60d0e3ce0">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-26f06893-3c96-4630-96a9-55678cb97d24">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-3c4654fa-f237-4e4c-9218-bca5e746a314">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-380eca57-2caf-474b-afdd-f40a752b6863">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-7fe33c63-e41b-4129-a50e-9ef83645b719">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-0b9d5132-dbc8-4f10-b592-e4955aca1782">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-60fb5db6-492a-42e6-9d7c-9faa454e80e3">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-cb6146cc-d254-4285-86ea-0ba5f69dcdc0">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-a74e9d1f-fd31-41ed-bd11-8fb84e2c46aa">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-2748c710-1088-4327-a17d-9dbb98e7debd">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-94ab1a7c-fcb1-4a91-9ab1-5d71723aff5e">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-79d6e253-b9cc-4cb8-ad6e-8c90b928ad67">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-6c5c3540-e93d-4f55-b14e-cc575d55dc8e">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-975d4e4b-2bf9-4ffe-9d61-2a57e346762d">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-db8349f9-1e7a-4032-a197-26aa743c4141">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-e8c30fcd-41b9-42d7-b4b3-dfffea091c35">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-30264ae1-0197-463d-9cae-c0a90be52f9b">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-4f46296d-8a59-43e4-a4ce-2c74af856ca6">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-753f1301-4b7c-4871-b3f3-a299d680a96f">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-981406ce-a749-4a19-84d2-77c9cd9cb21d">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-718ac6e5-4837-4b29-9f62-6fbf44c620ed">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-49b26fa2-7435-4ffb-bc06-1a85229c99b5">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-59a9e823-9119-4381-97c1-5926671061c5">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-c47619ff-6584-4e32-84a8-cc956d3b4e70">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+            </incident:Related_Observables>
+            <incident:Leveraged_TTPs scope="exclusive">
+                <incident:Leveraged_TTP>
+                    <stixCommon:TTP idref="NCCIC:ttp-4df231bb-0eb9-4253-917f-f5589a1287db" xsi:type='ttp:TTPType'/>
+                </incident:Leveraged_TTP>
+            </incident:Leveraged_TTPs>
+        </stix:Incident>
+    </stix:Incidents>
+</stix:STIX_Package>

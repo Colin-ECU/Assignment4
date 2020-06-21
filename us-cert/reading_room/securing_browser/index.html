@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html  lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  <head>
+    <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"877b02039c",applicationID:"140456368"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(f(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(4),f=e(5),c=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",d=l+"ixn-";a(p,function(e,n){s[n]=i(l+n,!0,"api")}),s.addPageAction=i(l+"addPageAction",!0),s.setCurrentRouteName=i(l+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(d+"tracer",[u.now(),e,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],t),e}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(d+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?c("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&c("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&c("lcp",[t[t.length-1]])}function o(e){if(e instanceof s&&!l){var n,t=Math.round(e.timeStamp);n=t>1e12?Date.now()-t:u.now()-t,l=!0,c("timing",["fi",t,{type:e.type,fid:n}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,f,c=e("handle"),u=e("loader"),s=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),f=new PerformanceObserver(i);try{a.observe({entryTypes:["paint"]}),f.observe({entryTypes:["largest-contentful-paint"]})}catch(p){}}if("addEventListener"in document){var l=!1,d=["click","keydown","mousedown","pointerdown","touchstart"];d.forEach(function(e){document.addEventListener(e,o,!1)})}}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],5:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],6:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?c(e,f,o):o()}function t(t,r,i,o){if(!l.aborted||o){e&&e(t,r,i);for(var a=n(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function d(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||i(t)}function w(e,n){u(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:d,addEventListener:d,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(l.aborted=!0,s=l.backlog={})}var f="nr@context",c=e("gos"),u=e(4),s={},p={},l=n.exports=i();l.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(y,function(n,t){e[n]||(e[n]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function i(){"complete"===d.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=e("handle"),u=e(4),s=e("ee"),p=e(3),l=window,d=l.document,m="addEventListener",v="attachEvent",g=l.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:g,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1169.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),e(2),d[m]?(d[m]("DOMContentLoaded",o,!1),l[m]("load",r,!1)):(d[v]("onreadystatechange",i),l[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=e(6)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){l([u,"",[r,a,i],f])}s(n+"start",[r,a,i],f);try{return c=e.apply(a,r)}catch(p){throw s(n+"err",[r,a,p],f),p}finally{s(n+"end",[r,a,c],f)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,p(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<n.length;c++)f=n[c],a=e[f],r(a)||(e[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||n){var o=c;c=!0;try{e.emit(t,r,i,n)}catch(a){l([a,t,r,i])}c=o}}function p(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){l([r])}for(var i in e)f.call(e,i)&&(n[i]=e[i]);return n}function l(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+<script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","/sites/default/files/google_analytics/analytics.js?qc1s8b","ga");ga("create", "UA-34879253-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");</script>
+<meta name="description" content="This article will help you configure your web browser for safer Internet surfing. It is written for home computer users, students, small business workers, and any other person who works with limited information technology (IT) support and broadband. Although the information in this document may be applicable to users with formal IT support as well, organizational IT policies should supersede these recommendations." />
+<meta name="abstract" content="As part of its mission, CISA leads the effort to enhance the security, resiliency, and reliability of the Nation&#039;s cybersecurity and communications infrastructure." />
+<meta name="keywords" content="uscert, csirt, cert, cybersecurity, cyber security, computer security, U. S. Computer Emergency Readiness, cyber risks" />
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="/sites/default/files/images/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="https://www.us-cert.gov/publications/securing-your-web-browser" />
+<link rel="shortlink" href="https://www.us-cert.gov/node/143" />
+<link rel="revision" href="https://www.us-cert.gov/publications/securing-your-web-browser" />
+
+    <title>Securing Your Web Browser | CISA</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_HVYUWve-etdcyfo-jK1VZCUdQrrPCTHPL3eas-Q22K0.css" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_5eeWkZKyg4VrOvul-8Ke-4oBmJ7NRiG9SzZJX8RDjS8.css" />
+
+    
+<!--[if lte IE 8]>
+<script src="/sites/default/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]-->
+
+    <!-- Google Font -->
+    <style type="text/css">
+/* source-sans-pro-regular - latin */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/profiles/uscertd8_gov/themes/custom/cert/fonts/source-sans-pro-v12-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'),
+  url('/profiles/uscertd8_gov/themes/custom/cert/fonts/source-sans-pro-v12-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('/profiles/uscertd8_gov/themes/custom/cert/fonts/source-sans-pro-v12-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+  url('/profiles/uscertd8_gov/themes/custom/cert/fonts/source-sans-pro-v12-latin-regular.woff') format('woff'), /* Modern Browsers */
+  url('/profiles/uscertd8_gov/themes/custom/cert/fonts/source-sans-pro-v12-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('/profiles/uscertd8_gov/themes/custom/cert/fonts/source-sans-pro-v12-latin-regular.svg#SourceSansPro') format('svg'); /* Legacy iOS */
+}
+    </style>
+    <!--link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet"--> 
+    <!-- Google Font -->
+  </head>
+  <body class="path-node page-node-type-site-page has-glyphicons">
+    <a href="#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+
+
+<div class="container-fluid hidden-xs hidden-sm top-top">
+      <aside role="complementary">
+        <div class="region region-top">
+    <section id="block-certtoptop" class="block block-block-content block-block-content4d95ffde-0818-4e6b-bd79-d1547b08c0c0 clearfix">
+  
+    
+
+      
+            <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item"><div class="container"><img alt="United States Flag" src="/sites/default/files/cert/flag.png" style="position: absolute;" /><p style="padding-left: 35px; font-family: Arial; font-size: 11px;">Official website of the Department of Homeland Security</p>
+</div>
+
+</div>
+      
+  </section>
+
+
+  </div>
+
+    </aside>
+  </div>
+
+
+
+<div class="container-fluid hidden-xs hidden-sm">
+<div class="container">
+<div class="row">
+
+
+  
+
+<section class="col-sm-9">
+
+      <a id="logo-section"></a>
+        <div class="region region-logo">
+    <section id="block-certlogo" class="block block-block-content block-block-content4639a667-debe-4642-bc69-7839662c0187 clearfix">
+  
+    
+
+      
+            <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item"><div class="hidden-xs hidden-sm"><a href="/"><img alt="Cybersecurity and Infrastructure Security Agency CISA" data-entity-type="" data-entity-uuid="" src="/sites/default/files/cert/logo2.png" title="Cybersecurity and Infrastructure Security Agency CISA" /></a></div>
+
+
+</div>
+      
+  </section>
+
+
+  </div>
+
+    </aside>
+  </section>
+
+
+
+      <aside class="col-sm-3" role="complementary">
+        <div class="region region-search">
+    <section id="block-certsearch" class="block block-block-content block-block-contentc33bd875-6ea6-42cc-b1ab-348a4e4bdff7 clearfix">
+  
+    
+
+      
+            <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item"><form accept-charset="UTF-8" action="https://search.us-cert.gov/search" class="hidden-xs searchbox" method="get"><input name="utf8" type="hidden" value="✓" /><input id="affiliate-desktop" name="affiliate" type="hidden" value="us-cert" /><div class="form-group"><label class="sr-only" for="query-desktop">Enter Search Terms(s):</label>
+<div class="input-group"><input autocomplete="off" class="form-control form-control-custom input-lg" id="query-desktop" name="query" placeholder="Search" type="text" /><div class="input-group-addon input-group-addon-custom"><button class="submit input-lg"><img alt="search icon" data-entity-type="" data-entity-uuid="" src="/sites/default/files/cert/search-icon.png" title="search icon" /></button></div>
+</div>
+</div>
+</form>
+<style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+.navbar-default ul.navbar-nav > li.last a{
+display: none;
+
+/*--><!]]>*/
+</style><div style="padding: 16px 12px 8px 12px"><a class="btn btn-primary" href="/services" role="button" style="font-weight: bold; width: 40%">Services</a><a class="btn btn-primary pull-right" href="/report" role="button" style="font-weight: bold; width: 40%">Report</a></div>
+
+</div>
+      
+  </section>
+
+
+  </div>
+
+    </aside>
+  </div>
+</div>
+<hr class="hidden-xs nav-top-line">
+</div>
+
+
+
+          <header class="navbar navbar-default container-fluid" id="navbar" role="banner">
+        <div class="container ">
+      <div class="navbar-header">
+        
+                          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+            <div class="hidden-lg hidden-md mobile-nav">
+        <a class="" href="/">
+            <img src="/sites/default/files/cert/logo3.png"  alt="US Department of Homeland Security CISA Cyber + Infrastructure" title="US Department of Homeland Security CISA Cyber + Infrastructure">
+          </a>
+        </div>
+      </div>
+
+              <div id="navbar-collapse" class="navbar-collapse collapse">
+            <div class="region region-navigation-collapsible">
+    <section id="block-certsearchmobile" class="block block-block-content block-block-content0da6361c-e31a-4a58-b455-f9ebde1ba544 clearfix">
+  
+    
+
+      
+            <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item"><form accept-charset="UTF-8" action="https://search.us-cert.gov/search" class="hidden-lg hidden-md searchbox" method="get"><input name="utf8" type="hidden" value="✓" /><input id="affiliate-mobile" name="affiliate" type="hidden" value="us-cert" /><div class="form-group"><label class="sr-only" for="query-mobile">Enter Search Terms(s):</label>
+<div class="input-group"><input autocomplete="off" class="form-control form-control-custom input-lg" id="query-mobile" name="query" placeholder="Search" type="text" /><div class="input-group-addon input-group-addon-custom"><button class="submit input-lg"><img alt="search icon" data-entity-type="" data-entity-uuid="" src="/sites/default/files/cert/search-icon.png" title="search icon" /></button></div>
+</div>
+</div>
+</form>
+<div class="hidden-md hidden-lg" style="padding: 8px"><a class="btn btn-primary btn-block" href="/services" role="button" style="font-weight: bold">Services</a></div>
+
+<div class="hidden-md hidden-lg" style="padding: 8px"><a class="btn btn-primary btn-block" href="/report" role="button" style="font-weight: bold">Report</a></div>
+
+</div>
+      
+  </section>
+
+<nav role="navigation" aria-labelledby="block-certmainmenu-menu" id="block-certmainmenu">
+            
+  <h2 class="visually-hidden" id="block-certmainmenu-menu">CertMain Menu</h2>
+  
+
+        
+      <ul class="menu menu--certmain-menu nav navbar-nav">
+                      <li class="first">
+                                        <a href="/about-us" title="About Us" data-drupal-link-system-path="node/7">About Us</a>
+              </li>
+                      <li>
+                                        <a href="/ncas" title="Alerts and Tips" data-drupal-link-system-path="node/5">Alerts and Tips</a>
+              </li>
+                      <li>
+                                        <a href="/resources" title="Resources" data-drupal-link-system-path="node/12436">Resources</a>
+              </li>
+                      <li>
+                                        <a href="/ics" title="Industrial Control Systems" data-drupal-link-system-path="ics">Industrial Control Systems</a>
+              </li>
+                      <li class="last">
+                                        <a href="/report" title="Report" data-drupal-link-system-path="node/5745">Report</a>
+              </li>
+        </ul>
+  
+
+  </nav>
+
+  </div>
+
+        </div>
+                </header>
+  <hr class="hidden-xs hidden-sm nav-bottom-line">
+<div class="visible-xs visible-sm mobile-border"></div>
+
+
+<div class="container">
+    <div id="print-logo"><img alt="US Department of Homeland Security CISA Cyber + Infrastructure" src="/sites/default/files/cert/logo2.png"/></div>
+    <div id="tlp-header"><svg height="30" width="120"> <rect fill="black" height="30" width="120" x="0" y="0"></rect> <text fill="#ffffff" font-size="18px" x="10" y="20">TLP:WHITE</text> </svg></div>
+    <div id="tlp-footer"><svg height="30" width="120"> <rect fill="black" height="30" width="120" x="0" y="0"></rect> <text fill="#ffffff" font-size="18px" x="10" y="20">TLP:WHITE</text> </svg></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <div role="main" class="main-container container js-quickedit-main-content">
+    <div class="row">
+
+                              <div class="col-sm-12" role="heading">
+              <div class="region region-header">
+      
+
+  </div>
+
+          </div>
+              
+
+            
+            
+                        
+
+            
+                  <section class="col-sm-12">
+
+                              <div class="highlighted">  <div class="region region-highlighted">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+</div>
+              
+                                      
+                  
+                          <a id="main-content"></a>
+            <div class="region region-content">
+                  <h1 class="page-header">Securing Your Web Browser</h1>
+    
+  <div class="cert-content">
+<article role="article" about="/publications/securing-your-web-browser" class="site-page full clearfix">
+
+  
+    
+
+  
+  <div class="content">
+    
+            <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item"><p><a name="introduction" id="introduction"></a>This article will help you configure your web browser for safer Internet surfing. It is written for home computer users, students, small business workers, and any other person who works with limited information technology (IT) support and broadband. Although the information in this document may be applicable to users with formal IT support as well, organizational IT policies should supersede these recommendations. If you are responsible for IT policies for your organization, please consider implementing these recommendations as part of your policy.</p><h2>Table of Contents</h2><ul><li><a href="#why">Why Secure Your Web Browser?</a></li><li><a href="#features">Web Browser Features and Risks</a></li><li><a href="#how_to_secure">How to Secure Your Web Browser</a><ul class="upper-roman"><li><a href="#Internet_Explorer">Microsoft Internet Explorer</a></li><li><a href="#Mozilla_Firefox">Mozilla Firefox</a></li><li><a href="#Safari">Apple Safari</a></li><li><a href="#Google">Google Chrome</a></li><li><a href="#Other_Browsers">Other Browsers</a></li></ul></li><li><a href="#Staying_Secure">Keeping Your Computer Secure</a><ul><li><a href="#references">References</a></li><li><a href="#CERTCC">CERT/CC</a></li><li><a href="#US-CERT">US-CERT</a></li></ul></li><li><a href="#history">Document revision history</a></li></ul><h2><a name="why" id="why"></a>Why Secure Your Browser</h2><p>Today, web browsers such as Microsoft Internet Explorer, Mozilla Firefox, and Apple Safari are installed on almost all computers. Because web browsers are used so frequently, it is vital to configure them securely. Often, the web browser that comes with an operating system is not set up in a secure default configuration. Not securing your web browser can lead quickly to a variety of computer problems caused by anything from spyware being installed without your knowledge to intruders taking control of your computer.</p><p>Ideally, computer users should evaluate the risks from the software they use. Many computers are sold with software already loaded. Whether installed by a computer manufacturer, operating system maker, Internet service provider, or by a retail store, the first step in assessing the vulnerability of your computer is to find out what software is installed and how programs will interact with each other. Unfortunately, it is not practical for most people to perform this level of analysis.</p><p>There is an increasing threat from software attacks that take advantage of vulnerable web browsers. We have observed new software vulnerabilities being exploited and directed at web browsers through use of compromised or malicious websites. This problem is made worse by a number of factors, including the following:</p><ul class="bulleted"><li>Many users have a tendency to click on links without considering the risks of their actions.</li><li>Web page addresses can be disguised or take you to an unexpected site.</li><li>Many web browsers are configured to provide increased functionality at the cost of decreased security.</li><li>New security vulnerabilities are often discovered after the software is configured and packaged by the manufacturer.</li><li>Computer systems and software packages may be bundled with additional software, which increases the number of vulnerabilities that may be attacked.</li><li>Third-party software may not have a mechanism for receiving security updates.</li><li>Many websites require that users enable certain features or install more software, putting the computer at additional risk.</li><li>Many users do not know how to configure their web browsers securely.</li><li>Many users are unwilling to enable or disable functionality as required to secure their web browser.</li></ul><p>As a result, exploiting vulnerabilities in web browsers has become a popular way for attackers to compromise computer systems.</p><p>In addition to following this paper's recommendations, refer to the documentation in the <a href="/reading_room/securing_browser/#references">References</a> section for other steps you can take to secure your system.</p><h2><a name="features" id="features"></a>Web Browser Features and Risks</h2><p>It is important to understand the functionality and features of the web browser you use. Enabling some web browser features may lower security. Vendors often enable features by default to improve the computing experience, but these features may end up increasing the risk to the computer.</p><p>Attackers focus on exploiting client-side systems (your computer) through various vulnerabilities. They use these vulnerabilities to take control of your computer, steal your information, destroy your files, and use your computer to attack other computers. A low-cost method attackers use is to exploit vulnerabilities in web browsers. An attacker can create a malicious web page that will install <a class="offsite" href="http://www.cert.org/advisories/CA-1999-02.html">Trojan</a> software or spyware that will steal your information. Additional information about spyware is available in the following document: <a class="offsite" href="http://www.cert.org/archive/pdf/spyware2005.pdf">http://www.cert.org/archive/pdf/spyware2005.pdf</a>. Rather than actively targeting and attacking vulnerable systems, a malicious website can passively compromise systems as the site is visited. A malicious HTML document can also be emailed to victims. In these cases, the act of opening the email or attachment can compromise the system.</p><p>Some specific web browser features and associated risks are briefly described below. Understanding what different features do will help you understand how they affect your web browser's functionality and the security of your computer.</p><p><strong><a id="activex" name="activex"></a>ActiveX</strong> is a technology used by Microsoft Internet Explorer on Microsoft Windows systems. ActiveX allows applications or parts of applications to be utilized by the web browser. A web page can use ActiveX components that may already reside on a Windows system, or a site may provide the component as a downloadable object. This gives extra functionality to traditional web browsing, but may also introduce more severe vulnerabilities if not properly implemented.</p><p>ActiveX has been plagued with various vulnerabilities and implementation issues. One problem with using ActiveX in a web browser is that it greatly increases the attack surface, or “attackability,” of a system. Installing any Windows application introduces the possibility of new ActiveX controls being installed. Vulnerabilities in ActiveX objects may be exploited via Internet Explorer, even if the object was never designed to be used in a web browser (<a class="offsite" href="http://www.kb.cert.org/vuls/id/680526">VU#680526</a>). In 2000, the CERT/CC held a workshop to analyze security in ActiveX. The results from that workshop may be viewed at <a class="offsite" href="http://www.cert.org/reports/activeX_report.pdf">http://www.cert.org/reports/activeX_report.pdf</a>. Many vulnerabilities with respect to ActiveX controls lead to severe impacts. Often an attacker can take control of the computer. You can search the Vulnerability Notes Database for ActiveX vulnerabilities at <a class="offsite" href="http://www.kb.cert.org/vuls/byid?searchview&amp;query=activex">http://www.kb.cert.org/vuls/byid?searchview&amp;query=activex</a>.</p><p><span style="font-weight: bold;"><a id="java" name="java"></a>Java</span> is an object-oriented programming language that can be used to develop active content for websites. A Java Virtual Machine, or JVM, is used to execute the Java code, or “<a class="offsite" href="http://java.sun.com/applets/">applet</a>,” provided by the website. Some operating systems come with a JVM, while others require a JVM to be installed before Java can be used. Java applets are operating system independent.</p><p>Java applets usually execute within a “sandbox” where the interaction with the rest of the system is limited. However, various implementations of the JVM contain vulnerabilities that allow an applet to bypass these restrictions. Signed Java applets can also bypass sandbox restrictions, but they generally prompt the user before they can execute. You can search the Vulnerability Notes Database for Java vulnerabilities at <a class="offsite" href="http://www.kb.cert.org/vuls/byid?searchview&amp;query=java">http://www.kb.cert.org/vuls/byid?searchview&amp;query=java</a>.</p><p><strong><a id="plug-ins" name="plug-ins"></a>Plug-ins</strong> are applications intended for use in the web browser. Netscape has developed the NPAPI standard for developing plug-ins, but this standard is used by multiple web browsers, including Mozilla Firefox and Safari. Plug-ins are similar to ActiveX controls but cannot be executed outside of a web browser. Adobe Flash is an example of an application that is available as a plug-in.</p><p>Plug-ins can contain programming flaws such as buffer overflows, or they may contain design flaws such as cross-domain violations, which arises when the <a class="offsite" href="http://www.mozilla.org/projects/security/components/same-origin.html">same origin policy</a> is not followed.</p><p><strong><a id="cookies" name="cookies"></a>Cookies</strong> are files placed on your system to store data for specific websites. A cookie can contain any information that a website is designed to place in it. Cookies may contain information about the sites you visited, or may even contain credentials for accessing the site. Cookies are designed to be readable only by the website that created the cookie. Session cookies are cleared when the browser is closed, and persistent cookies will remain on the computer until the specified expiration date is reached.</p><p>Cookies can be used to uniquely identify visitors of a website, which some people consider a violation of privacy. If a website uses cookies for authentication, then an attacker may be able to acquire unauthorized access to that site by obtaining the cookie. Persistent cookies pose a higher risk than session cookies because they remain on the computer longer.</p><p><strong><a id="javascript" name="javascript"></a>JavaScript</strong>, also known as ECMAScript, is a scripting language that is used to make websites more interactive. There are specifications in the JavaScript standard that restrict certain features such as accessing local files.</p><p><strong><a id="vbscript" name="vbscript"></a>VBScript</strong> is another scripting language that is unique to Microsoft Windows Internet Explorer. VBScript is similar to JavaScript, but it is not as widely used in websites because of limited compatibility with other browsers.</p><p>The ability to run a scripting language such as JavaScript or VBScript allows web page authors to add a significant amount of features and interactivity to a web page. However, this same capability can be abused by attackers. The default configuration for most web browsers enables scripting support, which can introduce multiple vulnerabilities, such as the following:</p><ul class="bulleted"><li><strong><a id="xss" name="xss"></a>Cross-Site Scripting</strong><p>Cross-Site Scripting, often referred to as XSS, is a vulnerability in a website that permits an attacker to leverage the trust relationship that you have with that site. For a high-level description of XSS attacks, please see the whitepaper published at <a class="offsite" href="http://www.cert.org/archive/pdf/cross_site_scripting.pdf">http://www.cert.org/archive/pdf/cross_site_scripting.pdf</a>. Note that Cross-Site Scripting is not usually caused by a failure in the web browser. You can search the Vulnerability Notes Database for Cross-Site Scripting vulnerabilities at <a class="offsite" href="http://www.kb.cert.org/vuls/byid?searchview&amp;query=cross-site+scripting">http://www.kb.cert.org/vuls/byid?searchview&amp;query=cross-site+scripting</a>.</p></li><li><strong><a id="cross-domain" name="cross-domain"></a>Cross-Zone and Cross-Domain Vulnerabilities</strong><p>Most web browsers employ security models to prevent script in a website from accessing data in a different domain. These security models are primarily based on the Netscape Same Origin Policy: <a class="offsite" href="http://www.mozilla.org/projects/security/components/same-origin.html">http://www.mozilla.org/projects/security/components/same-origin.html</a>. Internet Explorer also has a policy to enforce security zone separation.</p><p>Vulnerabilities that violate these security models can be used to perform actions that a site could not normally perform. The impact can be similar to a cross-site scripting vulnerability. However, if a vulnerability allows for an attacker to cross into the local machine zone or other protected areas, the attacker may be able to execute arbitrary commands on the vulnerable system. You can search the Vulnerability Notes Database for cross-zone and cross-domain vulnerabilities at <a class="offsite" href="http://www.kb.cert.org/vuls/byid?searchview&amp;query=cross-domain">http://www.kb.cert.org/vuls/byid?searchview&amp;query=cross-domain</a>.</p></li><li><strong><a id="evasion" name="evasion"></a>Detection Evasion </strong><p>Anti-virus, Intrusion Detection Systems (IDS), and Intrusion Prevention Systems (IPS) generally work by looking for specific patterns in content. If a “known bad” pattern is detected, then the appropriate actions can take place to protect the user. However, because of the dynamic nature of programming languages, scripting in web pages can be used to evade such protective systems.</p></li></ul><h2><a name="how_to_secure" id="how_to_secure"></a>How to Secure Your Web Browser</h2><p>Some software features that provide functionality to a web browser, such as ActiveX, Java, Scripting (JavaScript, VBScript, etc.), may also introduce vulnerabilities to the computer system. These vulnerabilities may stem from poor implementation, poor design, or an insecure configuration. For these reasons, you should understand which browsers support which features and the risks they could introduce. Some web browsers permit you to fully disable the use of these technologies, while others may permit you to enable features on a per-site basis.</p><p>This section provides links that show you how to securely configure a few of the most popular web browsers and how to disable features that can cause vulnerabilities. We encourage you to visit the vendor's website for each browser you use to learn more. If a vendor does not provide documentation on how to secure the browser, we encourage you to contact the vendor and request more information.</p><p>Multiple web browsers may be installed on your computer. Other software applications on your computer, such as email clients or document viewers, may use a different browser than the one you normally use to access the web. Also, certain file types may be configured to open with a different web browser. Using one web browser to manually interact with websites does not mean other applications will automatically use the same browser. For this reason, it is important to securely configure each web browser that may be installed on your computer. One advantage to having multiple web browsers is that one browser can be used for only sensitive activities such as online banking, and the other can be used for general purpose web browsing. Using multiple browsers can minimize the chances that a vulnerability in a particular web browser, website, or related software can be used to compromise sensitive information.</p><p>Web browsers are frequently updated. Depending on the version of your software, the features and options may move or change.</p><h3><a name="Internet_Explorer" id="Internet_Explorer"></a>Microsoft Internet Explorer</h3><p>Microsoft Internet Explorer (IE) is a web browser integrated into the Microsoft Windows operating system. For up-to-date information on security and privacy settings for Internet Explorer, visit <a href="http://windows.microsoft.com/en-us/internet-explorer/ie-security-privacy-settings">http://windows.microsoft.com/en-us/internet-explorer/ie-security-privacy-settings</a>.</p><h3><a name="Mozilla_Firefox" id="Mozilla_Firefox"></a>Mozilla Firefox</h3><p>Mozilla Firefox is a popular third-party browser for Windows, Mac, and Linux. To learn how to keep your information safe and secure with Firefox's private browsing, password features and other security settings, visit <a href="https://support.mozilla.org/en-US/products/firefox/privacy-and-security">https://support.mozilla.org/en-US/products/firefox/privacy-and-security</a>.</p><h3><a id="Safari" name="Safari"></a>Apple Safari</h3><p>Apple Safari is installed on its line of computers, tables, and phones. For information on the Safari’s security settings on Apple devices, visit <a href="https://support.apple.com/en-us/HT201265">https://support.apple.com/en-us/HT201265</a>. For information on Safari installed on computers, visit <a href="http://help.apple.com/safari/mac/8.0/">http://help.apple.com/safari/mac/8.0/</a> and select “Privacy and security” on the menu.</p><h3><a id="Google" name="Google"></a>Google Chrome</h3><p>In 2012, Google Chrome became the most widely used browser worldwide, according to Stat Counter and other sources. For more information on Chrome’s security, safety and reporting features, visit <a href="https://support.google.com/chrome#topic=3421433">https://support.google.com/chrome#topic=3421433</a> and select the options displayed under the topic.</p><h3><a name="Other_Browsers" id="Other_Browsers"></a>Other Browsers</h3><p>Other web browsers may have similar options to those described above. Please refer to each browser's documentation to determine which options are available and how to make the necessary changes. For example, the links below show where to find security information for two other web browsers:</p><ul class="bulleted"><li>Opera<ul><li>Security badges: <a href="http://help.opera.com/opera/Windows/1857/en/private.html#badges">http://help.opera.com/opera/Windows/1857/en/private.html#badges</a></li><li>Web preferences: <a href="http://help.opera.com/opera/Windows/1857/en/controlPages.html#content">http://help.opera.com/opera/Windows/1857/en/controlPages.html#content</a></li></ul></li><li>Chromium<ul><li>Security information: <a href="https://www.chromium.org/Home/chromium-security">https://www.chromium.org/Home/chromium-security</a></li></ul></li></ul><h2><a name="Staying_Secure" id="Staying_Secure"></a>Keeping Your Computer Secure</h2><p>In addition to selecting and securing your web browser, you can take measures to increase protection to your computer in general. The following are steps and links to information resources that will help you secure your computer.</p><ol style="list-style-type: upper-alpha;"><li><h4>Read the <a class="offsite" href="http://www.cert.org/tech_tips/home_networks.html">Home Network Security</a> document</h4></li><li class="desc"><h4>Enable automatic software updates if available</h4><p>Vendors will usually release patches for their software when a vulnerability has been discovered. Most product documentation offers a method to get updates and patches. You should be able to obtain updates from the vendor's website. Read the manuals or browse the vendor's website for more information.</p><p>Some applications will automatically check for available updates, and many vendors offer automatic notification of updates via a mailing list. Look on your vendor's website for information about automatic notification. If no mailing list or other automated notification mechanism is offered, you may need to check the vendor's website periodically for updates.</p></li><li class="desc"><h4>Install and use antivirus software</h4><p>While an up-to-date antivirus software package cannot protect against all malicious code, for most users it remains the best first-line of defense against malicious code attacks. Many antivirus packages support automatic updates of virus definitions. We recommend using these automatic updates when available. A list of <a class="offsite" href="/reading_room/virus.html">virus basics</a> is available on the CERT/CC website.</p></li><li class="desc"><h4>Avoid unsafe behavior</h4><p>Additional information on this topic can be found in the <a class="offsite" href="http://www.cert.org/tech_tips/home_networks.html">Home Network Security</a> document.</p><ul class="bulleted"><li>Use caution when opening email attachments or when using peer-to-peerfile sharing, instant messaging, or chat rooms.</li><li>Don't enable file sharing on network interfaces exposed directly to the Internet.</li></ul></li><li class="desc"><h4>Follow the principle of least privilege — don't enable it if you don't need it</h4><p>Consider creating and using an account with limited privileges instead of an 'administrator' or 'root' level account for everyday tasks. Depending on the operating system, you only need to use administrator level access when installing new software, changing system configurations, etc. Many vulnerability exploits (e.g., viruses, Trojan horses) are executed with the privileges of the user that runs them — making it far more risky to be logged in as an administrator all the time.</p></li></ol><h2><a name="references" id="references"></a>References</h2><h4><a name="CERTCC" id="CERTCC"></a>CERT/CC References</h4><ul class="bulleted"><li><a class="offsite" href="http://www.cert.org/archive/pdf/Phishing_trends.pdf">Technical Trends in Phishing Attacks</a> — http://www.cert.org/archive/pdf/Phishing_trends.pdf</li><li><a class="offsite" href="http://www.cert.org/archive/pdf/spyware2005.pdf">Spyware</a> — http://www.cert.org/archive/pdf/spyware2005.pdf</li></ul><h4><a id="US-CERT" name="US-CERT"></a>US-CERT References</h4><ul class="bulleted"><li><a href="/publications/before-you-connect-your-new-computer-to-the-internet">Before You Connect a New Computer to the Internet</a> — http:///www.us-cert.gov/security-publications/you-connect-new-computer-internet</li><li><a href="/Home-Network-Security">Home Network Security</a> — http:///www.us-cert.gov/security-publications/home-network-security</li><li><a href="/ncas/tips/st04-022-0">Understanding Your Computer: Web Browsers</a> — http://www.us-cert.gov/ncas/tips/st04-022-0</li><li><a href="/ncas/tips/st05-001">Evaluating Your Web Browser's Security Settings</a> — http://www.us-cert.gov/ncas/tips/st05-001</li><li><a href="/ncas/tips/st04-012">Browsing Safely: Understanding Active Content and Cookies</a> — http://www.us-cert.gov/ncas/tips/st04-012</li><li><a href="/ncas/tips/st05-010">Understanding Website Certificates</a> — http://www.us-cert.gov/ncas/tips/st05-010</li><li><a href="/ncas/tips/st05-016">Understanding Internationalized Domain Names</a> — http://www.us-cert.gov/ncas/tips/st05-016</li><li><a href="/ncas/tips/st04-014">Avoiding Social Engineering</a> — http://www.us-cert.gov/ncas/tips/st04-014</li></ul><h2><a id="history" name="history"></a>Revision History</h2><ul><li>January 23, 2006 – Initial Release</li><li>February 14, 2008 – Updated Internet Explorer and Firefox guidelines.</li><li>September 8, 2015 – Updated the Web Browser section to point to vendor privacy and security options.</li></ul></div>
+      
+  </div>
+
+</article>
+</div>
+
+
+  </div>
+
+              </section>
+
+
+                      </div>
+  </div>
+
+
+
+
+
+
+      <footer class="footer container-fluid" role="contentinfo">
+        <div class="region region-footer">
+    <section id="block-certsignup" class="block block-block-content block-block-contentc5846d10-2e2b-4822-aa59-7a5c3262f671 clearfix">
+  
+    
+
+      
+            <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item"><div class="container-fluid signup">
+<div class="container">
+<div class="row">
+<div class="col-lg-3 contact-icons">
+<h3>Contact Us</h3>
+
+<p class="phone-text"><img alt="phone icon" data-entity-type="" data-entity-uuid="" src="/sites/default/files/images/Icon-Phone.png" />(888)282-0870</p>
+
+<p><img alt="email icon" data-entity-type="" data-entity-uuid="" src="/sites/default/files/images/Icon-Email.png" /><a class="mailto" href="mailto:info@us-cert.gov" title="General questions or suggestions">Send us email</a></p>
+
+<p><img alt="lock icon" data-entity-type="" data-entity-uuid="" src="/sites/default/files/images/Icon-Lock.png" /><a href="/contact-us/" title="Download PGP/GPG keys">Download PGP/GPG keys</a></p>
+
+<p><img alt="feedback icon" data-entity-type="" data-entity-uuid="" height="32" src="/sites/default/files/images/icon-feedback.png" /><a href="/forms/website-feedback" title="Website Feedback">Submit website feedback</a></p>
+</div>
+
+<div class="col-lg-6 sub-alert">
+<h3>Subscribe to Alerts</h3>
+
+<p>Receive security alerts, tips, and other updates.</p>
+
+<form action="https://public.govdelivery.com/accounts/USDHSUSCERT/subscribers/qualify"><label class="visually-hidden" for="email-address-field">Enter your email address</label> <input class="signup-form" id="email-address-field" name="email" placeholder=" Enter your email address" title="Enter your email address" type="text" /><br /><input class="btn btn-primary" name="submit" title="Sign up for alerts" type="submit" value="Sign Up" /> </form>
+
+<div class="pull-right signup-icon-one"><a href="https://twitter.com/uscert_gov" title="US-CERT Twitter Feed"><img alt="twitter icon" data-entity-type="" data-entity-uuid="" src="/sites/default/files/images/twitter-button.png" /></a></div>
+
+<div class="pull-right signup-icon-two"><a href="/mailing-lists-and-feeds" title="Mailing Lists and Feeds"><img alt="rss icon" data-entity-type="" data-entity-uuid="" src="/sites/default/files/images/rss-button-bottom.png" /></a></div>
+
+<div class="pull-right signup-icon-three"><a href="/hsin"><button class="btn btn-cert-report" name="button" type="button">HSIN</button></a></div>
+</div>
+
+<div class="col-lg-3 cert-report"><a href="/report"><button class="btn btn-cert-report btn-lg" name="button" type="button">Report</button></a></div>
+</div>
+</div>
+</div>
+
+
+</div>
+      
+  </section>
+
+<section id="block-certcertfooter" class="block block-block-content block-block-contentd5b85bd2-62d1-485a-b9ae-f040b1ca1a45 clearfix">
+  
+    
+
+      
+            <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item"><div class="container">
+<hr /><div class="text-center"><a href="/" title="Home">Home</a>   <a href="/sitemap" title="Site Map">Site Map</a>   <a href="/faq/" title="FAQ">FAQ</a>   <a href="/contact-us/" title="Contact Us">Contact Us</a>   <a href="/tlp/" title="Traffic Light Protocol">Traffic Light Protocol</a>   <a href="/pcii" title="PCII">PCII</a>   <a href="https://www.dhs.gov" title="Accountability">Accountability</a>   <a href="/disclaimer" title="Disclaimer">Disclaimer</a>   <a href="/privacy-policy" title="Privacy Policy">Privacy Policy</a>   <a href="https://www.dhs.gov/freedom-information-act-foia" title="FOIA">FOIA</a>   <a href="https://www.dhs.gov/homeland-security-no-fear-act-reporting" title="No Fear Act">No Fear Act</a>   <a href="/accessibility/" title="Accessibility">Accessibility</a><a href="https://www.dhs.gov/plain-writing-dhs" title="Plain Writing">Plain Writing</a><a href="https://www.dhs.gov/plug-information" title="Plug-ins">Plug-ins</a>   <a href="https://www.oig.dhs.gov/" title="Office of the Inspector General">Inspector General</a>   <a href="https://www.whitehouse.gov/" title="The White House">The White House</a>   <a href="https://www.usa.gov/" title="USA.gov">USA.gov</a><br />
+ 
+<p>CISA is part of the <a href="https://www.dhs.gov/" title="Department of Homeland Security">Department of Homeland Security</a></p>
+</div>
+<script type="text/javascript">
+<!--//--><![CDATA[// ><!--
+
+    window.onload = function(){
+            jQuery('body.page-node-type-us-cert-events div#ncas-header').find('img').each(function(){
+                    var $src=jQuery(this).prop('src');
+                    if($src.indexOf('default/files/') == -1)jQuery(this).remove();
+                    });
+            if('Privacy Data Breach' == jQuery('#uscert-utilities-irf-form #item-info-impact option:selected').text()){ 
+                jQuery('#item-info-impact-block').removeClass('collapsed'); 
+            }
+jQuery('#print-logo img').removeAttr('width').removeAttr('height');
+if(jQuery('body.path-frontpage').length > 0)
+{   
+    jQuery('.main-container').find('.col-sm-12').removeAttr('role');
+}  
+    };
+
+//--><!]]>
+</script></div>
+<style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+#views-bootstrap-carousel-block-2 .carousel-inner > .item > a > img {
+  margin:auto;
+}
+button#product-feedback-next {
+    margin-bottom: 10px;
+}
+/*
+.mobile-nav {
+border-bottom: 3px solid #112e51;
+}
+*/
+.cma-banner-container {
+    display: none;
+}
+
+/*--><!]]>*/
+</style></div>
+      
+  </section>
+
+
+  </div>
+
+    </footer>
+  
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/143","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"data":{"extlink":{"extTarget":false,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":false,"extFollowNoOverride":false,"extClass":"ext","extLabel":"(link is external)","extImgClass":false,"extSubdomains":true,"extExclude":"(\\.gov|\\.mil|\\.org.*|twitter\\.com\\\/share\\?url\\=.*|www\\.facebook\\.com\\\/sharer\\.php\\?u\\=.*|www\\.addthis\\.com\\\/bookmark\\.php\\?url\\=.*|javascript\\:window\\.print\\(\\)\\;)","extInclude":"","extCssExclude":"","extCssExplicit":"","extAlert":true,"extAlertText":"You are now leaving an official website of the United States Government (USG), the Department of Homeland Security (DHS), and the Cybersecurity and Infrastructure Security Agency (CISA). Links to non-USG, non-DHS, and non-CISA sites are provided for the visitor\u0026#039;s convenience and do not represent an endorsement by USG, DHS, or CISA of any commercial or private issues, products, or services. Note that the privacy policy of the linked site may differ from that of USG, DHS, and CISA.","mailtoClass":"mailto","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":null}},"bootstrap":{"forms_has_error_value_toggle":1,"popover_enabled":1,"popover_animation":1,"popover_auto_close":1,"popover_container":"body","popover_content":"","popover_delay":"0","popover_html":0,"popover_placement":"right","popover_selector":"","popover_title":"","popover_trigger":"click","tooltip_enabled":1,"tooltip_animation":1,"tooltip_container":"body","tooltip_delay":"0","tooltip_html":0,"tooltip_placement":"auto left","tooltip_selector":"","tooltip_trigger":"hover"},"user":{"uid":0,"permissionsHash":"5ac3ae468050ddd0aa4ecea12c34a32977a23244239ed53eb7226f296aed658f"}}</script>
+<script src="/sites/default/files/js/js_9V16XxOYg6WVLUHMizNPhhF_eoLettE2OLZxxtal3zw.js"></script>
+<script src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=DHS&amp;subagency=US-CERT&amp;pua=0" id="_fed_an_ua_tag"></script>
+<script src="/sites/default/files/js/js_87GkjKlBmTiL81KWHkfPyx4yVUmL8undDys6xQWZZ08.js"></script>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"877b02039c","applicationID":"140456368,2052686","transactionName":"ZFYHMhZSXUpRUkcKDF0cMBQNHFpXVFRLTRNbQw==","queueTime":0,"applicationTime":151,"atts":"SBEERF5ITkQ=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

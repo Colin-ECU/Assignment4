@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<stix:STIX_Package 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:stix="http://stix.mitre.org/stix-1" 
+xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1" 
+xmlns:marking="http://data-marking.mitre.org/Marking-1" 
+xmlns:AIS="http://www.us-cert.gov/STIXMarkingStructure#AISConsentMarking-2" 
+xmlns:stixCommon="http://stix.mitre.org/common-1" 
+xmlns:stix-ciq="http://stix.mitre.org/extensions/Identity#CIQIdentity3.0-1" 
+xmlns:xpil="urn:oasis:names:tc:ciq:xpil:3" 
+xmlns:xal="urn:oasis:names:tc:ciq:xal:3" 
+xmlns:cyboxCommon="http://cybox.mitre.org/common-2" 
+xmlns:coa="http://stix.mitre.org/CourseOfAction-1" 
+xsi:schemaLocation="
+http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd 
+http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd 
+http://data-marking.mitre.org/Marking-1 http://stix.mitre.org/XMLSchema/data_marking/1.1.1/data_marking.xsd 
+http://www.us-cert.gov/STIXMarkingStructure#AISConsentMarking-2 http://www.us-cert.gov/sites/default/files/STIX_Namespace/AIS_Bundle_Marking_1.1.1_v1.0.xsd 
+http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd 
+http://stix.mitre.org/extensions/Identity#CIQIdentity3.0-1 http://stix.mitre.org/XMLSchema/extensions/identity/ciq_3.0/1.1.1/ciq_3.0_identity.xsd 
+urn:oasis:names:tc:ciq:xpil:3 http://stix.mitre.org/XMLSchema/external/oasis_ciq_3.0/xPIL.xsd 
+http://cybox.mitre.org/common-2 http://cybox.mitre.org/XMLSchema/common/2.1/cybox_common.xsd 
+http://stix.mitre.org/CourseOfAction-1 http://stix.mitre.org/XMLSchema/course_of_action/1.1.1/course_of_action.xsd 
+" 
+version="1.1.1" 
+xmlns:NCCIC="https://www.us-cert.gov/" id="NCCIC:Package-f51fa117-370a-4a02-92e0-b33640afa48b" timestamp="2019-08-13T13:49:55.142Z">
+  <!-- SOURCE: NONFED -->
+  <stix:STIX_Header>
+    <stix:Title>ICS-ALERT-19-255-01 Mitsubishi Electric smartRTU and INEA ME-RTU</stix:Title>
+    <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Threat Report</stix:Package_Intent>
+    <stix:Description>ICS-ALERT-19-255-01 Mitsubishi Electric smartRTU and INEA ME-RTU (Update A)
+1	EXECUTIVE SUMMARY
+CISA is aware of a public report of vulnerabilities with proof-of-concept (PoC) exploit code affecting Mitsubishi Electric smartRTU (Versions 2.02 and prior) and INEA ME-RTU (Versions 3.0 and prior), remote terminal unit products. According to this report, there are multiple vulnerabilities that could be exploited to gain remote code execution with root privileges. CISA has notified Mitsubishi Electric of the report and has asked them to confirm the vulnerabilities and identify mitigations. CISA is issuing this ALERT to provide early notice of the report and identify baseline mitigations for reducing risks to these and other cybersecurity attacks.
+The report included vulnerability details and PoC exploit code for the following vulnerabilities:
+Vulnerability Type	Exploitable
+Remotely	Impact
+OS command injection	Yes	Possible remote code execution with admin privileges 
+Improper access control	Yes	Possible remote code execution with admin privileges
+Stored cross-site scripting	Yes	Possible to run arbitrary code on the client target system
+Hard-coded cryptographic keys	Yes	Possible unauthorized access/disclosure of encrypted data
+Hard-coded credentials	Yes	Possible unauthorized access/execution of admin commands
+Plaintext password storage	Yes	Possible disclosure of usernames and plaintext passwords
+Incorrect default permissions	No 	Possible disclosure of usernames and plaintext passwords by a logged in user
+
+Please report any issues affecting control systems in critical infrastructure environments to CISA.
+Successful exploitation of these vulnerabilities could allow an attacker to achieve remote code execution with root privileges.
+Researcher with the handle Xerubus reported these vulnerabilities to CISA. Researcher followed a 45-day disclosure policy. 
+Researcher’s PoC and report have been published at the following link: https://www.mogozobo.com/?p=3593</stix:Description>
+    <stix:Handling>
+      <marking:Marking>
+        <marking:Controlled_Structure>//node()</marking:Controlled_Structure>
+        <marking:Marking_Structure xsi:type="AIS:AISMarkingStructure">
+          <AIS:Not_Proprietary CISA_Proprietary="false">
+            <AIS:AISConsent consent="EVERYONE" />
+            <AIS:TLPMarking color="WHITE" />
+          </AIS:Not_Proprietary>
+        </marking:Marking_Structure>
+        <marking:Information_Source>
+          <stixCommon:Identity xsi:type="stix-ciq:CIQIdentity3.0InstanceType">
+            <stix-ciq:Specification>
+              <xpil:PartyName />
+              <xpil:Addresses>
+                <xpil:Address>
+                  <xal:Country>
+                    <xal:NameElement xal:NameCode="US" xal:NameCodeType="ISO 3166-1 alpha-2" />
+                  </xal:Country>
+                  <xal:AdministrativeArea>
+                    <xal:NameElement xal:NameCode="US-DC" xal:NameCodeType="ISO 3166-2" />
+                  </xal:AdministrativeArea>
+                </xpil:Address>
+              </xpil:Addresses>
+              <xpil:OrganisationInfo xpil:IndustryType="Government Facilities Sector" />
+            </stix-ciq:Specification>
+          </stixCommon:Identity>
+          <stixCommon:Tools>
+            <cyboxCommon:Tool>
+              <cyboxCommon:Metadata>
+                <cyboxCommon:Value>ICS-CERT</cyboxCommon:Value>
+              </cyboxCommon:Metadata>
+            </cyboxCommon:Tool>
+          </stixCommon:Tools>
+        </marking:Information_Source>
+      </marking:Marking>
+    </stix:Handling>
+    <stix:Information_Source>
+      <stixCommon:Time>
+        <cyboxCommon:Produced_Time>2019-08-13T06:00:00.000Z</cyboxCommon:Produced_Time>
+      </stixCommon:Time>
+    </stix:Information_Source>
+  </stix:STIX_Header>
+  <stix:TTPs>
+    <stix:Kill_Chains>
+      <stixCommon:Kill_Chain definer="LMCO" id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" name="LM Cyber Kill Chain" number_of_phases="7" reference="http://www.lockheedmartin.com/content/dam/lockheed/data/corporate/documents/LM-White-Paper-Intel-Driven-Defense.pdf">
+        <stixCommon:Kill_Chain_Phase name="Reconnaissance" ordinality="1" phase_id="stix:KillChainPhase-af1016d6-a744-4ed7-ac91-00fe2272185a" />
+        <stixCommon:Kill_Chain_Phase name="Weaponization" ordinality="2" phase_id="stix:KillChainPhase-445b4827-3cca-42bd-8421-f2e947133c16" />
+        <stixCommon:Kill_Chain_Phase name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d" />
+        <stixCommon:Kill_Chain_Phase name="Exploitation" ordinality="4" phase_id="stix:KillChainPhase-f706e4e7-53d8-44ef-967f-81535c9db7d0" />
+        <stixCommon:Kill_Chain_Phase name="Installation" ordinality="5" phase_id="stix:KillChainPhase-e1e4e3f7-be3b-4b39-b80a-a593cfd99a4f" />
+        <stixCommon:Kill_Chain_Phase name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2" />
+        <stixCommon:Kill_Chain_Phase name="Actions on Objectives" ordinality="7" phase_id="stix:KillChainPhase-786ca8f9-2d9a-4213-b38e-399af4a2e5d6" />
+      </stixCommon:Kill_Chain>
+    </stix:Kill_Chains>
+  </stix:TTPs>
+  <stix:Courses_Of_Action>
+    <stix:Course_Of_Action xsi:type="coa:CourseOfActionType" id="NCCIC:Course_Of_Action-c455ee48-d8ff-46cf-b5ea-df9b235356af" timestamp="2019-08-13T13:53:56.211Z">
+      <coa:Title>2	MITIGATIONS</coa:Title>
+      <coa:Description>CISA is currently coordinating with the vendor and security researcher to identify mitigations.
+Researcher has recommended the following workaround mitigations until an official fix is available:
+•	Ensure devices have appropriate controls to protect the devices from unauthorized network access.
+•	Ensure the devices are not exposed or accessible from the Internet.
+•	Ensure devices are not exposed or accessible from the corporate or other untrusted networks.
+•	Initiate change control and test processes once patches are released by the vendor.  If unable to patch, ensure appropriate controls and logging capability are in place for vulnerable devices.
+CISA recommends users: 
+•	When remote access is required, use secure methods, such as virtual private networks (VPNs), recognizing that VPNs may have vulnerabilities and should be updated to the most current version available. Also recognize that VPN is only as secure as the connected devices.
+CISA reminds organizations to perform proper impact analysis and risk assessment prior to deploying defensive measures.
+CISA also provides a section for control systems security recommended practices on the ICS webpage on us-cert.gov. Several recommended practices are available for reading and download, including Improving Industrial Control Systems Cybersecurity with Defense-in-Depth Strategies.
+Additional mitigation guidance and recommended practices are publicly available on the ICS webpage on us-cert.gov in the Technical Information Paper, ICS-TIP-12-146-01B--Targeted Cyber Intrusion Detection and Mitigation Strategies.</coa:Description>
+    </stix:Course_Of_Action>
+  </stix:Courses_Of_Action>
+</stix:STIX_Package>

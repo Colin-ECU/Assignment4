@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:og="http://ogp.me/ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:schema="http://schema.org/" xmlns:sioc="http://rdfs.org/sioc/ns#" xmlns:sioct="http://rdfs.org/sioc/types#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" version="2.0" xml:base="https://www.us-cert.gov/">
+  <channel>
+    <title>CISA ICS Announcements</title>
+    <link>https://www.us-cert.gov/</link>
+    <description/>
+    <language>en</language>
+    
+    <item>
+	<title>Next ICSJWG Webinar November 13, 2019 from 1 p.m. to 2:15 p.m. EST</title>
+	<link>https://www.us-cert.gov/ics/next-icsjwg-webinar-november-13-2019-1-pm-215-pm-est-1</link>
+	<description>Andrew Ginter of Waterfall Security Solutions will present on  Secure Operations Technology  on November 13, 2019 from 1 p.m. to 2:15 p.m. EST</description>
+  <pubDate>Monday, October 14, 2019 - 10:53</pubDate>
+    <dc:creator>ICS Announcement</dc:creator>
+    <guid isPermaLink="true">https://www.us-cert.gov/13007</guid>
+    </item>
+<item>
+	<title>ICSJWG Quarterly Newsletter released for September</title>
+	<link>https://www.us-cert.gov/ics/icsjwg-quarterly-newsletter-released-september-0</link>
+	<description>The newsletter highlights the 2019 Biannual Meeting in Springfield, Mass., upcoming ICS Events, training, technology updates, National Cybersecurity Awareness Month, and articles of interest provided by the ICS Community. Get involved! Article submissions for the December 2019 edition are currently being accepted for review until December 9, 2019.</description>
+  <pubDate>Monday, October 14, 2019 - 10:48</pubDate>
+    <dc:creator>ICS Announcement</dc:creator>
+    <guid isPermaLink="true">https://www.us-cert.gov/13001</guid>
+    </item>
+<item>
+	<title>ICSJWG Accepting Abstracts through Friday, July 26</title>
+	<link>https://www.us-cert.gov/ics/icsjwg-accepting-abstracts-through-friday-july-26</link>
+	<description>The Industrial Control Systems Joint Working Group (ICSJWG)—a collaborative and coordinating body for Industrial Control Systems hosted by CISA and driven by the community—is still accepting abstracts for the 2019 Fall Meeting in Springfield, Massachusetts, August 27–29, 2019. </description>
+  <pubDate>Thursday, July 25, 2019 - 10:57</pubDate>
+    <dc:creator>ICS Announcement</dc:creator>
+    <guid isPermaLink="true">https://www.us-cert.gov/12622</guid>
+    </item>
+<item>
+	<title>WaterISAC Releases Cybersecurity Fundamentals</title>
+	<link>https://www.us-cert.gov/ics/waterisac-releases-cybersecurity-fundamentals</link>
+	<description>The Water Information Sharing and Analysis Center (WaterISAC) recently released an updated cybersecurity fundamentals guide for water and wastewater utilities. The guide includes cybersecurity best practices, grouped into 15 categories, to help sector utilities reduce exploitable weaknesses and attacks. WaterISAC is a CISA partner focused on protecting Water and Wastewater Systems Sector utilities from all hazards.</description>
+  <pubDate>Wednesday, July 17, 2019 - 21:34</pubDate>
+    <dc:creator>ICS Announcement</dc:creator>
+    <guid isPermaLink="true">https://www.us-cert.gov/12590</guid>
+    </item>
+<item>
+	<title>ICSJWG Call for Abstracts</title>
+	<link>https://www.us-cert.gov/ics/icsjwg-call-abstracts</link>
+	<description>The Industrial Control Systems Joint Working Group (ICSJWG)—a collaborative and coordinating body for Industrial Control Systems hosted by CISA and driven by the community—is currently accepting abstracts for the 2019 Fall Meeting in Springfield, Massachusetts, August 27–29, 2019. </description>
+  <pubDate>Tuesday, July 9, 2019 - 20:22</pubDate>
+    <dc:creator>ICS Announcement</dc:creator>
+    <guid isPermaLink="true">https://www.us-cert.gov/12538</guid>
+    </item>
+<item>
+	<title>CISA Relaunch of the Newly Integrated Website</title>
+	<link>https://www.us-cert.gov/ics/cisa-relaunch-newly-integrated-website</link>
+	<description>The Cybersecurity and Infrastructure Security Agency (CISA) is excited to announce the relaunch of the newly integrated us-cert.gov website! On June 25, us-cert.gov and ics-cert.us-cert.gov were consolidated into a single us-cert.gov site—a comprehensive, easy-to-navigate website with an updated look and feel.</description>
+  <pubDate>Tuesday, June 25, 2019 - 22:26</pubDate>
+    <dc:creator>ICS Announcement</dc:creator>
+    <guid isPermaLink="true">https://www.us-cert.gov/12457</guid>
+    </item>
+<item>
+	<title>Microsoft Releases Security Update for Remote Desktop Services Vulnerability</title>
+	<link>https://www.us-cert.gov/ics/Microsoft-Releases-Security-Update-Remote-Desktop-Services-Vulnerability</link>
+	<description>Microsoft has released security updates to address a remote code execution vulnerability (CVE-2019-0708) in Remote Desktop Services.</description>
+  <pubDate>Monday, May 20, 2019 - 10:55</pubDate>
+    <dc:creator>ICS Announcement</dc:creator>
+    <guid isPermaLink="true">https://www.us-cert.gov/12413</guid>
+    </item>
+<item>
+	<title>ICSJWG Spring Meeting April 23–25</title>
+	<link>https://www.us-cert.gov/ics/ICSJWG-Spring-Meeting-April-23%E2%80%9325</link>
+	<description>The Industrial Control Systems Joint Working Group (ICSJWG)—a collaborative and coordinating body operating under the Critical Infrastructure Partnership Advisory Council framework—will hold the 2019 ICSJWG Spring Meeting in Kansas City, Mo, April 23–25, 2019. ICSJWG facilitates information sharing to reduce the risk to the Nation’s industrial control systems.</description>
+  <pubDate>Wednesday, April 17, 2019 - 14:25</pubDate>
+    <dc:creator>ICS Announcement</dc:creator>
+    <guid isPermaLink="true">https://www.us-cert.gov/12316</guid>
+    </item>
+<item>
+	<title>ICSJWG 2019 Spring Meeting – Registration now open and Call for Abstract deadline extended!</title>
+	<link>https://www.us-cert.gov/ics/ICSJWG-2019-Spring-Meeting-%E2%80%93-Registration-now-open-and-Call-Abstract-deadline-extended</link>
+	<description>ICSJWG 2019 Spring Meeting – Registration now open and Call for Abstract deadline extended!&lt;br /&gt;
+Additional information regarding the event can be located at the ICSJWG Website: &lt;br /&gt;
+https://ics-cert.us-cert.gov/Industrial-Control-Systems-Joint-Working-Group-ICSJWG</description>
+  <pubDate>Thursday, March 7, 2019 - 13:53</pubDate>
+    <dc:creator>ICS Announcement</dc:creator>
+    <guid isPermaLink="true">https://www.us-cert.gov/11965</guid>
+    </item>
+<item>
+	<title>MAR-17-352-01 HatMan - Safety System Targeted Malware (Update B)</title>
+	<link>https://www.us-cert.gov/ics/MAR-17-352-01-HatMan-Safety-System-Targeted-Malware-Update-B</link>
+	<description>This updated malware analysis report is a follow-up to the updated malware analysis report titled MAR-17-352-01 HatMan - Safety System Targeted Malware (Updated A) that was published April 10, 2018, on the ICS-CERT website.</description>
+  <pubDate>Friday, March 1, 2019 - 15:15</pubDate>
+    <dc:creator>ICS Announcement</dc:creator>
+    <guid isPermaLink="true">https://www.us-cert.gov/11955</guid>
+    </item>
+<item>
+	<title>New Session Added: CISA Awareness Briefing on Chinese Malicious Cyber Activity</title>
+	<link>https://www.us-cert.gov/ics/New-Session-Added-CISA-Awareness-Briefing-Chinese-Malicious-Cyber-Activity</link>
+	<description>The Cybersecurity and Infrastructure Security Agency (CISA) has added an additional session to the virtual awareness briefing on Chinese malicious cyber activity targeting managed service providers.</description>
+  <pubDate>Tuesday, February 12, 2019 - 11:24</pubDate>
+    <dc:creator>ICS Announcement</dc:creator>
+    <guid isPermaLink="true">https://www.us-cert.gov/11964</guid>
+    </item>
+<item>
+	<title>CISA Awareness Briefing on Chinese Malicious Cyber Activity</title>
+	<link>https://www.us-cert.gov/ics/CISA-Awareness-Briefing-Chinese-Malicious-Cyber-Activity</link>
+	<description>The Cybersecurity and Infrastructure Security Agency (CISA) will conduct a series of virtual awareness briefings on Chinese malicious cyber activity targeting managed service providers (MSPs).</description>
+  <pubDate>Wednesday, January 30, 2019 - 11:44</pubDate>
+    <dc:creator>ICS Announcement</dc:creator>
+    <guid isPermaLink="true">https://www.us-cert.gov/11963</guid>
+    </item>
+<item>
+	<title>The Patch Factory: Global Infrastructure for Managing Cybersecurity Vulnerabilities</title>
+	<link>https://www.us-cert.gov/ics/Patch-Factory-Global-Infrastructure-Managing-Cybersecurity-Vulnerabilities</link>
+	<description>DHS is committed to assisting manufacturers with security of their products through a steady stream of vulnerability information.&lt;br /&gt;
+https://www.dhs.gov/blog/2018/09/18/patch-factory-global-infrastructure-managing-cybersecurity-vulnerabilities</description>
+  <pubDate>Tuesday, September 18, 2018 - 13:03</pubDate>
+    <dc:creator>ICS Announcement</dc:creator>
+    <guid isPermaLink="true">https://www.us-cert.gov/11961</guid>
+    </item>
+<item>
+	<title>Recommended Practice: Updating Antivirus in an Industrial Control System</title>
+	<link>https://www.us-cert.gov/ics/Recommended-Practice-Updating-Antivirus-Industrial-Control-System</link>
+	<description>NCCIC has released the Recommended Practice: Updating Antivirus in an Industrial Control System document.</description>
+  <pubDate>Thursday, August 2, 2018 - 10:16</pubDate>
+    <dc:creator>ICS Announcement</dc:creator>
+    <guid isPermaLink="true">https://www.us-cert.gov/11959</guid>
+    </item>
+<item>
+	<title>NIST Releases Special Publication 800-193, Platform Firmware Resiliency Guidelines</title>
+	<link>https://www.us-cert.gov/ics/NIST-Releases-Special-Publication-800-193-Platform-Firmware-Resiliency-Guidelines</link>
+	<description>NIST is releasing a publication that will help organizations prepare better against potentially destructive attacks to the collection of hardware and firmware components of a computer system, also called the platform. Special Publication 800-193, Platform Firmware Resiliency Guidelines provides technical guidelines and recommendations supporting resiliency of platform firmware and data against such attacks.</description>
+  <pubDate>Friday, May 4, 2018 - 14:36</pubDate>
+    <dc:creator>ICS Announcement</dc:creator>
+    <guid isPermaLink="true">https://www.us-cert.gov/11956</guid>
+    </item>
+<item>
+	<title>Memorandum for U.S. Owners and Operators Using GPS to Obtain UTC Time.</title>
+	<link>https://www.us-cert.gov/ics/Memorandum-US-Owners-and-Operators-Using-GPS-Obtain-UTC-Time</link>
+	<description>This paper is intended to provide an understanding of the possible effects of the April 6, 2019 GPS Week Number Rollover on Coordinated Universal Time derived from GPS devices.</description>
+  <pubDate>Tuesday, April 10, 2018 - 10:21</pubDate>
+    <dc:creator>ICS Announcement</dc:creator>
+    <guid isPermaLink="true">https://www.us-cert.gov/11954</guid>
+    </item>
+<item>
+	<title>Cyber Resiliency: Engineering Systems to Anticipate, Recover from, and Adapt to Advanced Persistent Threats</title>
+	<link>https://www.us-cert.gov/ics/Cyber-Resiliency-Engineering-Systems-Anticipate-Recover-and-Adapt-Advanced-Persistent-Threats</link>
+	<description>The National Institute of Standards and Technology (NIST) released the initial public draft of NIST Special Publication 800-160 Volume 2, Systems Security Engineering: Cyber Resiliency Considerations for the Engineering of Trustworthy Secure Systems.</description>
+  <pubDate>Wednesday, March 21, 2018 - 10:29</pubDate>
+    <dc:creator>ICS Announcement</dc:creator>
+    <guid isPermaLink="true">https://www.us-cert.gov/11953</guid>
+    </item>
+<item>
+	<title>MAR-17-352-01 HatMan—Safety System Targeted Malware</title>
+	<link>https://www.us-cert.gov/ics/MAR-17-352-01-HatMan%E2%80%94Safety-System-Targeted-Malware</link>
+	<description>MAR-17-352-01 HatMan—Safety System Targeted Malware. This malware analysis report discusses the components and capabilities of the HatMan malware and some potential mitigations. Media reporting also refers to this malware as both TRITON and TRISIS.</description>
+  <pubDate>Monday, December 18, 2017 - 16:46</pubDate>
+    <dc:creator>ICS Announcement</dc:creator>
+    <guid isPermaLink="true">https://www.us-cert.gov/11951</guid>
+    </item>
+<item>
+	<title>Best Practices for Leap Second Event Occurring on 31 December 2016</title>
+	<link>https://www.us-cert.gov/ics/Best-Practices-Leap-Second-Event-Occurring-31-December-2016</link>
+	<description>This paper is intended as a best practices guide to be used for the upcoming Leap Second event scheduled for Saturday, 31 December 2016.</description>
+  <pubDate>Thursday, October 13, 2016 - 17:47</pubDate>
+    <dc:creator>ICS Announcement</dc:creator>
+    <guid isPermaLink="true">https://www.us-cert.gov/11927</guid>
+    </item>
+
+  </channel>
+</rss>

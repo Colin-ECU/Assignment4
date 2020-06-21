@@ -1,0 +1,1238 @@
+<stix:STIX_Package 
+	xmlns:cyboxCommon="http://cybox.mitre.org/common-2"
+	xmlns:cybox="http://cybox.mitre.org/cybox-2"
+	xmlns:cyboxVocabs="http://cybox.mitre.org/default_vocabularies-2"
+	xmlns:AddressObj="http://cybox.mitre.org/objects#AddressObject-2"
+	xmlns:ArtifactObj="http://cybox.mitre.org/objects#ArtifactObject-2"
+	xmlns:FileObj="http://cybox.mitre.org/objects#FileObject-2"
+	xmlns:PortObj="http://cybox.mitre.org/objects#PortObject-2"
+	xmlns:WhoisObj="http://cybox.mitre.org/objects#WhoisObject-2"
+	xmlns:WinExecutableFileObj="http://cybox.mitre.org/objects#WinExecutableFileObject-2"
+	xmlns:WinFileObj="http://cybox.mitre.org/objects#WinFileObject-2"
+	xmlns:marking="http://data-marking.mitre.org/Marking-1"
+	xmlns:tlpMarking="http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1"
+	xmlns:TOUMarking="http://data-marking.mitre.org/extensions/MarkingStructure#Terms_Of_Use-1"
+	xmlns:maecBundle="http://maec.mitre.org/XMLSchema/maec-bundle-4"
+	xmlns:maecPackage="http://maec.mitre.org/XMLSchema/maec-package-2"
+	xmlns:maecVocabs="http://maec.mitre.org/default_vocabularies-1"
+	xmlns:incident="http://stix.mitre.org/Incident-1"
+	xmlns:indicator="http://stix.mitre.org/Indicator-2"
+	xmlns:ttp="http://stix.mitre.org/TTP-1"
+	xmlns:stixCommon="http://stix.mitre.org/common-1"
+	xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1"
+	xmlns:stix-maec="http://stix.mitre.org/extensions/Malware#MAEC4.1-1"
+	xmlns:stix="http://stix.mitre.org/stix-1"
+	xmlns:NCCIC="http://www.us-cert.gov/"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+	http://cybox.mitre.org/common-2 http://cybox.mitre.org/XMLSchema/common/2.1/cybox_common.xsd
+	http://cybox.mitre.org/cybox-2 http://cybox.mitre.org/XMLSchema/core/2.1/cybox_core.xsd
+	http://cybox.mitre.org/default_vocabularies-2 http://cybox.mitre.org/XMLSchema/default_vocabularies/2.1/cybox_default_vocabularies.xsd
+	http://cybox.mitre.org/objects#AddressObject-2 http://cybox.mitre.org/XMLSchema/objects/Address/2.1/Address_Object.xsd
+	http://cybox.mitre.org/objects#ArtifactObject-2 http://cybox.mitre.org/XMLSchema/objects/Artifact/2.1/Artifact_Object.xsd
+	http://cybox.mitre.org/objects#FileObject-2 http://cybox.mitre.org/XMLSchema/objects/File/2.1/File_Object.xsd
+	http://cybox.mitre.org/objects#PortObject-2 http://cybox.mitre.org/XMLSchema/objects/Port/2.1/Port_Object.xsd
+	http://cybox.mitre.org/objects#WhoisObject-2 http://cybox.mitre.org/XMLSchema/objects/Whois/2.1/Whois_Object.xsd
+	http://cybox.mitre.org/objects#WinExecutableFileObject-2 http://cybox.mitre.org/XMLSchema/objects/Win_Executable_File/2.1/Win_Executable_File_Object.xsd
+	http://cybox.mitre.org/objects#WinFileObject-2 http://cybox.mitre.org/XMLSchema/objects/Win_File/2.1/Win_File_Object.xsd
+	http://data-marking.mitre.org/Marking-1 http://stix.mitre.org/XMLSchema/data_marking/1.1.1/data_marking.xsd
+	http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1 http://stix.mitre.org/XMLSchema/extensions/marking/tlp/1.1.1/tlp_marking.xsd
+	http://data-marking.mitre.org/extensions/MarkingStructure#Terms_Of_Use-1 http://stix.mitre.org/XMLSchema/extensions/marking/terms_of_use/1.0.1/terms_of_use_marking.xsd
+	http://maec.mitre.org/XMLSchema/maec-bundle-4 http://maec.mitre.org/language/version4.1/maec_bundle_schema.xsd
+	http://maec.mitre.org/XMLSchema/maec-package-2 http://maec.mitre.org/language/version4.1/maec_package_schema.xsd
+	http://maec.mitre.org/default_vocabularies-1 http://maec.mitre.org/language/version4.1/maec_default_vocabularies.xsd
+	http://stix.mitre.org/Incident-1 http://stix.mitre.org/XMLSchema/incident/1.1.1/incident.xsd
+	http://stix.mitre.org/Indicator-2 http://stix.mitre.org/XMLSchema/indicator/2.1.1/indicator.xsd
+	http://stix.mitre.org/TTP-1 http://stix.mitre.org/XMLSchema/ttp/1.1.1/ttp.xsd
+	http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd
+	http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd
+	http://stix.mitre.org/extensions/Malware#MAEC4.1-1 http://stix.mitre.org/XMLSchema/extensions/malware/maec_4.1/1.0.1/maec_4.1_malware.xsd
+	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd" id="NCCIC:Package-f102f819-cca3-4e41-b75b-8fc57d419173" version="1.1.1" timestamp="2017-08-14T12:50:38.861301+00:00">
+    <stix:STIX_Header>
+        <stix:Title>MAR-10132963</stix:Title>
+        <stix:Package_Intent>Malware Characterization</stix:Package_Intent>
+        <stix:Handling>
+            <marking:Marking>
+                <marking:Controlled_Structure>//node() | //@*</marking:Controlled_Structure>
+                <marking:Marking_Structure xsi:type='tlpMarking:TLPMarkingStructureType' color="WHITE"/>
+                <marking:Marking_Structure xsi:type='TOUMarking:TermsOfUseMarkingStructureType'>
+                    <TOUMarking:Terms_Of_Use>This report is provided "as is" for informational purposes only. The Department of Homeland Security (DHS) does not provide any warranties of any kind regarding any information contained within. The DHS does not endorse any commercial product or service, referenced in this bulletin or otherwise. This document is marked TLP:WHITE. Disclosure is not limited. Sources may use TLP:WHITE when information carries minimal or no foreseeable risk of misuse, in accordance with applicable rules and procedures for public release. Subject to standard copyright rules, TLP:WHITE information may be distributed without restriction. For more information on the Traffic Light Protocol, see http://www.us-cert.gov/tlp.</TOUMarking:Terms_Of_Use>
+                </marking:Marking_Structure>
+            </marking:Marking>
+        </stix:Handling>
+        <stix:Information_Source>
+            <stixCommon:Identity>
+                <stixCommon:Name>US-CERT</stixCommon:Name>
+            </stixCommon:Identity>
+            <stixCommon:Time>
+                <cyboxCommon:Produced_Time>2017-08-14T16:03:12.197827+00:00</cyboxCommon:Produced_Time>
+            </stixCommon:Time>
+            <stixCommon:Tools>
+                <cyboxCommon:Tool>
+                    <cyboxCommon:Name>bmachine</cyboxCommon:Name>
+                    <cyboxCommon:Description>F694.F694.G8WM.F694.F694.F694.F694.F694.F694.F694</cyboxCommon:Description>
+                    <cyboxCommon:Version>6.4.17</cyboxCommon:Version>
+                </cyboxCommon:Tool>
+            </stixCommon:Tools>
+        </stix:Information_Source>
+    </stix:STIX_Header>
+    <stix:Observables cybox_major_version="2" cybox_minor_version="1" cybox_update_version="0">
+        <cybox:Observable id="NCCIC:Observable-0e8214df-8b0e-436e-aa3e-e404e15afd55">
+            <cybox:Description><![CDATA[This file contains three embedded resources. Two of the resources are 32bit and 64bit versions of the winpcap packet driver called npf.sys. The third resource is the program's configuration file, netplg.log.
+
+When the program is executed, it will look for any previous existence of itself by looking for the mutex "\Global\NetplugDiscovery0.7".
+
+The malware will then install the packet driver described above based on the operating system architecture.
+
+If this is the first time the program has started, the program will create and install a new service called "netplug". 
+
+---Begin Service Details---
+
+netplug
+Network Card Service
+"This service monitors the network interface, turning it off or on depending on signal, used mainly for laptos that may not always be connected."
+
+---End Service Details---
+
+When the netplug service is executed, it will load "netplg.log". This resource will then be stored in %System32% and contains the hard-coded IP address, 153.68.198.14. This IP address is used to calculate the true command and control (C2) IP address by XORing the IP address with the hex string 0x579C3A53 and attempting to connect to the newly created IP address on TCP Port 443. The malware generates a log file in the current directory where activity regarding the installation of the bot and the connection are stored. This file is named the same as the malware with the <malware_name>.log. If the malware is able to connect, it will send the log file to the C2. In this analysis, the C2 was determined to be 202.126.90.89. See Screenshot 1. If no results are returned, the malware will terminate. 
+
+The malware contains an attack component that can perform the following commands:
+
+---Begin Bot Commands---
+
+DownExec - Downloads and executes files (calls URLDownloadToFile)
+ChngBotconfig - Changes the configuration of the bot
+BotUpdate - Updates the attack modules
+BotDie - Terminates the bot by calling a self-deleting batch file, msvcrt.bat
+[No Name] - Starts a new attack
+[No Name] - Stops the attack
+
+---End Bot Commands---
+
+The malware is capable of conducting three different types of attacks:
+
+---Begin Attack List---
+
+NTP_ATTACK	- Network Time Protocol attack via UDP flood
+CGN_ATTACK - Carrier Grade NAT attack targeting CGN IP addresses
+DNS_ATTACK - Domain Name Service attack via UDP flood
+
+---End Attack List---
+
+When the Network Card Service (netplug) is started, the malware will begin logging activity to the file, <malware_name>.log which is stored in the current directory. The log file records all installation and connection activity associated with the bot and is written in plaintext. The following is a sample of log file entries associated with the service startup:
+
+---Begin Log File Entries---
+
+AtkNum:
+TotalPackets:
+
+Resovle DnsName Falied:	--> Written if unable to resolve DNS name from configuration file
+__ResolveDnsName:				  --> Written if resolution is successful
+
+:Connecting...<target>:<port>				 --> Written during connection process
+:Connected<target><port>				  --> Written if connection is successful
+:HS Success<name><port>				  --> If unsuccessful the socket will be closed
+:Connection Failed<target><port>  --> Written if connection fails
+
+MyMain Started				  --> Service is initiated
+CreateService Success				  --> Service is successfully created
+StartService Success				  --> Service is successfully started
+CreateBotMutex: ERROR_ALREADY_EXISTS				  --> Mutex is successfully created
+LoadConfig Failed: ERROR_ALREADY_EXISTS			--> The service is already running
+SERVICE_CONTROL_SHUTDOWN, error code =    --> The service failed to start
+SetServiceStatus failed, error code =				 --> The service is not configured correctly
+**************Connection Fins...	 --> Written when the log is successfully sent to the C2
+ 
+---End Log File Entries---
+
+Each time the service is started, it will attempt to open and read data from the configuration file:
+
+---Log File Entries---
+
+ExtractPackage Failed: %d				 --> Written if the service fails to open the file
+ExtractConfig Failed: %d				 --> Written if the service fails to read the file
+ExtractPackage Success				 --> Written if the service successfully opens the file
+ExtractConfig Success				 --> Written if the service successfully reads the file
+Install and Run Success				 --> Written the new config installation is successful
+
+---End File Entries---
+
+When the service receives an attack command, the program creates a new log file called edbchk.log. This file is stored in C:\Windows\System32\catroot2\ and records all activity associated with the attack bot only. The following entries can be written to the log:
+
+---Begin File Entries---
+
+############## Received Attack Cmd %d#...	       --> Written when the attack command is received
+Waiting For NTP Attack <target> ...Remain <time> --> Written when the NTP attack is staged
+Waiting For NTP Fake Attack <target>...Remain <time> --> Written when the NTP fake attack is staged
+############## NTP Attack Started <target>						 --> Written when the NTP Attack starts
+############## NTP Fake Attack Started <target>   --> Written when the NTP Attack starts
+Reamin Time:						 --> Written at intervals during the attack
+############## NTP Attack Ended <target>						 --> Written when the attack ends
+############## NTP AttackTime is up						 --> Written if the attack fails
+
+############## CGN Attack Started <name>						 --> Written when the CGN attack starts
+Waiting for CGN Attack <target>...Remain <time>  --> Written when the CGN attack is staged
+############## CGN Attack Ended <target>###					 --> Written when the CGN attack ends
+############## CGN AttackTime is up						 --> Written if the CGN attack fails
+
+Waiting for DNS Attack <target>...Remain<time>		 --> Written when the DNS Attack is staged
+############## DNS Attack Started <target>						 --> Written when the DNS Attack starts
+############## DNS Attack Ended <target> ###				 --> Written when the DNS Attack ends
+DNS AttackTime is up <time>						 --> Written if the DNS Attack fails
+
+############## Received Stop Cmd <target>						 --> Written when the attack bot is stopped
+
+---End File Entries---
+
+If the bot is terminated (BotDie) the program will generate a self-deleting script called msvcrt.bat to delete itself. Msvcrt.bat contains the following data:
+
+---Begin Msvcrt File---
+
+@echo off
+del /a %1
+if exist %1 goto D1
+del /a %0
+%s "%s"
+
+---End Msvcrt File---]]></cybox:Description>
+            <cybox:Object id="NCCIC:WinExecutableFile-c8559c47-9c57-4d21-b11d-712605523b2b">
+                <cybox:Properties xsi:type="WinExecutableFileObj:WindowsExecutableFileObjectType">
+                    <FileObj:File_Name>5D29DFE2EA9CA8DA3FF7A14FB20C5E86</FileObj:File_Name>
+                    <FileObj:Size_In_Bytes>180224</FileObj:Size_In_Bytes>
+                    <FileObj:File_Format>PE32 executable (GUI) Intel 80386, for MS Windows</FileObj:File_Format>
+                    <FileObj:Hashes>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>5d29dfe2ea9ca8da3ff7a14fb20c5e86</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>3fdf856b6fbcb23e7c3372a3f53ce26c0fe6de77</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA256</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>e95c318d1b1906d57471bb524fff128356c160132d4230db04ab5898ec0eb145</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA512</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>6d4304dc3ad67bd31b4726c646bdd76a4e029a71d65223b6d437a6742cadacd5fef7769f649205542747289d3cdaec83c2ac1d8a1a03ef35f6d0326f0dcaea98</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SSDEEP</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>3072:9sCh49HhQS2qaWuLYyJHYnGerQJDu70cSrzdZHlIbFX:9sCh4TQqaZYyJHYGen70lzdZFSZ</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                    </FileObj:Hashes>
+                    <FileObj:Packer_List>
+                        <FileObj:Packer>
+                            <FileObj:Name>Microsoft Visual C++ v6.0</FileObj:Name>
+                        </FileObj:Packer>
+                    </FileObj:Packer_List>
+                    <FileObj:Peak_Entropy>6.13711245238</FileObj:Peak_Entropy>
+                    <WinExecutableFileObj:Headers>
+                        <WinExecutableFileObj:File_Header>
+                            <WinExecutableFileObj:Number_Of_Sections>5</WinExecutableFileObj:Number_Of_Sections>
+                            <WinExecutableFileObj:Time_Date_Stamp>2014-12-17T14:03:38Z</WinExecutableFileObj:Time_Date_Stamp>
+                            <WinExecutableFileObj:Size_Of_Optional_Header>4096</WinExecutableFileObj:Size_Of_Optional_Header>
+                            <WinExecutableFileObj:Hashes>
+                                <cyboxCommon:Hash>
+                                    <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                                    <cyboxCommon:Simple_Hash_Value>6a5356bedf23ccecac180cd887c15de8</cyboxCommon:Simple_Hash_Value>
+                                </cyboxCommon:Hash>
+                            </WinExecutableFileObj:Hashes>
+                        </WinExecutableFileObj:File_Header>
+                        <WinExecutableFileObj:Entropy>
+                            <WinExecutableFileObj:Value>0.792314879114</WinExecutableFileObj:Value>
+                        </WinExecutableFileObj:Entropy>
+                    </WinExecutableFileObj:Headers>
+                    <WinExecutableFileObj:Sections>
+                        <WinExecutableFileObj:Section>
+                            <WinExecutableFileObj:Section_Header>
+                                <WinExecutableFileObj:Name>.text</WinExecutableFileObj:Name>
+                                <WinExecutableFileObj:Size_Of_Raw_Data>77824</WinExecutableFileObj:Size_Of_Raw_Data>
+                            </WinExecutableFileObj:Section_Header>
+                            <WinExecutableFileObj:Entropy>
+                                <WinExecutableFileObj:Value>6.14523436219</WinExecutableFileObj:Value>
+                            </WinExecutableFileObj:Entropy>
+                            <WinExecutableFileObj:Header_Hashes>
+                                <cyboxCommon:Hash>
+                                    <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                                    <cyboxCommon:Simple_Hash_Value>72d9f7da3d7eb917a18954668399ce67</cyboxCommon:Simple_Hash_Value>
+                                </cyboxCommon:Hash>
+                            </WinExecutableFileObj:Header_Hashes>
+                        </WinExecutableFileObj:Section>
+                        <WinExecutableFileObj:Section>
+                            <WinExecutableFileObj:Section_Header>
+                                <WinExecutableFileObj:Name>.rdata</WinExecutableFileObj:Name>
+                                <WinExecutableFileObj:Size_Of_Raw_Data>8192</WinExecutableFileObj:Size_Of_Raw_Data>
+                            </WinExecutableFileObj:Section_Header>
+                            <WinExecutableFileObj:Entropy>
+                                <WinExecutableFileObj:Value>3.96837828979</WinExecutableFileObj:Value>
+                            </WinExecutableFileObj:Entropy>
+                            <WinExecutableFileObj:Header_Hashes>
+                                <cyboxCommon:Hash>
+                                    <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                                    <cyboxCommon:Simple_Hash_Value>af59deeeff5d5f41ecdd092b80536d25</cyboxCommon:Simple_Hash_Value>
+                                </cyboxCommon:Hash>
+                            </WinExecutableFileObj:Header_Hashes>
+                        </WinExecutableFileObj:Section>
+                        <WinExecutableFileObj:Section>
+                            <WinExecutableFileObj:Section_Header>
+                                <WinExecutableFileObj:Name>.data</WinExecutableFileObj:Name>
+                                <WinExecutableFileObj:Size_Of_Raw_Data>12288</WinExecutableFileObj:Size_Of_Raw_Data>
+                            </WinExecutableFileObj:Section_Header>
+                            <WinExecutableFileObj:Entropy>
+                                <WinExecutableFileObj:Value>4.24722552284</WinExecutableFileObj:Value>
+                            </WinExecutableFileObj:Entropy>
+                            <WinExecutableFileObj:Header_Hashes>
+                                <cyboxCommon:Hash>
+                                    <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                                    <cyboxCommon:Simple_Hash_Value>b994d715f522732213ea03cb2013a469</cyboxCommon:Simple_Hash_Value>
+                                </cyboxCommon:Hash>
+                            </WinExecutableFileObj:Header_Hashes>
+                        </WinExecutableFileObj:Section>
+                        <WinExecutableFileObj:Section>
+                            <WinExecutableFileObj:Section_Header>
+                                <WinExecutableFileObj:Name>.rsrc</WinExecutableFileObj:Name>
+                                <WinExecutableFileObj:Size_Of_Raw_Data>77824</WinExecutableFileObj:Size_Of_Raw_Data>
+                            </WinExecutableFileObj:Section_Header>
+                            <WinExecutableFileObj:Entropy>
+                                <WinExecutableFileObj:Value>6.31904971708</WinExecutableFileObj:Value>
+                            </WinExecutableFileObj:Entropy>
+                            <WinExecutableFileObj:Header_Hashes>
+                                <cyboxCommon:Hash>
+                                    <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                                    <cyboxCommon:Simple_Hash_Value>219125d84f95e9ec104a49383da7b991</cyboxCommon:Simple_Hash_Value>
+                                </cyboxCommon:Hash>
+                            </WinExecutableFileObj:Header_Hashes>
+                        </WinExecutableFileObj:Section>
+                    </WinExecutableFileObj:Sections>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:Address-6f08db2d-e43d-4baf-9507-61418159ba9f">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Connected_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                    <cybox:Related_Object idref="NCCIC:Artifact-7aa29fbe-ad36-4c01-a84d-e5f497effd1e">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Related_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                    <cybox:Related_Object idref="NCCIC:Address-c8552af6-9b7f-4de8-a9ad-9a2f515d318d">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Connected_From</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-b34a4f16-af0b-417b-a443-553dd08fce5f">
+            <cybox:Title>Screenshot 1: Program Connection Log</cybox:Title>
+            <cybox:Object id="NCCIC:Artifact-7aa29fbe-ad36-4c01-a84d-e5f497effd1e">
+                <cybox:Properties xsi:type="ArtifactObj:ArtifactObjectType" type="File">
+                    <ArtifactObj:Raw_Artifact><![CDATA[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iigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAMHwV/yJulf9e4/rW9WD4K/5E3Sv+vcf1reoAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAMHwV/yJulf9e4/rW9WD4K/wCRN0r/AK9x/Wt6gAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAwfBX/ACJulf8AXuP61vVg+Cv+RN0r/r3H9a3qACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/2Q==]]></ArtifactObj:Raw_Artifact>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:WinExecutableFile-c8559c47-9c57-4d21-b11d-712605523b2b">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Related_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-ce4e4fe7-9224-477e-90f0-45a0bacba2d3">
+            <cybox:Description><![CDATA[202.126.90.89 is the command-and-control IP that is decoded by 5D29DFE2EA9CA8DA3FF7A14FB20C5E86 using the XOR string 0x579C3A53.]]></cybox:Description>
+            <cybox:Object id="NCCIC:Address-6f08db2d-e43d-4baf-9507-61418159ba9f">
+                <cybox:Properties xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                    <AddressObj:Address_Value>202.126.90.89</AddressObj:Address_Value>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:Port-87770327-f681-4a76-8ee1-5ca7aa12aebf">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Related_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                    <cybox:Related_Object idref="NCCIC:WhoisEntry-f0cd00f9-5860-41c9-a02f-11e7be202eab">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Characterized_By</cybox:Relationship>
+                    </cybox:Related_Object>
+                    <cybox:Related_Object idref="NCCIC:WinExecutableFile-c8559c47-9c57-4d21-b11d-712605523b2b">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Connected_From</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-65004574-9789-4863-a662-daeec7641159">
+            <cybox:Object id="NCCIC:Address-c8552af6-9b7f-4de8-a9ad-9a2f515d318d">
+                <cybox:Properties xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                    <AddressObj:Address_Value>153.68.198.14</AddressObj:Address_Value>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:WhoisEntry-70e909a9-67b2-4caa-b847-71cfe255c5d8">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Characterized_By</cybox:Relationship>
+                    </cybox:Related_Object>
+                    <cybox:Related_Object idref="NCCIC:WinExecutableFile-c8559c47-9c57-4d21-b11d-712605523b2b">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Connected_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-6f2fa5d4-7df7-47cf-ac62-e21c0ae8645d">
+            <cybox:Description><![CDATA[This malicious file is a utility that allows an operator to push secondary payloads to the victim system. When executed from the command line with the -i argument, the program will install itself and launch a service named "DnsQuerySvc". During runtime, the program will bind and listen for data on TCP Port 443. An operator can connect to the compromised system and send command and control data to the victim system. The data passed is encoded using a simple XOR cipher to make it difficult to identify as C2 traffic. Of particular note, the malware does not connect to the C2 server, but instead requires the operator to connect. Therefore, no network traffic would be detected until the operator decides to connect to push new payloads or commands to the victim system.
+
+Analysis of this application reveals it provides operator decision based command and control capabilities over a victim system. It accepts blocks of data from an operator, decodes them, and then uses eight bytes of this decoded data to determine which activity to perform on compromised systems. These commands are displayed below:
+
+---Begin Commands---
+
+0x26B9A0BA	-	Starts a C2 session.
+0x1AB0918C	-	This command allows the operator to replace the configuration file mimefilter.xml. The command also replaces the file extensions of the files edbres00001.jrs, edbres00002.jrs, edbres00003.jrs and edbres00004.jrs with the following four respective file names -- .jrdb1, .jrbd2, .jrbd3 and .jrbd4. The purpose of replacing these files names and the purpose of the edbres * files are unknown as these files were not included within this submission.
+0x1AB0918F	-	This command allows an operator to replace the file mimefilter.xml that the malware expects to be installed as C:\Windows\System32\mimefilter.xml. This file is an RC4 configuration file that contains the working update directories the malware uses.
+0x1AB0918D	-	This command allows an operator to simultaneously exfiltrate four files at once from the victim system. The nature of these four files is not known. Importantly, exfiltrated data will also be protected via the same XOR cipher as data received by the implant.
+0x1AB09190	-	This command allows an operator to write a payload to the victim system's temp folder. The file name for this uploaded payload will start with "oem". The malware then reads this payload and processes it through an algorithm that appears to be a loader function. None of these payloads were included within this submission, but analysis indicates they will be Win32 DLLs.
+0x1AB09191	-	This command removes the extensions from any files that have an extension named .jrbt1, .jrbt2, .jrbt3, or .jrbt4. The command then uploads four files to the victim system that may have these extensions. This technique is likely used to ensure there are no file name conflicts between files uploaded to the victim system. It appears this command is designed to allow an operator to push out multiple payloads to their collection of compromised systems simultaneously.
+0x1AB0918E	-	This command allows an operator to write 4 files to the victim system simultaneously. This command is similar to the command 0x1AB09191 except that it does not remove the .jrbt extensions from existing files.
+0x1AB09192	-	This command allows the operator to upload a file to the victim system using the Win32 API WriteFile.
+0x1AB09193	-	This command provides the operator with information about the victim system. It gets this information using the Win32 APIs GetComputerNameW and GetVersionExA.
+
+---End Commands---
+
+The program is designed to mimic the Windows Update process, in that it uses the same folders in C:\Windows\System32\catroot2\ as its primary working folders:
+
+---Begin Catroot Folders---
+
+C:\WINDOWS\system32\catroot2\{A750E6C3-38EE-17D5-85E5- 10D03DA378DE}
+C:\WINDOWS\system32\catroot2\{12CD0A1D-4EA2-11D1-8608- 00C04FC295EF}
+
+---End Catroot Folders---
+
+Additional payloads are uploaded to these folders. The Windows OS also uses these folders to store updates.
+
+It appears the malware uses this location to mask its payloads as legitimate Windows updates. The C2 structure of the malware enables an operator to easily replace this RC4 encrypted file to dynamically adjust the working directory of their implant. A listing of the folders is found in the program's configuration file, mimefilter.xml. After loading the configuration file, the malware will attempt to search the folders for all files that begin with the name "oem". The malware attempts to read each of these files it finds, and processes their data through a function, which appears to be a loader method. None of these oem* files were included within this submission, however analysis indicates they may be Windows DLLs.
+
+The program can also modify settings to the firewall by invoking the netsh command. 
+
+---Begin Firewall Settings---
+
+cmd.exe /c netsh firewall add portopening protocol=tcp port=%d name="Windows Media Player Network Sharing"
+cmd.exe /c netsh advfirewall add rule name="Windows Media Player Network Sharing" dir=in action=allow Protocol=TCP localport=%d
+cmd.exe /c netsh firewall delete portopening protocol=tcp port=%d
+cmd.exe /c netsh advfirewall firewall delete rule name="Windows Media Player Network Sharing" Protocol=TCP localport=%d
+
+---End Firewall Settings---
+
+The following YARA rule can be used to detect the presence of this updater program:
+
+---Begin YARA Rule---
+
+rule Malware_Updater 
+{
+meta:
+  Author="US-CERT Code Analysis Team"
+  Date="2017/08/02"
+  Incident="10132963"
+  MD5_1="8F4FC2E10B6EC15A01E0AF24529040DD"
+  MD5_2="584AC94142F0B7C0DF3D0ADDE6E661ED"
+  Info="Malware may be used to update multiple systems with secondary payloads" 
+  super_rule=1
+strings:
+  $s0 = { 8A4C040480F15D80C171884C04044083F8107CEC }
+  $s1 = { 8A4D0080F19580E97C884D00454B75F0 }
+
+condition: any of them 
+
+}
+---End YARA Rule---]]></cybox:Description>
+            <cybox:Object id="NCCIC:WinExecutableFile-3ad46370-c3b3-4e82-b37d-d4dc757eed5a">
+                <cybox:Properties xsi:type="WinExecutableFileObj:WindowsExecutableFileObjectType">
+                    <FileObj:File_Name>8F4FC2E10B6EC15A01E0AF24529040DD</FileObj:File_Name>
+                    <FileObj:Size_In_Bytes>53248</FileObj:Size_In_Bytes>
+                    <FileObj:File_Format>PE32 executable (GUI) Intel 80386, for MS Windows</FileObj:File_Format>
+                    <FileObj:Hashes>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>8f4fc2e10b6ec15a01e0af24529040dd</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>b164ba5e5734c469839292ede4d5c04e76523bae</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA256</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>aff73144a359020abbb4bde3f80858d822b840dd7171ba7946b77ba9b3487831</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA512</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>56c150b551ee5f276665defc55183cffc9eb8a919fc9ecaf8fb65d0e8af08f61caf9849007b4d4a43c994e7b99b52ed2f0c863bb4f4424ce77baf59a731cb630</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SSDEEP</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>768:wH75DjuOD73BTzuqK6C1C+UjuoxxPDzREAY8aTk0kjo:W5pZCTUVjQpk0so</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                    </FileObj:Hashes>
+                    <FileObj:Packer_List>
+                        <FileObj:Packer>
+                            <FileObj:Name>Microsoft Visual C++ v6.0</FileObj:Name>
+                        </FileObj:Packer>
+                    </FileObj:Packer_List>
+                    <FileObj:Peak_Entropy>5.20908628282</FileObj:Peak_Entropy>
+                    <WinExecutableFileObj:Headers>
+                        <WinExecutableFileObj:File_Header>
+                            <WinExecutableFileObj:Number_Of_Sections>4</WinExecutableFileObj:Number_Of_Sections>
+                            <WinExecutableFileObj:Time_Date_Stamp>2015-08-25T09:09:28Z</WinExecutableFileObj:Time_Date_Stamp>
+                            <WinExecutableFileObj:Size_Of_Optional_Header>4096</WinExecutableFileObj:Size_Of_Optional_Header>
+                            <WinExecutableFileObj:Hashes>
+                                <cyboxCommon:Hash>
+                                    <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                                    <cyboxCommon:Simple_Hash_Value>a4fc300b72266ccce1977f93b1bca3b5</cyboxCommon:Simple_Hash_Value>
+                                </cyboxCommon:Hash>
+                            </WinExecutableFileObj:Hashes>
+                        </WinExecutableFileObj:File_Header>
+                        <WinExecutableFileObj:Entropy>
+                            <WinExecutableFileObj:Value>0.640698472599</WinExecutableFileObj:Value>
+                        </WinExecutableFileObj:Entropy>
+                    </WinExecutableFileObj:Headers>
+                    <WinExecutableFileObj:Sections>
+                        <WinExecutableFileObj:Section>
+                            <WinExecutableFileObj:Section_Header>
+                                <WinExecutableFileObj:Name>.text</WinExecutableFileObj:Name>
+                                <WinExecutableFileObj:Size_Of_Raw_Data>28672</WinExecutableFileObj:Size_Of_Raw_Data>
+                            </WinExecutableFileObj:Section_Header>
+                            <WinExecutableFileObj:Entropy>
+                                <WinExecutableFileObj:Value>6.07747984156</WinExecutableFileObj:Value>
+                            </WinExecutableFileObj:Entropy>
+                            <WinExecutableFileObj:Header_Hashes>
+                                <cyboxCommon:Hash>
+                                    <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                                    <cyboxCommon:Simple_Hash_Value>11eab7228491af5ac109f58055c8f94f</cyboxCommon:Simple_Hash_Value>
+                                </cyboxCommon:Hash>
+                            </WinExecutableFileObj:Header_Hashes>
+                        </WinExecutableFileObj:Section>
+                        <WinExecutableFileObj:Section>
+                            <WinExecutableFileObj:Section_Header>
+                                <WinExecutableFileObj:Name>.rdata</WinExecutableFileObj:Name>
+                                <WinExecutableFileObj:Size_Of_Raw_Data>12288</WinExecutableFileObj:Size_Of_Raw_Data>
+                            </WinExecutableFileObj:Section_Header>
+                            <WinExecutableFileObj:Entropy>
+                                <WinExecutableFileObj:Value>3.84897647617</WinExecutableFileObj:Value>
+                            </WinExecutableFileObj:Entropy>
+                            <WinExecutableFileObj:Header_Hashes>
+                                <cyboxCommon:Hash>
+                                    <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                                    <cyboxCommon:Simple_Hash_Value>6dd10b0e9a62a4943665e32d36c02b9f</cyboxCommon:Simple_Hash_Value>
+                                </cyboxCommon:Hash>
+                            </WinExecutableFileObj:Header_Hashes>
+                        </WinExecutableFileObj:Section>
+                        <WinExecutableFileObj:Section>
+                            <WinExecutableFileObj:Section_Header>
+                                <WinExecutableFileObj:Name>.data</WinExecutableFileObj:Name>
+                                <WinExecutableFileObj:Size_Of_Raw_Data>8192</WinExecutableFileObj:Size_Of_Raw_Data>
+                            </WinExecutableFileObj:Section_Header>
+                            <WinExecutableFileObj:Entropy>
+                                <WinExecutableFileObj:Value>3.74298941886</WinExecutableFileObj:Value>
+                            </WinExecutableFileObj:Entropy>
+                            <WinExecutableFileObj:Header_Hashes>
+                                <cyboxCommon:Hash>
+                                    <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                                    <cyboxCommon:Simple_Hash_Value>1bdda8ad01a81904160d4aaff5028678</cyboxCommon:Simple_Hash_Value>
+                                </cyboxCommon:Hash>
+                            </WinExecutableFileObj:Header_Hashes>
+                        </WinExecutableFileObj:Section>
+                    </WinExecutableFileObj:Sections>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:File-4aff1671-d5dd-4a96-85a2-af6bfa94335f">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Related_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-b6ec5742-c409-49a8-ad26-d59f5996b55a">
+            <cybox:Description><![CDATA[mimefilter.xml is an RC4 encrypted file that contains configuration data that is read by 8F4FC2E10B6EC15A01E0AF24529040DD. The data is decrypted using the RC4 cipher and the key "InitializeSecurityContextA". See Screenshot 2.]]></cybox:Description>
+            <cybox:Object id="NCCIC:File-4aff1671-d5dd-4a96-85a2-af6bfa94335f">
+                <cybox:Properties xsi:type="FileObj:FileObjectType">
+                    <FileObj:File_Name>mimefilter.xml_584AC94142F0B7C0DF3D0ADDE6E661ED</FileObj:File_Name>
+                    <FileObj:Size_In_Bytes>528</FileObj:Size_In_Bytes>
+                    <FileObj:File_Format>data</FileObj:File_Format>
+                    <FileObj:Hashes>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>584ac94142f0b7c0df3d0adde6e661ed</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>1f21185303b7992d6ef54b23e816d48911496b9d</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA256</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>bd1233850f192dc34afe0e7738f98673718c5a9f5bc7f4710c3aa7da6f970346</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA512</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>e026a92c53efc83814a3b3e32df5e6ce92b7a67bafcfe272cd74bd11ce147b075d9b7720ab77492257ba2b7592a3dfa265d2023e3f7d9e975ebc4571ee7ebd53</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SSDEEP</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>12:N80aKgpdlWhMwlpIh1XdPDFVxzsSCe2nI8xm062UdYoPP4jySeNTi:N80ngJKrILd1vEm062UdNPor</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                    </FileObj:Hashes>
+                    <FileObj:Peak_Entropy>7.59623010182</FileObj:Peak_Entropy>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:WinExecutableFile-3ad46370-c3b3-4e82-b37d-d4dc757eed5a">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Related_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                    <cybox:Related_Object idref="NCCIC:Artifact-3c2d2096-84aa-465f-87e6-3fb889e3230d">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Related_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-b3b2df31-7d0c-4b14-a3b9-6a0d671383a2">
+            <cybox:Title>Screenshot 2: Decrypted Config File</cybox:Title>
+            <cybox:Object id="NCCIC:Artifact-3c2d2096-84aa-465f-87e6-3fb889e3230d">
+                <cybox:Properties xsi:type="ArtifactObj:ArtifactObjectType" type="File">
+                    <ArtifactObj:Raw_Artifact><![CDATA[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]]></ArtifactObj:Raw_Artifact>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:File-4aff1671-d5dd-4a96-85a2-af6bfa94335f">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Related_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-fe986a45-e5b0-44c6-aa80-c25b80c4d288">
+            <cybox:Object id="NCCIC:Port-87770327-f681-4a76-8ee1-5ca7aa12aebf">
+                <cybox:Properties xsi:type="PortObj:PortObjectType">
+                    <PortObj:Port_Value>443</PortObj:Port_Value>
+                    <PortObj:Layer4_Protocol>TCP</PortObj:Layer4_Protocol>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:Address-6f08db2d-e43d-4baf-9507-61418159ba9f">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Related_To</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-eb1759c0-4b8e-423b-99fe-aa3ca3bb24bd">
+            <cybox:Object id="NCCIC:WhoisEntry-f0cd00f9-5860-41c9-a02f-11e7be202eab">
+                <cybox:Properties xsi:type="WhoisObj:WhoisObjectType">
+                    <WhoisObj:Remarks>inetnum:        202.126.90.0 - 202.126.90.255
+netname:        ULUSNET
+descr:          ULUSNET mobile WiMax subs pool#1
+country:        MN
+admin-c:        UNT1-AP
+tech-c:         UNT1-AP
+status:         ASSIGNED NON-PORTABLE
+mnt-by:         MAINT-MN-ULUSNET
+mnt-irt:        IRT-ULUSNET-MN
+changed:        tuvshinbayar@mobicom.mn 20170727
+source:         APNIC
+
+irt:            IRT-ULUSNET-MN
+address:        MPRP building, 313, Ulaanbaatar, Mongolia
+e-mail:         manlai@ulusnet.mn
+abuse-mailbox:  manlai@ulusnet.mn
+admin-c:        NT331-AP
+tech-c:         NT331-AP
+auth:           # Filtered
+mnt-by:         MAINT-MN-ULUSNET
+changed:        manlai@ulusnet.mn 20110329
+source:         APNIC
+
+role:           Ulusnet Network Team
+address:        Sambuu street - 47, Post office-38, Chingeltei district, Ulaanbaatar - 15171, Mongolia
+country:        MN
+phone:          +976-75759944
+e-mail:         peering@mobicom.mn
+admin-c:        NT331-AP
+tech-c:         NT331-AP
+nic-hdl:        UNT1-AP
+mnt-by:         MAINT-MN-ULUSNET
+changed:        tuvshinbayar@mobicom.mn 20170727
+source:         APNIC
+
+% Information related to '202.126.90.0/24AS38218'
+
+route:          202.126.90.0/24
+descr:          MN-MONGOLIA-ULUSNET
+origin:         AS38218
+mnt-by:         MAINT-MN-ULUSNET
+changed:        manlai@ulusnet.mn 20090418
+source:         APNIC</WhoisObj:Remarks>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:Address-6f08db2d-e43d-4baf-9507-61418159ba9f">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Characterizes</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-13f418fd-2347-46e3-ab42-6b8744ebd17a">
+            <cybox:Object id="NCCIC:File-541d42ad-da87-45f8-8f36-d3a9de0ab42a">
+                <cybox:Properties xsi:type="FileObj:FileObjectType">
+                    <FileObj:Hashes>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value condition="Equals">5d29dfe2ea9ca8da3ff7a14fb20c5e86</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                    </FileObj:Hashes>
+                </cybox:Properties>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-cb593293-0e27-4ad3-937d-105bcb802bf1">
+            <cybox:Object id="NCCIC:File-0623fb50-9e36-4893-ac48-dfd84cf21b25">
+                <cybox:Properties xsi:type="FileObj:FileObjectType">
+                    <FileObj:Hashes>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value condition="Equals">3fdf856b6fbcb23e7c3372a3f53ce26c0fe6de77</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                    </FileObj:Hashes>
+                </cybox:Properties>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-051258f3-74e0-4afc-82e0-4b4d3e2c4447">
+            <cybox:Object id="NCCIC:Address-3410ae1d-2241-4465-8332-b98b49b7bcf2">
+                <cybox:Properties xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                    <AddressObj:Address_Value condition="Equals">202.126.90.89</AddressObj:Address_Value>
+                </cybox:Properties>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-edd0b0b2-61ae-4987-b168-92fcce5bcf1b">
+            <cybox:Object id="NCCIC:File-61703848-b156-4bc8-bdb8-ca7590b07178">
+                <cybox:Properties xsi:type="FileObj:FileObjectType">
+                    <FileObj:Hashes>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value condition="Equals">8f4fc2e10b6ec15a01e0af24529040dd</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                    </FileObj:Hashes>
+                </cybox:Properties>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-b1785c26-c8e4-4a87-b51c-30bd8b90e9c7">
+            <cybox:Object id="NCCIC:File-ccdcf702-605a-469d-83b3-c7e35e7cc1a3">
+                <cybox:Properties xsi:type="FileObj:FileObjectType">
+                    <FileObj:Hashes>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value condition="Equals">b164ba5e5734c469839292ede4d5c04e76523bae</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                    </FileObj:Hashes>
+                </cybox:Properties>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-3dcc1e74-ae42-49be-bf22-3505538e8cec">
+            <cybox:Object id="NCCIC:File-85509138-8fad-49eb-a7ad-330041d1bcb3">
+                <cybox:Properties xsi:type="FileObj:FileObjectType">
+                    <FileObj:Hashes>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value condition="Equals">584ac94142f0b7c0df3d0adde6e661ed</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                    </FileObj:Hashes>
+                </cybox:Properties>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-8a149b19-2c61-4a4e-8ed1-1495bed7fc0f">
+            <cybox:Object id="NCCIC:File-3a33df6e-ea81-43bf-943b-0f0adcf2cb17">
+                <cybox:Properties xsi:type="FileObj:FileObjectType">
+                    <FileObj:Hashes>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value condition="Equals">1f21185303b7992d6ef54b23e816d48911496b9d</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                    </FileObj:Hashes>
+                </cybox:Properties>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-3719407b-7eb0-42be-861e-841247a06fb9">
+            <cybox:Object id="NCCIC:WhoisEntry-70e909a9-67b2-4caa-b847-71cfe255c5d8">
+                <cybox:Properties xsi:type="WhoisObj:WhoisObjectType">
+                    <WhoisObj:Remarks>Queried whois.arin.net with "n 153.68.198.14"...
+
+NetRange:       153.66.0.0 - 153.87.255.255
+CIDR:           153.80.0.0/13, 153.72.0.0/13, 153.68.0.0/14, 153.66.0.0/15
+NetName:        NCRWIN17
+NetHandle:      NET-153-66-0-0-1
+Parent:         APNIC-ERX-153 (NET-153-0-0-0-0)
+NetType:        Direct Allocation
+OriginAS:       
+Organization:   NCR Corporation (NCR)
+RegDate:        1991-09-23
+Updated:        2014-01-08
+Ref:            https://whois.arin.net/rest/net/NET-153-66-0-0-1
+
+
+OrgName:        NCR Corporation
+OrgId:          NCR
+Address:        GNCS - WHQ 
+Address:        3097 Satellite Blvd.
+City:           Duluth
+StateProv:      GA
+PostalCode:     30096
+Country:        US
+RegDate:        1989-03-29
+Updated:        2012-09-11
+Ref:            https://whois.arin.net/rest/org/NCR
+
+
+OrgTechHandle: CGH3-ARIN
+OrgTechName:   Haug, Chris Gordon
+OrgTechPhone:  +1-905-819-4168 
+OrgTechEmail:  ch134537@ncr.com
+OrgTechRef:    https://whois.arin.net/rest/poc/CGH3-ARIN
+
+OrgAbuseHandle: CGH3-ARIN
+OrgAbuseName:   Haug, Chris Gordon
+OrgAbusePhone:  +1-905-819-4168 
+OrgAbuseEmail:  ch134537@ncr.com
+OrgAbuseRef:    https://whois.arin.net/rest/poc/CGH3-ARIN
+
+OrgTechHandle: SPEAR14-ARIN
+OrgTechName:   spear, Bryan 
+OrgTechPhone:  +1-770-689-2237 
+OrgTechEmail:  BS185095@corp.ncr.com
+OrgTechRef:    https://whois.arin.net/rest/poc/SPEAR14-ARIN
+
+RTechHandle: CGH3-ARIN
+RTechName:   Haug, Chris Gordon
+RTechPhone:  +1-905-819-4168 
+RTechEmail:  ch134537@ncr.com
+RTechRef:    https://whois.arin.net/rest/poc/CGH3-ARIN</WhoisObj:Remarks>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object idref="NCCIC:Address-c8552af6-9b7f-4de8-a9ad-9a2f515d318d">
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Characterizes</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-b1438778-fe85-4b0b-9dde-d29cdb8dbbeb">
+            <cybox:Object id="NCCIC:Address-59c10e45-f746-44e4-a885-c6056eac6838">
+                <cybox:Properties xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                    <AddressObj:Address_Value condition="Equals">153.68.198.14</AddressObj:Address_Value>
+                </cybox:Properties>
+            </cybox:Object>
+        </cybox:Observable>
+    </stix:Observables>
+    <stix:Indicators>
+        <stix:Indicator id="NCCIC:indicator-be5f9a7e-5e0d-45aa-984e-97af6d5d6850" timestamp="2017-08-02T03:16:03.072563+00:00" xsi:type='indicator:IndicatorType'>
+            <indicator:Title>Suspicious File - MD5</indicator:Title>
+            <indicator:Type>Malware Artifacts</indicator:Type>
+            <indicator:Observable id="NCCIC:Observable-849abcc1-5e70-4a4b-822e-f74f77c04a19">
+                <cybox:Object idref="NCCIC:File-541d42ad-da87-45f8-8f36-d3a9de0ab42a"/>
+            </indicator:Observable>
+            <indicator:Producer>
+                <stixCommon:Identity>
+                    <stixCommon:Name>US-CERT</stixCommon:Name>
+                </stixCommon:Identity>
+                <stixCommon:Time>
+                    <cyboxCommon:Produced_Time>2017-08-02T03:16:03.073370+00:00</cyboxCommon:Produced_Time>
+                </stixCommon:Time>
+            </indicator:Producer>
+        </stix:Indicator>
+        <stix:Indicator id="NCCIC:indicator-0f351c77-4d8b-42bc-acd1-a5dd4805dbe4" timestamp="2017-08-02T03:16:03.073860+00:00" xsi:type='indicator:IndicatorType'>
+            <indicator:Title>Suspicious File - SHA1</indicator:Title>
+            <indicator:Type>Malware Artifacts</indicator:Type>
+            <indicator:Observable id="NCCIC:Observable-1ea192ac-0de5-4401-ba69-c5e1c327db35">
+                <cybox:Object idref="NCCIC:File-0623fb50-9e36-4893-ac48-dfd84cf21b25"/>
+            </indicator:Observable>
+            <indicator:Producer>
+                <stixCommon:Identity>
+                    <stixCommon:Name>US-CERT</stixCommon:Name>
+                </stixCommon:Identity>
+                <stixCommon:Time>
+                    <cyboxCommon:Produced_Time>2017-08-02T03:16:03.074343+00:00</cyboxCommon:Produced_Time>
+                </stixCommon:Time>
+            </indicator:Producer>
+        </stix:Indicator>
+        <stix:Indicator id="NCCIC:indicator-d44a34a3-ef3a-4a9d-a044-81a9934f877c" timestamp="2017-08-02T03:16:15.904567+00:00" xsi:type='indicator:IndicatorType'>
+            <indicator:Title>Suspicious IP</indicator:Title>
+            <indicator:Type>IP Watchlist</indicator:Type>
+            <indicator:Observable id="NCCIC:Observable-c29124d3-bd3e-4c30-b815-097ece2dbb03">
+                <cybox:Object idref="NCCIC:Address-3410ae1d-2241-4465-8332-b98b49b7bcf2"/>
+            </indicator:Observable>
+            <indicator:Producer>
+                <stixCommon:Identity>
+                    <stixCommon:Name>US-CERT</stixCommon:Name>
+                </stixCommon:Identity>
+                <stixCommon:Time>
+                    <cyboxCommon:Produced_Time>2017-08-02T03:16:15.905216+00:00</cyboxCommon:Produced_Time>
+                </stixCommon:Time>
+            </indicator:Producer>
+        </stix:Indicator>
+        <stix:Indicator id="NCCIC:indicator-20324ec6-88c9-4dbc-80fe-f6f90bffa019" timestamp="2017-08-02T03:16:28.856530+00:00" xsi:type='indicator:IndicatorType'>
+            <indicator:Title>Suspicious File - MD5</indicator:Title>
+            <indicator:Type>Malware Artifacts</indicator:Type>
+            <indicator:Observable id="NCCIC:Observable-c3dd4223-f605-4bf0-8409-06c2cc71fae4">
+                <cybox:Object idref="NCCIC:File-61703848-b156-4bc8-bdb8-ca7590b07178"/>
+            </indicator:Observable>
+            <indicator:Producer>
+                <stixCommon:Identity>
+                    <stixCommon:Name>US-CERT</stixCommon:Name>
+                </stixCommon:Identity>
+                <stixCommon:Time>
+                    <cyboxCommon:Produced_Time>2017-08-02T03:16:28.857250+00:00</cyboxCommon:Produced_Time>
+                </stixCommon:Time>
+            </indicator:Producer>
+        </stix:Indicator>
+        <stix:Indicator id="NCCIC:indicator-b6fb4c95-6e5e-4b77-b0e9-8963097568ec" timestamp="2017-08-02T03:16:28.857580+00:00" xsi:type='indicator:IndicatorType'>
+            <indicator:Title>Suspicious File - SHA1</indicator:Title>
+            <indicator:Type>Malware Artifacts</indicator:Type>
+            <indicator:Observable id="NCCIC:Observable-0eac94c3-572b-4e68-99ae-f5be3dffdc2b">
+                <cybox:Object idref="NCCIC:File-ccdcf702-605a-469d-83b3-c7e35e7cc1a3"/>
+            </indicator:Observable>
+            <indicator:Producer>
+                <stixCommon:Identity>
+                    <stixCommon:Name>US-CERT</stixCommon:Name>
+                </stixCommon:Identity>
+                <stixCommon:Time>
+                    <cyboxCommon:Produced_Time>2017-08-02T03:16:28.858208+00:00</cyboxCommon:Produced_Time>
+                </stixCommon:Time>
+            </indicator:Producer>
+        </stix:Indicator>
+        <stix:Indicator id="NCCIC:indicator-bf2531a0-85c0-47c9-be95-ab7fe53d8df8" timestamp="2017-08-02T03:16:40.680559+00:00" xsi:type='indicator:IndicatorType'>
+            <indicator:Title>Suspicious File - MD5</indicator:Title>
+            <indicator:Type>Malware Artifacts</indicator:Type>
+            <indicator:Observable id="NCCIC:Observable-17c9399f-8f54-4056-a0bf-669dc9288e38">
+                <cybox:Object idref="NCCIC:File-85509138-8fad-49eb-a7ad-330041d1bcb3"/>
+            </indicator:Observable>
+            <indicator:Producer>
+                <stixCommon:Identity>
+                    <stixCommon:Name>US-CERT</stixCommon:Name>
+                </stixCommon:Identity>
+                <stixCommon:Time>
+                    <cyboxCommon:Produced_Time>2017-08-02T03:16:40.681322+00:00</cyboxCommon:Produced_Time>
+                </stixCommon:Time>
+            </indicator:Producer>
+        </stix:Indicator>
+        <stix:Indicator id="NCCIC:indicator-171a2b97-9530-4a1c-b926-dffb541294a4" timestamp="2017-08-02T03:16:40.681663+00:00" xsi:type='indicator:IndicatorType'>
+            <indicator:Title>Suspicious File - SHA1</indicator:Title>
+            <indicator:Type>Malware Artifacts</indicator:Type>
+            <indicator:Observable id="NCCIC:Observable-a2c9343d-91c3-4a1b-8bee-e48775ac6613">
+                <cybox:Object idref="NCCIC:File-3a33df6e-ea81-43bf-943b-0f0adcf2cb17"/>
+            </indicator:Observable>
+            <indicator:Producer>
+                <stixCommon:Identity>
+                    <stixCommon:Name>US-CERT</stixCommon:Name>
+                </stixCommon:Identity>
+                <stixCommon:Time>
+                    <cyboxCommon:Produced_Time>2017-08-02T03:16:40.682321+00:00</cyboxCommon:Produced_Time>
+                </stixCommon:Time>
+            </indicator:Producer>
+        </stix:Indicator>
+        <stix:Indicator id="NCCIC:indicator-14e0eddf-5453-4db4-a541-89ad1b71a9ad" timestamp="2017-08-03T15:45:11.481873+00:00" xsi:type='indicator:IndicatorType'>
+            <indicator:Title>Suspicious IP</indicator:Title>
+            <indicator:Type>IP Watchlist</indicator:Type>
+            <indicator:Observable id="NCCIC:Observable-afa23118-ce87-47d2-82fd-7cdd88fe9925">
+                <cybox:Object idref="NCCIC:Address-59c10e45-f746-44e4-a885-c6056eac6838"/>
+            </indicator:Observable>
+            <indicator:Producer>
+                <stixCommon:Identity>
+                    <stixCommon:Name>US-CERT</stixCommon:Name>
+                </stixCommon:Identity>
+                <stixCommon:Time>
+                    <cyboxCommon:Produced_Time>2017-08-03T15:45:11.482921+00:00</cyboxCommon:Produced_Time>
+                </stixCommon:Time>
+            </indicator:Producer>
+        </stix:Indicator>
+    </stix:Indicators>
+    <stix:TTPs>
+        <stix:TTP id="NCCIC:ttp-8c66279a-2ef6-425c-b6ac-55026133b92e" timestamp="2017-07-18T14:24:59.640063+00:00" xsi:type='ttp:TTPType'>
+            <ttp:Title>MAEC Characterization of 5d29dfe2ea9ca8da3ff7a14fb20c5e86</ttp:Title>
+            <ttp:Behavior>
+                <ttp:Malware>
+                    <ttp:Malware_Instance xsi:type='stix-maec:MAEC4.1InstanceType'>
+                        <stix-maec:MAEC id="NCCIC:package-64c48d0b-948f-4a14-aa2f-0e3a24ba9a38" schema_version="2.1">
+                            <maecPackage:Malware_Subjects>
+                                <maecPackage:Malware_Subject id="NCCIC:malware_subject-8f17c41f-ecc7-4dd9-be1e-1c6a417a3cf4">
+                                    <maecPackage:Malware_Instance_Object_Attributes idref="NCCIC:WinExecutableFile-c8559c47-9c57-4d21-b11d-712605523b2b"/>
+                                    <maecPackage:Findings_Bundles>
+                                        <maecPackage:Bundle defined_subject="true" id="NCCIC:bundle-4fff457e-ef81-4d76-bcfb-c814ea91adf9" schema_version="4.1">
+                                            <maecBundle:AV_Classifications>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>ClamAV</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Win.Trojan.Agent-1388767</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Kaspersky</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>HackTool.Win32.Agent.aesh</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Microsoft Security Essentials</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Backdoor:Win32/Winsec.B!dha</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>TrendMicro House Call</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>BKDR_SCADPRV.B</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>TrendMicro</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>BKDR_SCADPRV.B</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                            </maecBundle:AV_Classifications>
+                                        </maecPackage:Bundle>
+                                    </maecPackage:Findings_Bundles>
+                                </maecPackage:Malware_Subject>
+                            </maecPackage:Malware_Subjects>
+                        </stix-maec:MAEC>
+                    </ttp:Malware_Instance>
+                </ttp:Malware>
+            </ttp:Behavior>
+        </stix:TTP>
+        <stix:TTP id="NCCIC:ttp-730fca62-0002-4975-a18d-37a20ead1a1c" timestamp="2017-07-18T14:28:30.526415+00:00" xsi:type='ttp:TTPType'>
+            <ttp:Title>MAEC Characterization of 8f4fc2e10b6ec15a01e0af24529040dd</ttp:Title>
+            <ttp:Behavior>
+                <ttp:Malware>
+                    <ttp:Malware_Instance xsi:type='stix-maec:MAEC4.1InstanceType'>
+                        <stix-maec:MAEC id="NCCIC:package-296603e9-98d9-4a29-99ab-39546b77f494" schema_version="2.1">
+                            <maecPackage:Malware_Subjects>
+                                <maecPackage:Malware_Subject id="NCCIC:malware_subject-0fa514e4-6cbf-4943-83db-f2f35e5fd209">
+                                    <maecPackage:Malware_Instance_Object_Attributes idref="NCCIC:WinExecutableFile-3ad46370-c3b3-4e82-b37d-d4dc757eed5a"/>
+                                    <maecPackage:Findings_Bundles>
+                                        <maecPackage:Bundle defined_subject="true" id="NCCIC:bundle-b9a50a46-aa4e-4858-9284-c4356593d7ab" schema_version="4.1">
+                                            <maecBundle:AV_Classifications>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>nProtect</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Backdoor/W32.Agent.53248.LS</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>McAfee</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>RDN/Generic BackDoor</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>NetGate</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Trojan.Win32.Malware</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>K7</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Riskware ( 0040eff71 )</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Systweak</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>trojan.deltacharlie	</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>F-secure</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Trojan.GenericKD.5400227</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Kaspersky</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Backdoor.Win32.Agent.guhi</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>BitDefender</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Trojan.GenericKD.5400227</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Microsoft Security Essentials</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Trojan:Win32/Dynamer!rfn</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Sophos</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Troj/DeltaC-A</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>TrendMicro House Call</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>BKDR_ESCAD.SMHA</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>TrendMicro</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>BKDR_ESCAD.SMHA</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Emsisoft</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Trojan.GenericKD.5400227 (B)</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Avira</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>TR/Fuery.kevww</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Ahnlab</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Backdoor/Win32.Escad</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>ESET</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>a variant of Generik.DXNZOSG trojan</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>NANOAV</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Trojan.Win32.Agent.eqhpcw</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Vir.IT eXplorer</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Trojan.Win32.Genus.BWG</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Quick Heal</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name> DDoS.HidenCobra.S1166387</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Ikarus</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Trojan.SuspectCRC</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>AVG</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>SCGeneric2.BDVR</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                            </maecBundle:AV_Classifications>
+                                        </maecPackage:Bundle>
+                                    </maecPackage:Findings_Bundles>
+                                </maecPackage:Malware_Subject>
+                            </maecPackage:Malware_Subjects>
+                        </stix-maec:MAEC>
+                    </ttp:Malware_Instance>
+                </ttp:Malware>
+            </ttp:Behavior>
+        </stix:TTP>
+        <stix:TTP id="NCCIC:ttp-70776331-e65b-4816-9461-e7c8c5943989" timestamp="2017-07-18T14:32:00.446158+00:00" xsi:type='ttp:TTPType'>
+            <ttp:Title>MAEC Characterization of 584ac94142f0b7c0df3d0adde6e661ed</ttp:Title>
+            <ttp:Behavior>
+                <ttp:Malware>
+                    <ttp:Malware_Instance xsi:type='stix-maec:MAEC4.1InstanceType'>
+                        <stix-maec:MAEC id="NCCIC:package-9f48a216-7503-4260-89a9-cb0ede2b77bf" schema_version="2.1">
+                            <maecPackage:Malware_Subjects>
+                                <maecPackage:Malware_Subject id="NCCIC:malware_subject-27cdf55a-b23e-4cc4-a8be-d7422ba51c39">
+                                    <maecPackage:Malware_Instance_Object_Attributes idref="NCCIC:File-4aff1671-d5dd-4a96-85a2-af6bfa94335f"/>
+                                    <maecPackage:Findings_Bundles>
+                                        <maecPackage:Bundle defined_subject="true" id="NCCIC:bundle-1acf8a9a-03f7-4081-a65a-968eea074609" schema_version="4.1"/>
+                                    </maecPackage:Findings_Bundles>
+                                </maecPackage:Malware_Subject>
+                            </maecPackage:Malware_Subjects>
+                        </stix-maec:MAEC>
+                    </ttp:Malware_Instance>
+                </ttp:Malware>
+            </ttp:Behavior>
+        </stix:TTP>
+    </stix:TTPs>
+    <stix:Incidents>
+        <stix:Incident id="NCCIC:incident-711d4026-61c9-4a5d-aa9c-0b084092563f" timestamp="2017-07-18T14:21:17.147927+00:00" xsi:type='incident:IncidentType'>
+            <incident:Title>10132963</incident:Title>
+            <incident:Description><![CDATA[US-CERT received three files associated with the DeltaCharlie attack malware. The files are designed to conduct three types of attacks, NTP_Attack, DNS_Attack, and CGN_Attack. The files also establish backdoor command-and-control capability on the victim system.]]></incident:Description>
+            <incident:Categories>
+                <incident:Category xsi:type="stixVocabs:IncidentCategoryVocab-1.0">Malicious Code</incident:Category>
+            </incident:Categories>
+            <incident:Related_Indicators scope="exclusive">
+                <incident:Related_Indicator>
+                    <stixCommon:Indicator idref="NCCIC:indicator-be5f9a7e-5e0d-45aa-984e-97af6d5d6850" xsi:type='indicator:IndicatorType'/>
+                </incident:Related_Indicator>
+                <incident:Related_Indicator>
+                    <stixCommon:Indicator idref="NCCIC:indicator-0f351c77-4d8b-42bc-acd1-a5dd4805dbe4" xsi:type='indicator:IndicatorType'/>
+                </incident:Related_Indicator>
+                <incident:Related_Indicator>
+                    <stixCommon:Indicator idref="NCCIC:indicator-d44a34a3-ef3a-4a9d-a044-81a9934f877c" xsi:type='indicator:IndicatorType'/>
+                </incident:Related_Indicator>
+                <incident:Related_Indicator>
+                    <stixCommon:Indicator idref="NCCIC:indicator-20324ec6-88c9-4dbc-80fe-f6f90bffa019" xsi:type='indicator:IndicatorType'/>
+                </incident:Related_Indicator>
+                <incident:Related_Indicator>
+                    <stixCommon:Indicator idref="NCCIC:indicator-b6fb4c95-6e5e-4b77-b0e9-8963097568ec" xsi:type='indicator:IndicatorType'/>
+                </incident:Related_Indicator>
+                <incident:Related_Indicator>
+                    <stixCommon:Indicator idref="NCCIC:indicator-bf2531a0-85c0-47c9-be95-ab7fe53d8df8" xsi:type='indicator:IndicatorType'/>
+                </incident:Related_Indicator>
+                <incident:Related_Indicator>
+                    <stixCommon:Indicator idref="NCCIC:indicator-171a2b97-9530-4a1c-b926-dffb541294a4" xsi:type='indicator:IndicatorType'/>
+                </incident:Related_Indicator>
+                <incident:Related_Indicator>
+                    <stixCommon:Indicator idref="NCCIC:indicator-14e0eddf-5453-4db4-a541-89ad1b71a9ad" xsi:type='indicator:IndicatorType'/>
+                </incident:Related_Indicator>
+            </incident:Related_Indicators>
+            <incident:Related_Observables scope="exclusive">
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-0e8214df-8b0e-436e-aa3e-e404e15afd55">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-6f2fa5d4-7df7-47cf-ac62-e21c0ae8645d">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-b6ec5742-c409-49a8-ad26-d59f5996b55a">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-ce4e4fe7-9224-477e-90f0-45a0bacba2d3">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-fe986a45-e5b0-44c6-aa80-c25b80c4d288">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-eb1759c0-4b8e-423b-99fe-aa3ca3bb24bd">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-13f418fd-2347-46e3-ab42-6b8744ebd17a">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-cb593293-0e27-4ad3-937d-105bcb802bf1">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-051258f3-74e0-4afc-82e0-4b4d3e2c4447">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-edd0b0b2-61ae-4987-b168-92fcce5bcf1b">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-b1785c26-c8e4-4a87-b51c-30bd8b90e9c7">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-3dcc1e74-ae42-49be-bf22-3505538e8cec">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-8a149b19-2c61-4a4e-8ed1-1495bed7fc0f">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-b3b2df31-7d0c-4b14-a3b9-6a0d671383a2">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-b34a4f16-af0b-417b-a443-553dd08fce5f">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-65004574-9789-4863-a662-daeec7641159">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-3719407b-7eb0-42be-861e-841247a06fb9">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-b1438778-fe85-4b0b-9dde-d29cdb8dbbeb">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+            </incident:Related_Observables>
+            <incident:Leveraged_TTPs scope="exclusive">
+                <incident:Leveraged_TTP>
+                    <stixCommon:TTP idref="NCCIC:ttp-8c66279a-2ef6-425c-b6ac-55026133b92e" xsi:type='ttp:TTPType'/>
+                </incident:Leveraged_TTP>
+                <incident:Leveraged_TTP>
+                    <stixCommon:TTP idref="NCCIC:ttp-730fca62-0002-4975-a18d-37a20ead1a1c" xsi:type='ttp:TTPType'/>
+                </incident:Leveraged_TTP>
+                <incident:Leveraged_TTP>
+                    <stixCommon:TTP idref="NCCIC:ttp-70776331-e65b-4816-9461-e7c8c5943989" xsi:type='ttp:TTPType'/>
+                </incident:Leveraged_TTP>
+            </incident:Leveraged_TTPs>
+        </stix:Incident>
+    </stix:Incidents>
+</stix:STIX_Package>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<stix:STIX_Package 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:stix="http://stix.mitre.org/stix-1" 
+xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1" 
+xmlns:marking="http://data-marking.mitre.org/Marking-1" 
+xmlns:AIS="http://www.us-cert.gov/STIXMarkingStructure#AISConsentMarking-2" 
+xmlns:stixCommon="http://stix.mitre.org/common-1" 
+xmlns:stix-ciq="http://stix.mitre.org/extensions/Identity#CIQIdentity3.0-1" 
+xmlns:xpil="urn:oasis:names:tc:ciq:xpil:3" 
+xmlns:xal="urn:oasis:names:tc:ciq:xal:3" 
+xmlns:cyboxCommon="http://cybox.mitre.org/common-2" 
+xmlns:coa="http://stix.mitre.org/CourseOfAction-1" 
+xsi:schemaLocation="
+http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd 
+http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd 
+http://data-marking.mitre.org/Marking-1 http://stix.mitre.org/XMLSchema/data_marking/1.1.1/data_marking.xsd 
+http://www.us-cert.gov/STIXMarkingStructure#AISConsentMarking-2 http://www.us-cert.gov/sites/default/files/STIX_Namespace/AIS_Bundle_Marking_1.1.1_v1.0.xsd 
+http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd 
+http://stix.mitre.org/extensions/Identity#CIQIdentity3.0-1 http://stix.mitre.org/XMLSchema/extensions/identity/ciq_3.0/1.1.1/ciq_3.0_identity.xsd 
+urn:oasis:names:tc:ciq:xpil:3 http://stix.mitre.org/XMLSchema/external/oasis_ciq_3.0/xPIL.xsd 
+http://cybox.mitre.org/common-2 http://cybox.mitre.org/XMLSchema/common/2.1/cybox_common.xsd 
+http://stix.mitre.org/CourseOfAction-1 http://stix.mitre.org/XMLSchema/course_of_action/1.1.1/course_of_action.xsd 
+" 
+version="1.1.1" 
+xmlns:NCCIC="https://www.us-cert.gov/" id="NCCIC:Package-eb693c4b-584d-4142-b0d2-ca228428364c" timestamp="2019-06-11T17:28:58.660Z">
+  <!-- SOURCE: NONFED -->
+  <stix:STIX_Header>
+    <stix:Title>ICS-ALERT-19-162-01 DICOM Standard in Medical Devices</stix:Title>
+    <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Threat Report</stix:Package_Intent>
+    <stix:Description>1	EXECUTIVE SUMMARY
+NCCIC is aware of a public report of a vulnerability in the DICOM (Digital Imaging and Communications in Medicine) standard with proof-of-concept (PoC) exploit code. The DICOM standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information. According to this report, the vulnerability is exploitable by embedding executable code into the 128 byte preamble. This report was released without coordination with NCCIC or any known vendor.
+NCCIC has notified some of the affected vendors who may utilize the DICOM Standard (primarily in the healthcare industry) about the report to confirm the vulnerability and to identify mitigations. NCCIC is issuing this alert to provide notice of the report and identify baseline mitigations for reducing risks of these and other cybersecurity attacks.
+The report included vulnerability details and PoC exploit code for the following vulnerability:
+Vulnerability Type	Exploitable
+Remotely	Impact
+Input Validation	No—Requires Local Access	Possible Embedded Malware in Portable Medical Imagery
+Please report any issues affecting medical systems in critical infrastructure environments to NCCIC.
+DICOM is widely used throughout the Healthcare and Public Health Sector for portability in medical imaging; it uses the .dcm file extension.
+Successful exploitation of this vulnerability could allow an attacker to embed executable code into image files used by medical imaging devices. The severity of any attack varies depending on the type and intent of the executable code embedded within the preamble. It is important to note this code can be embedded in a way that allows the code to be a functioning Windows executable while not interfering with the readability and functionality of the DICOM imagery.
+The vulnerability was discovered by Markel Picado Ortiz of Cylera Labs and has been issued CVE-2019-11687.</stix:Description>
+    <stix:Handling>
+      <marking:Marking>
+        <marking:Controlled_Structure>//node()</marking:Controlled_Structure>
+        <marking:Marking_Structure xsi:type="AIS:AISMarkingStructure">
+          <AIS:Not_Proprietary CISA_Proprietary="false">
+            <AIS:AISConsent consent="EVERYONE" />
+            <AIS:TLPMarking color="WHITE" />
+          </AIS:Not_Proprietary>
+        </marking:Marking_Structure>
+        <marking:Information_Source>
+          <stixCommon:Identity xsi:type="stix-ciq:CIQIdentity3.0InstanceType">
+            <stix-ciq:Specification>
+              <xpil:PartyName />
+              <xpil:Addresses>
+                <xpil:Address>
+                  <xal:Country>
+                    <xal:NameElement xal:NameCode="US" xal:NameCodeType="ISO 3166-1 alpha-2" />
+                  </xal:Country>
+                  <xal:AdministrativeArea>
+                    <xal:NameElement xal:NameCode="US-DC" xal:NameCodeType="ISO 3166-2" />
+                  </xal:AdministrativeArea>
+                </xpil:Address>
+              </xpil:Addresses>
+              <xpil:OrganisationInfo xpil:IndustryType="Government Facilities Sector" />
+            </stix-ciq:Specification>
+          </stixCommon:Identity>
+          <stixCommon:Tools>
+            <cyboxCommon:Tool>
+              <cyboxCommon:Metadata>
+                <cyboxCommon:Value>ICS-CERT</cyboxCommon:Value>
+              </cyboxCommon:Metadata>
+            </cyboxCommon:Tool>
+          </stixCommon:Tools>
+        </marking:Information_Source>
+      </marking:Marking>
+    </stix:Handling>
+    <stix:Information_Source>
+      <stixCommon:Time>
+        <cyboxCommon:Produced_Time>2019-06-11T06:00:00.000Z</cyboxCommon:Produced_Time>
+      </stixCommon:Time>
+    </stix:Information_Source>
+  </stix:STIX_Header>
+  <stix:TTPs>
+    <stix:Kill_Chains>
+      <stixCommon:Kill_Chain definer="LMCO" id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" name="LM Cyber Kill Chain" number_of_phases="7" reference="http://www.lockheedmartin.com/content/dam/lockheed/data/corporate/documents/LM-White-Paper-Intel-Driven-Defense.pdf">
+        <stixCommon:Kill_Chain_Phase name="Reconnaissance" ordinality="1" phase_id="stix:KillChainPhase-af1016d6-a744-4ed7-ac91-00fe2272185a" />
+        <stixCommon:Kill_Chain_Phase name="Weaponization" ordinality="2" phase_id="stix:KillChainPhase-445b4827-3cca-42bd-8421-f2e947133c16" />
+        <stixCommon:Kill_Chain_Phase name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d" />
+        <stixCommon:Kill_Chain_Phase name="Exploitation" ordinality="4" phase_id="stix:KillChainPhase-f706e4e7-53d8-44ef-967f-81535c9db7d0" />
+        <stixCommon:Kill_Chain_Phase name="Installation" ordinality="5" phase_id="stix:KillChainPhase-e1e4e3f7-be3b-4b39-b80a-a593cfd99a4f" />
+        <stixCommon:Kill_Chain_Phase name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2" />
+        <stixCommon:Kill_Chain_Phase name="Actions on Objectives" ordinality="7" phase_id="stix:KillChainPhase-786ca8f9-2d9a-4213-b38e-399af4a2e5d6" />
+      </stixCommon:Kill_Chain>
+    </stix:Kill_Chains>
+  </stix:TTPs>
+  <stix:Courses_Of_Action>
+    <stix:Course_Of_Action xsi:type="coa:CourseOfActionType" id="NCCIC:Course_Of_Action-90124f52-bd81-4cc5-a257-eb3f8f0d468d" timestamp="2019-06-11T17:33:37.889Z">
+      <coa:Title>2	MITIGATIONS</coa:Title>
+      <coa:Description>NCCIC is currently coordinating with multiple stakeholders to identify any potential mitigations.
+The DICOM Security Group has provided a statement for user strategies on how to mitigate the risk titled:
+DICOM STATEMENT ON REPORTED MALWARE VULNERABILITY
+DICOM SECURITY GROUP PROVIDES USER STRATEGIES TO MITIGATE RISK
+This statement is found at the following location:
+https://www.dicomstandard.org/dicom-in-the-news/
+
+NCCIC recommends that users affected by the vulnerability in the DICOM Standard implement an AV (Antivirus) solution on all medical imaging systems. NCCIC recommends that affected users reach out to their specific AV vendor to determine if their solution properly scans for the affected file type. In the situation where an AV solution cannot be installed, affected users should take steps to make sure that they have processes and procedures in place to scan portable/removable media for suspicious files before introducing the media into their medical networks.
+NCCIC reminds organizations to perform proper impact analysis and risk assessment prior to deploying defensive measures.
+NCCIC also provides a section for control systems security recommended practices on the ICS-CERT website. Several recommended practices are available for reading and download, including Improving Industrial Control Systems Cybersecurity with Defense-in-Depth Strategies.
+Additional mitigation guidance and recommended practices are publicly available on the ICS-CERT website in the Technical Information Paper, ICS-TIP-12-146-01B--Targeted Cyber Intrusion Detection and Mitigation Strategies.</coa:Description>
+    </stix:Course_Of_Action>
+  </stix:Courses_Of_Action>
+</stix:STIX_Package>

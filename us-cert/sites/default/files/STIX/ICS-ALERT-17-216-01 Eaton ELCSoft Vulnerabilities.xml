@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<stix:STIX_Package 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:stix="http://stix.mitre.org/stix-1" 
+xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1" 
+xmlns:marking="http://data-marking.mitre.org/Marking-1" 
+xmlns:AIS="http://www.us-cert.gov/STIXMarkingStructure#AISConsentMarking-2" 
+xmlns:stixCommon="http://stix.mitre.org/common-1" 
+xmlns:stix-ciq="http://stix.mitre.org/extensions/Identity#CIQIdentity3.0-1" 
+xmlns:xpil="urn:oasis:names:tc:ciq:xpil:3" 
+xmlns:xal="urn:oasis:names:tc:ciq:xal:3" 
+xmlns:cyboxCommon="http://cybox.mitre.org/common-2" 
+xmlns:coa="http://stix.mitre.org/CourseOfAction-1" 
+xsi:schemaLocation="
+http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd 
+http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd 
+http://data-marking.mitre.org/Marking-1 http://stix.mitre.org/XMLSchema/data_marking/1.1.1/data_marking.xsd 
+http://www.us-cert.gov/STIXMarkingStructure#AISConsentMarking-2 http://www.us-cert.gov/sites/default/files/STIX_Namespace/AIS_Bundle_Marking_1.1.1_v1.0.xsd 
+http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd 
+http://stix.mitre.org/extensions/Identity#CIQIdentity3.0-1 http://stix.mitre.org/XMLSchema/extensions/identity/ciq_3.0/1.1.1/ciq_3.0_identity.xsd 
+urn:oasis:names:tc:ciq:xpil:3 http://stix.mitre.org/XMLSchema/external/oasis_ciq_3.0/xPIL.xsd 
+http://cybox.mitre.org/common-2 http://cybox.mitre.org/XMLSchema/common/2.1/cybox_common.xsd 
+http://stix.mitre.org/CourseOfAction-1 http://stix.mitre.org/XMLSchema/course_of_action/1.1.1/course_of_action.xsd 
+" 
+version="1.1.1" 
+xmlns:NCCIC="https://www.us-cert.gov/" id="NCCIC:Package-7c26712c-67c2-49d7-a2c0-e9d7c7425218" timestamp="2017-08-04T19:39:57.836Z">
+  <!-- SOURCE: NONFED -->
+  <stix:STIX_Header>
+    <stix:Title>ICS-ALERT-17-216-01 EATON ELCSOFT VULNERABILITIES</stix:Title>
+    <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Threat Report</stix:Package_Intent>
+    <stix:Description>NCCIC/ICS-CERT is aware of a public report of buffer overflow vulnerabilities affecting Eaton ELCSoft, a PLC programming software for Eaton Logic Control (ELC) controllers. According to the public report, which was coordinated with ICS-CERT prior to its public release, researcher Ariele Caltabiano (kimiya) working with Trend Micro&apos;s Zero Day Initiative, identified that an attacker can leverage these vulnerabilities to execute arbitrary code in the context of the process. ICS-CERT has notified the affected vendor, who has reported that they are planning to address the vulnerabilities. No timeline has been provided. ICS-CERT is issuing this alert to provide notice of the report and to identify baseline mitigations for reducing risks to these and other cybersecurity attacks.
+The report included the following vulnerability details:
+Vulnerability Type	Remotely Exploitable	Impact
+Stack-based Buffer Overflow	Yes	 Possible Remote Code Execution
+Heap-based Buffer
+Overflow	Yes 	Possible Remote Code Execution
+The affected product, ELCSoft programming software, is used to configure Eaton ELC programmable logic controllers. According to Eaton this product is used primarily in the Energy sector. Eaton estimates this product is used worldwide. 
+These vulnerabilities could allow remote attackers to execute arbitrary code on vulnerable installations of Eaton ELCSoft.</stix:Description>
+    <stix:Handling>
+      <marking:Marking>
+        <marking:Controlled_Structure>//node()</marking:Controlled_Structure>
+        <marking:Marking_Structure xsi:type="AIS:AISMarkingStructure">
+          <AIS:Not_Proprietary CISA_Proprietary="false">
+            <AIS:AISConsent consent="EVERYONE" />
+            <AIS:TLPMarking color="WHITE" />
+          </AIS:Not_Proprietary>
+        </marking:Marking_Structure>
+        <marking:Information_Source>
+          <stixCommon:Identity xsi:type="stix-ciq:CIQIdentity3.0InstanceType">
+            <stix-ciq:Specification>
+              <xpil:PartyName />
+              <xpil:Addresses>
+                <xpil:Address>
+                  <xal:Country>
+                    <xal:NameElement xal:NameCode="US" xal:NameCodeType="ISO 3166-1 alpha-2" />
+                  </xal:Country>
+                  <xal:AdministrativeArea>
+                    <xal:NameElement xal:NameCode="US-DC" xal:NameCodeType="ISO 3166-2" />
+                  </xal:AdministrativeArea>
+                </xpil:Address>
+              </xpil:Addresses>
+              <xpil:OrganisationInfo xpil:IndustryType="Energy Sector" />
+            </stix-ciq:Specification>
+          </stixCommon:Identity>
+          <stixCommon:Tools>
+            <cyboxCommon:Tool>
+              <cyboxCommon:Metadata>
+                <cyboxCommon:Value>ICS-CERT</cyboxCommon:Value>
+              </cyboxCommon:Metadata>
+            </cyboxCommon:Tool>
+          </stixCommon:Tools>
+        </marking:Information_Source>
+      </marking:Marking>
+    </stix:Handling>
+    <stix:Information_Source>
+      <stixCommon:Time>
+        <cyboxCommon:Produced_Time>2017-08-04T05:00:00.000Z</cyboxCommon:Produced_Time>
+      </stixCommon:Time>
+    </stix:Information_Source>
+  </stix:STIX_Header>
+  <stix:TTPs>
+    <stix:Kill_Chains>
+      <stixCommon:Kill_Chain definer="LMCO" id="stix:KillChain-af3e707f-2fb9-49e5-8c37-14026ca0a5ff" name="LM Cyber Kill Chain" number_of_phases="7" reference="http://www.lockheedmartin.com/content/dam/lockheed/data/corporate/documents/LM-White-Paper-Intel-Driven-Defense.pdf">
+        <stixCommon:Kill_Chain_Phase name="Reconnaissance" ordinality="1" phase_id="stix:KillChainPhase-af1016d6-a744-4ed7-ac91-00fe2272185a" />
+        <stixCommon:Kill_Chain_Phase name="Weaponization" ordinality="2" phase_id="stix:KillChainPhase-445b4827-3cca-42bd-8421-f2e947133c16" />
+        <stixCommon:Kill_Chain_Phase name="Delivery" ordinality="3" phase_id="stix:KillChainPhase-79a0e041-9d5f-49bb-ada4-8322622b162d" />
+        <stixCommon:Kill_Chain_Phase name="Exploitation" ordinality="4" phase_id="stix:KillChainPhase-f706e4e7-53d8-44ef-967f-81535c9db7d0" />
+        <stixCommon:Kill_Chain_Phase name="Installation" ordinality="5" phase_id="stix:KillChainPhase-e1e4e3f7-be3b-4b39-b80a-a593cfd99a4f" />
+        <stixCommon:Kill_Chain_Phase name="Command and Control" ordinality="6" phase_id="stix:KillChainPhase-d6dc32b9-2538-4951-8733-3cb9ef1daae2" />
+        <stixCommon:Kill_Chain_Phase name="Actions on Objectives" ordinality="7" phase_id="stix:KillChainPhase-786ca8f9-2d9a-4213-b38e-399af4a2e5d6" />
+      </stixCommon:Kill_Chain>
+    </stix:Kill_Chains>
+  </stix:TTPs>
+  <stix:Courses_Of_Action>
+    <stix:Course_Of_Action xsi:type="coa:CourseOfActionType" id="NCCIC:Course_Of_Action-1e45e526-3c30-4316-b649-826ec0fdc9ca" timestamp="2017-08-04T19:42:00.369Z">
+      <coa:Title>MITIGATION</coa:Title>
+      <coa:Description>MITIGATION
+ICS-CERT is currently coordinating with the vendor and security researcher to identify more prescriptive mitigations. ICS-CERT plans to follow up this alert with an advisory as more information becomes available.
+ICS-CERT recommends that users take defensive measures to minimize the risk of exploitation of these vulnerabilities. Specifically, users should:
+•	Minimize network exposure for all control system devices and/or systems, and ensure that they are not accessible from the Internet.
+•	Locate control system networks and devices behind firewalls, and isolate them from the business network. 
+•	Isolate vulnerable systems from the Internet and untrusted systems; however, if connectivity is required, use a VPN solution and implement network monitoring, recognizing that VPNs may have vulnerabilities and should be updated to the most current version available. Also recognize that VPN is only as secure as the connected devices.
+In addition, ICS-CERT recommends that users take the following measures to protect themselves from social engineering attacks: 
+1.	Do not click web links or open unsolicited attachments in email messages. 
+2.	Refer to Recognizing and Avoiding Email Scams for more information on avoiding email scams. 
+3.	Refer to Avoiding Social Engineering and Phishing Attacks for more information on social engineering attacks.
+ICS-CERT reminds organizations to perform proper impact analysis and risk assessment prior to taking defensive measures.
+ICS-CERT also provides a control systems recommended practices page on the ICS-CERT web site. Several recommended practices are available for reading or download, including Improving Industrial Control Systems Cybersecurity with Defense-in-Depth Strategies.
+Organizations that observe any suspected malicious activity should follow their established internal procedures and report their findings to ICS-CERT for tracking and correlation against other incidents.</coa:Description>
+    </stix:Course_Of_Action>
+  </stix:Courses_Of_Action>
+</stix:STIX_Package>
